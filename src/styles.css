@@ -3,6 +3,16 @@
   outline: none;
 }
 
+*,
+*:hover {
+  cursor: none !important;
+}
+
+::selection {
+  background: #727272;
+  /* Safari */
+}
+
 html {
   font-size: 10px;
 }
