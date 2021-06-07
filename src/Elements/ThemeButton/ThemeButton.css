@@ -1,0 +1,9 @@
+.theme-button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  opacity: 50%;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+}
