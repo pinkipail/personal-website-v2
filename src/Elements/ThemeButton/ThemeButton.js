@@ -1,7 +1,7 @@
 import React from "react";
 import "./ThemeButton.css";
 
-export default function ThemeButton() {
+export default function ThemeButton({toggle}) {
   return (
     <div className="toggle__wrap">
       <input
@@ -11,6 +11,7 @@ export default function ThemeButton() {
         value="false"
         type="radio"
         defaultChecked
+        onChange={() => toggle(false)}
       />
       <label htmlFor="toggle-on" className="toggle__btn">
         dark
@@ -22,6 +23,7 @@ export default function ThemeButton() {
         name="toggle"
         value="true"
         type="radio"
+        onChange={() => toggle(true)}
       />
       <label htmlFor="toggle-off" className="toggle__btn">
         light

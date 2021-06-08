@@ -129,7 +129,14 @@ function Scene() {
   );
 }
 
-export default function Background({ children }) {
+export default function Background() {
+
+  const [whiteTheme, setWhiteTheme] = useState(false)
+
+  function toggleTheme(value) {
+    setWhiteTheme(value)
+  }
+
   return (
     <>
       <Canvas
@@ -143,7 +150,7 @@ export default function Background({ children }) {
           depth: false,
         }}
       >
-        <color attach="background" args={["#050505"]} />
+        <color attach="background" args={[whiteTheme ? "#999999" : "#050505"]} />
         <fog color="#161616" attach="fog" near={8} far={30} />
         <Suspense fallback={<Html center>Loading.</Html>}>
           <Scene />
@@ -180,7 +187,7 @@ export default function Background({ children }) {
           </header>
 
           <footer>
-            <ThemeButton />
+            <ThemeButton toggle={toggleTheme}/>
             <ProgressBar />
           </footer>
           <SmoothScroll>
