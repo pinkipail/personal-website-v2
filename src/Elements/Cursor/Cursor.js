@@ -11,7 +11,14 @@ export default function Cursor() {
       el.addEventListener("mouseenter", () => cursor.emit("enter"));
       el.addEventListener("mouseleave", () => cursor.emit("leave"));
     });
+
+    [...document.querySelectorAll("label")].forEach((el) => {
+      el.addEventListener("mouseenter", () => cursor.emit("enter"));
+      el.addEventListener("mouseleave", () => cursor.emit("leave"));
+    });
   }, [])
+
+  
   return (
     <>
       <svg className="cursor" width="90" height="90" viewBox="0 0 90 90">

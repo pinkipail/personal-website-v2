@@ -9,8 +9,7 @@
 }
 
 ::selection {
-  background: #727272;
-  /* Safari */
+  background: #727272cc;
 }
 
 html {

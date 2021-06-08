@@ -16,4 +16,5 @@ footer {
 
 footer {
   bottom: 3rem;
+  align-items: flex-end;
 }
