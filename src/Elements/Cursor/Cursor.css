@@ -27,4 +27,5 @@
   background: #fff;
   transform: translate(-50% -50%);
   border-radius: 100%;
+  transition: transform 0.2s ease-in-out;
 }

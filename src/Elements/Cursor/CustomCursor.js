@@ -2,8 +2,6 @@ import { gsap } from "gsap";
 import { lerp, getMousePos } from "./utils";
 import { EventEmitter } from "events";
 
-// Calculate the viewport size
-
 
 // Track the mouse position
 let mouse = { x: 0, y: 0 };
@@ -33,7 +31,8 @@ export default class CustomCursor extends EventEmitter {
       radius: { previous: 30, current: 30, amt: 0.2 },
       stroke: { previous: 1, current: 1, amt: 0.2 },
     };
-    this.dot.style.transform = `translateX(${this.renderedStyles["tx"].current}px) translateY(${this.renderedStyles["ty"].current}px)`;
+    this.dot.style.top = this.renderedStyles["ty"].current + "px";
+    this.dot.style.left = this.renderedStyles["tx"].current + "px";
     this.listen();
 
     this.onMouseMoveEv = () => {
@@ -50,12 +49,16 @@ export default class CustomCursor extends EventEmitter {
       window.removeEventListener("mousemove", this.onMouseMoveEv);
     };
     window.addEventListener("mousemove", this.onMouseMoveEv);
+    window.addEventListener("mouseup", () => this.onMouseUp());
+    window.addEventListener("mousedown", () => this.onMouseDown());
   }
+
   render() {
     this.renderedStyles["tx"].current = mouse.x - this.bounds.width / 2;
     this.renderedStyles["ty"].current = mouse.y - this.bounds.height / 2;
 
-    this.DOM.el.style.transform = `translateX(${this.renderedStyles["tx"].previous}px) translateY(${this.renderedStyles["ty"].previous}px)`;
+    this.DOM.el.style.top = this.renderedStyles["ty"].previous + "px";
+    this.DOM.el.style.left = this.renderedStyles["tx"].previous + "px";
     for (const key in this.renderedStyles) {
       this.renderedStyles[key].previous = lerp(
         this.renderedStyles[key].previous,
@@ -63,11 +66,9 @@ export default class CustomCursor extends EventEmitter {
         this.renderedStyles[key].amt
       );
     }
-    this.dot.style.transform = `translateX(${
-      this.renderedStyles["tx"].current + this.bounds.width / 2 - 5
-    }px) translateY(${
-      this.renderedStyles["ty"].current + this.bounds.width / 2 - 5
-    }px)`;
+
+    this.dot.style.top = this.renderedStyles["ty"].current + this.bounds.width / 2 - 5 + "px";
+    this.dot.style.left = this.renderedStyles["tx"].current + this.bounds.width / 2 - 5 + "px";
     this.DOM.circleInner.setAttribute(
       "r",
       this.renderedStyles["radius"].previous
@@ -114,5 +115,14 @@ export default class CustomCursor extends EventEmitter {
   listen() {
     this.on("enter", () => this.enter());
     this.on("leave", () => this.leave());
+  }
+
+  
+  onMouseUp() {
+    this.dot.style.transform = `scale(1, 1)`;
+  }
+
+  onMouseDown() {
+    this.dot.style.transform = `scale(2, 2)`;
   }
 }
