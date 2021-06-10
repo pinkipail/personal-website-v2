@@ -1,0 +1,56 @@
+.footer {
+  position: relative;
+  height: 25rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+.footer__title {
+  font-weight: 500;
+  font-size: 6.5rem;
+  line-height: 110%;
+
+  text-align: right;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.footer__contacts-item {
+  display: flex;
+  align-items: center;
+}
+
+.footer-link {
+  font-weight: 500;
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  text-decoration-line: underline;
+  margin-left: 1rem;
+  line-height: 200%;
+}
+
+.spliter {
+  height: 100%;
+  width: 1px;
+  margin: 0 17rem;
+  background-color: #fff;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0;
+
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: 0.16em;
+  color: #ffffff80;
+}

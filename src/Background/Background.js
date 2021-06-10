@@ -24,6 +24,7 @@ import Logo from "../Elements/Logo/Logo";
 import ProgressBar from "../Elements/ProgressBar/ProgressBar";
 import MainBlock from "../Blocks/MainBlock";
 import ThemeButton from "../Elements/ThemeButton/ThemeButton";
+import Footer from "../Blocks/Footer/Footer";
 
 function MainSphere({ material }) {
   const main = useRef();
@@ -193,6 +194,7 @@ export default function Background() {
           <SmoothScroll>
             <MainBlock />
             <MainBlock />
+            <Footer/>
           </SmoothScroll>
         </div>
     </>
