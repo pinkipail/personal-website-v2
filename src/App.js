@@ -6,7 +6,7 @@ import Cursor from "./Elements/Cursor/Cursor";
 export default function App() {
   return (
     <>
-      <Background></Background>
+      <Background/>
       <Cursor/>
     </>
   );

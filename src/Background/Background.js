@@ -22,9 +22,10 @@ import "./Background.css";
 import SmoothScroll from "../Common/SmoothScroll/SmoothScroll";
 import Logo from "../Elements/Logo/Logo";
 import ProgressBar from "../Elements/ProgressBar/ProgressBar";
-import MainBlock from "../Blocks/MainBlock";
+import MainBlock from "../Blocks/MainBlock/MainBlock";
 import ThemeButton from "../Elements/ThemeButton/ThemeButton";
 import Footer from "../Blocks/Footer/Footer";
+import About from "../Blocks/About/About";
 
 function MainSphere({ material }) {
   const main = useRef();
@@ -184,7 +185,7 @@ export default function Background() {
         <div className="content">
           <header>
             <Logo url={"img/logo.svg"} size={"5.2rem"} />
-            <Logo url={"img/logo1.svg"} size={"5.5rem"} />
+            <Logo url={"img/logo1.svg"} size={"5.55rem"} />
           </header>
 
           <footer>
@@ -193,7 +194,7 @@ export default function Background() {
           </footer>
           <SmoothScroll>
             <MainBlock />
-            <MainBlock />
+            <About />
             <Footer/>
           </SmoothScroll>
         </div>
