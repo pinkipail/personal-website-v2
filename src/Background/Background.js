@@ -27,6 +27,7 @@ import ThemeButton from "../Elements/ThemeButton/ThemeButton";
 import Footer from "../Blocks/Footer/Footer";
 import About from "../Blocks/About/About";
 import AboutJS from "../Blocks/AboutJS/AboutJS";
+import AboutMe from "../Blocks/AboutMe/AboutMe";
 
 function MainSphere({ material }) {
   const main = useRef();
@@ -196,6 +197,7 @@ export default function Background() {
           <SmoothScroll>
             <MainBlock />
             <About />
+            <AboutMe />
             <AboutJS />
             <Footer/>
           </SmoothScroll>

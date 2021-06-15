@@ -1,0 +1,57 @@
+.block {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.block__content {
+  margin: auto;
+  width: 80vw;
+  height: 75vh;
+}
+
+.block__description {
+  width: 110rem;
+  font-weight: 500;
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+
+.block__number {
+  font-weight: 900;
+  font-size: 30rem;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: transparent;
+
+  -webkit-text-stroke: 3px rgba(255, 255, 255, 0.2);
+
+}
+
+.about-me {
+  position: relative;
+}
+
+.about-me .block__description {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.about-me .block__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.8;
+  backdrop-filter: blur(30px);
+}
+
+.about-me .block__number {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  line-height: 0.75;
+  margin-right: -1rem;
+}
