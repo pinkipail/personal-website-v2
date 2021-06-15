@@ -30,6 +30,7 @@ import AboutJS from "../Blocks/AboutJS/AboutJS";
 import AboutMe from "../Blocks/AboutMe/AboutMe";
 import Skills from "../Blocks/Skills/Skills";
 import Projects from "../Blocks/Projects/Projects";
+import { TweenLite } from "gsap/gsap-core";
 
 function MainSphere({ material }) {
   const main = useRef();
@@ -115,6 +116,7 @@ function Scene() {
   useEffect(() => {
     setMaterial(materialRef.current);
   }, [materialRef]);
+
   return (
     <>
       <MeshDistortMaterial
@@ -136,11 +138,13 @@ function Scene() {
 }
 
 export default function Background() {
-
-  const [whiteTheme, setWhiteTheme] = useState(false)
+  let background = useRef();
 
   function toggleTheme(value) {
-    setWhiteTheme(value)
+    const color = value
+      ? { b: 0.5, g: 0.5, r: 0.5 }
+      : { b: 0.02, g: 0.02, r: 0.02 };
+    TweenLite.to(background.current, 1, { ...color, ease: "power1.inOut" });
   }
 
   return (
@@ -156,7 +160,7 @@ export default function Background() {
           depth: false,
         }}
       >
-        <color attach="background" args={[whiteTheme ? "#999999" : "#050505"]} />
+        <color ref={background} attach="background" args={["#050505"]} />
         <fog color="#161616" attach="fog" near={8} far={30} />
         <Suspense fallback={<Html center>Loading.</Html>}>
           <Scene />
@@ -186,26 +190,26 @@ export default function Background() {
           </EffectComposer>
         </Suspense>
       </Canvas>
-        <div className="content">
-          <header>
-            <Logo url={"img/logo.svg"} size={"5.2rem"} />
-            <Logo url={"img/logo1.svg"} size={"5.55rem"} />
-          </header>
+      <div className="content">
+        <header>
+          <Logo url={"img/logo.svg"} size={"5.2rem"} />
+          <Logo url={"img/logo1.svg"} size={"5.55rem"} />
+        </header>
 
-          <footer>
-            <ThemeButton toggle={toggleTheme}/>
-            <ProgressBar />
-          </footer>
-          <SmoothScroll>
-            <MainBlock />
-            <About />
-            <AboutMe />
-            <AboutJS />
-            <Skills/>
-            <Projects/>
-            <Footer/>
-          </SmoothScroll>
-        </div>
+        <footer>
+          <ThemeButton toggle={toggleTheme} />
+          <ProgressBar />
+        </footer>
+        <SmoothScroll>
+          <MainBlock />
+          <About />
+          <AboutMe />
+          <AboutJS />
+          <Skills />
+          <Projects />
+          <Footer />
+        </SmoothScroll>
+      </div>
     </>
   );
 }

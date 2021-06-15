@@ -17,7 +17,6 @@ export default function ProgressBar() {
         document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100 * 1.5;
       setScrollProgress(scrolled);
-      console.log("object :>> ", scrolled);
     }
   }
 
