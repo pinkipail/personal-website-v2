@@ -22,7 +22,7 @@
 .block__description {
   width: 110rem;
   font-weight: 500;
-  font-size: 6.5rem;
+  font-size: 6rem;
   text-transform: uppercase;
 }
 
@@ -38,31 +38,25 @@
 
 }
 
-.about {
+.about-js {
   position: relative;
 }
 
-.about .block__title {
+.about-js .block__description {
   position: absolute;
   top: 0;
-  left: 15rem;
-}
-
-.about .block__description {
-  position: absolute;
-  top: 20rem;
   right: 0;
 }
 
-.about .block__image {
+.about-js .block__image {
   position: absolute;
   bottom: 0;
   left: 0;
   opacity: 0.8;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(30px);
 }
 
-.about .block__number {
+.about-js .block__number {
   position: absolute;
   bottom: 0;
   right: 0;
