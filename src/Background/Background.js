@@ -28,6 +28,7 @@ import Footer from "../Blocks/Footer/Footer";
 import About from "../Blocks/About/About";
 import AboutJS from "../Blocks/AboutJS/AboutJS";
 import AboutMe from "../Blocks/AboutMe/AboutMe";
+import Skills from "../Blocks/Skills/Skills";
 
 function MainSphere({ material }) {
   const main = useRef();
@@ -199,6 +200,7 @@ export default function Background() {
             <About />
             <AboutMe />
             <AboutJS />
+            <Skills/>
             <Footer/>
           </SmoothScroll>
         </div>
