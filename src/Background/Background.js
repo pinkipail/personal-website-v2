@@ -29,6 +29,7 @@ import About from "../Blocks/About/About";
 import AboutJS from "../Blocks/AboutJS/AboutJS";
 import AboutMe from "../Blocks/AboutMe/AboutMe";
 import Skills from "../Blocks/Skills/Skills";
+import Projects from "../Blocks/Projects/Projects";
 
 function MainSphere({ material }) {
   const main = useRef();
@@ -201,6 +202,7 @@ export default function Background() {
             <AboutMe />
             <AboutJS />
             <Skills/>
+            <Projects/>
             <Footer/>
           </SmoothScroll>
         </div>
