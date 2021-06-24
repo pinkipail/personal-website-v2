@@ -35,7 +35,6 @@ const SmoothScroll = ({ children }) => {
     if(data.current - data.previous > 1  || data.current - data.previous < -1) {
       data.rounded = Math.round(data.previous * 100) / 100;
       scrollingContainerRef.current.style.transform = `translateY(-${data.previous}px)`;
-      // console.log(data.current - data.previous);
     }
 
     requestAnimationFrame(() => smoothScrollingHandler());

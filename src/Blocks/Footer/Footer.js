@@ -27,7 +27,7 @@ export default function Footer() {
               fill="white"
             />
           </svg>
-          <div className="footer-link">
+          <div className="footer-link cursor-anumation">
             info@vasiliy-fedorov.ru
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
               fill="white"
             />
           </svg>
-          <div className="footer-link">
+          <div className="footer-link cursor-anumation" >
             github.com/pinkipail
           </div>
         </div>

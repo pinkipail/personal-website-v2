@@ -7,12 +7,7 @@ export default function Cursor() {
     console.log('Cursor :>> ');
     const cursor = new CustomCursor(document.querySelector(".cursor"));
   
-    [...document.querySelectorAll("button")].forEach((el) => {
-      el.addEventListener("mouseenter", () => cursor.emit("enter"));
-      el.addEventListener("mouseleave", () => cursor.emit("leave"));
-    });
-
-    [...document.querySelectorAll("label")].forEach((el) => {
+    [...document.querySelectorAll(".cursor-anumation")].forEach((el) => {
       el.addEventListener("mouseenter", () => cursor.emit("enter"));
       el.addEventListener("mouseleave", () => cursor.emit("leave"));
     });
