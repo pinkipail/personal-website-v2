@@ -13,7 +13,7 @@ export default function ThemeButton({toggle}) {
         defaultChecked
         onChange={() => toggle(false)}
       />
-      <label htmlFor="toggle-on" className="toggle__btn">
+      <label htmlFor="toggle-on" className="toggle__btn cursor-anumation">
         dark
       </label>
 
@@ -25,7 +25,7 @@ export default function ThemeButton({toggle}) {
         type="radio"
         onChange={() => toggle(true)}
       />
-      <label htmlFor="toggle-off" className="toggle__btn">
+      <label htmlFor="toggle-off" className="toggle__btn cursor-anumation">
         light
       </label>
     </div>
