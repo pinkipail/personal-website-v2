@@ -1,5 +1,5 @@
-import React from "react";
-import "./Logo.css";
+import React from 'react';
+import './Logo.css';
 
 export default function Logo({ url, size: height }) {
   return (
@@ -9,8 +9,8 @@ export default function Logo({ url, size: height }) {
         type="image/svg+xml"
         data={url}
         aria-label="logo"
-        style={{ height: height }}
-      ></object>
+        style={{ height }}
+      />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import "./MainBlock.css";
+import React from 'react';
+import './MainBlock.css';
 
 export default function MainBlock() {
   return (
@@ -17,13 +17,13 @@ export default function MainBlock() {
             ВАСИЛИЙ
           </div>
         </div>
-      <div className="description">
-        Мне нравится создавать
-        интерактивные приложения
-        на JavaScript с акцентом на 
-        анимированный контент, 
-        интерактивные приложения
-      </div>
+        <div className="description">
+          Мне нравится создавать
+          интерактивные приложения
+          на JavaScript с акцентом на
+          анимированный контент,
+          интерактивные приложения
+        </div>
       </div>
     </div>
   );

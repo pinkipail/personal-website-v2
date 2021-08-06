@@ -1,13 +1,15 @@
-import React, { Suspense, useEffect, useRef, useState } from "react";
-import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React, {
+  Suspense, useEffect, useRef, useState,
+} from 'react';
+import * as THREE from 'three';
+import { Canvas, useFrame } from '@react-three/fiber';
 import {
   useTexture,
   useCubeTexture,
   MeshDistortMaterial,
   Icosahedron,
   Html,
-} from "@react-three/drei";
+} from '@react-three/drei';
 import {
   Bloom,
   DepthOfField,
@@ -15,22 +17,23 @@ import {
   Vignette,
   EffectComposer,
   ToneMapping,
-} from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+} from '@react-three/postprocessing';
+import { BlendFunction } from 'postprocessing';
 
-import "./Background.css";
-import SmoothScroll from "../Common/SmoothScroll/SmoothScroll";
-import Logo from "../Elements/Logo/Logo";
-import ProgressBar from "../Elements/ProgressBar/ProgressBar";
-import MainBlock from "../Blocks/MainBlock/MainBlock";
-import ThemeButton from "../Elements/ThemeButton/ThemeButton";
-import Footer from "../Blocks/Footer/Footer";
-import About from "../Blocks/About/About";
-import AboutJS from "../Blocks/AboutJS/AboutJS";
-import AboutMe from "../Blocks/AboutMe/AboutMe";
-import Skills from "../Blocks/Skills/Skills";
-import Projects from "../Blocks/Projects/Projects";
-import { TweenLite } from "gsap/gsap-core";
+import './Background.css';
+import { TweenLite } from 'gsap/gsap-core';
+import SmoothScroll from '../Common/SmoothScroll/SmoothScroll';
+import Logo from '../Elements/Logo/Logo';
+import ProgressBar from '../Elements/ProgressBar/ProgressBar';
+import MainBlock from '../Blocks/MainBlock/MainBlock';
+import ThemeButton from '../Elements/ThemeButton/ThemeButton';
+import Footer from '../Blocks/Footer/Footer';
+import About from '../Blocks/About/About';
+import AboutJS from '../Blocks/AboutJS/AboutJS';
+import AboutMe from '../Blocks/AboutMe/AboutMe';
+import Skills from '../Blocks/Skills/Skills';
+import Projects from '../Blocks/Projects/Projects';
+import generateId from '../Common/func/generateId';
 
 function MainSphere({ material }) {
   const main = useRef();
@@ -40,12 +43,12 @@ function MainSphere({ material }) {
     main.current.rotation.y = THREE.MathUtils.lerp(
       main.current.rotation.y,
       mouse.x * Math.PI,
-      0.1
+      0.1,
     );
     main.current.rotation.x = THREE.MathUtils.lerp(
       main.current.rotation.x,
       mouse.y * Math.PI,
-      0.1
+      0.1,
     );
   });
   return (
@@ -76,14 +79,14 @@ function Instances({ material }) {
   // smaller spheres movement
   useFrame(() => {
     // animate each sphere in the array
-    // const pageYOffset = window.pageYOffset / 100;
-    // console.log('pageYOffset :>> ', pageYOffset);
-    sphereRefs.forEach((el) => {
+    sphereRefs.map((sphere) => {
+      const el = sphere;
       el.position.y += 0.05;
       if (el.position.y > 20) el.position.y = -20;
       el.rotation.x += 0.06;
       el.rotation.y += 0.06;
       el.rotation.z += 0.02;
+      return el;
     });
   });
   return (
@@ -94,8 +97,8 @@ function Instances({ material }) {
           args={[1, 4]}
           position={[pos[0], pos[1], pos[2]]}
           material={material}
-          key={i}
-          ref={(ref) => (sphereRefs[i] = ref)}
+          key={generateId()}
+          ref={(ref) => { sphereRefs[i] = ref; }}
         />
       ))}
     </>
@@ -103,10 +106,10 @@ function Instances({ material }) {
 }
 
 function Scene() {
-  const bumpMap = useTexture("/bump.jpg");
+  const bumpMap = useTexture('/bump.jpg');
   const envMap = useCubeTexture(
-    ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],
-    { path: "/cube/" }
+    ['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'],
+    { path: '/cube/' },
   );
   // We use `useResource` to be able to delay rendering the spheres until the material is ready
   // const [materialRef, material] = useResource()
@@ -121,7 +124,7 @@ function Scene() {
     <>
       <MeshDistortMaterial
         ref={materialRef}
-        color={"#010101"}
+        color="#010101"
         roughness={0.1}
         metalness={1}
         bumpScale={0.005}
@@ -138,29 +141,29 @@ function Scene() {
 }
 
 export default function Background() {
-  let background = useRef();
+  const background = useRef();
 
   function toggleTheme(value) {
     const color = value
       ? { b: 0.5, g: 0.5, r: 0.5 }
       : { b: 0.02, g: 0.02, r: 0.02 };
-    TweenLite.to(background.current, 1, { ...color, ease: "power1.inOut" });
+    TweenLite.to(background.current, 1, { ...color, ease: 'power1.inOut' });
   }
 
   return (
     <>
       <Canvas
-        style={{ position: "fixed", zIndex: 0 }}
+        style={{ position: 'fixed', zIndex: 0 }}
         camera={{ position: [0, 0, 3] }}
         gl={{
-          powerPreference: "high-performance",
+          powerPreference: 'high-performance',
           alpha: false,
           antialias: false,
           stencil: false,
           depth: false,
         }}
       >
-        <color ref={background} attach="background" args={["#050505"]} />
+        <color ref={background} attach="background" args={['#050505']} />
         <fog color="#161616" attach="fog" near={8} far={30} />
         <Suspense fallback={<Html center>Loading.</Html>}>
           <Scene />
@@ -192,8 +195,8 @@ export default function Background() {
       </Canvas>
       <div className="content">
         <header>
-          <Logo url={"img/logo.svg"} size={"5.2rem"} />
-          <Logo url={"img/logo1.svg"} size={"5.55rem"} />
+          <Logo url="img/logo.svg" size="5.2rem" />
+          <Logo url="img/logo1.svg" size="5.55rem" />
         </header>
 
         <footer>

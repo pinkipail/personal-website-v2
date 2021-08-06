@@ -1,7 +1,7 @@
 import React, {
-  useEffect, useRef
+  useEffect, useRef,
 } from 'react';
-import classes from './CanvasBgAnimation.module.css'
+import classes from './CanvasBgAnimation.module.css';
 
 const createConstellationConfig = (canvas) => ({
   star: {
@@ -10,7 +10,7 @@ const createConstellationConfig = (canvas) => ({
   },
   line: {
     color: 'rgba(255, 255, 255, .3)',
-    width: 0.3
+    width: 0.3,
   },
   position: {
     x: canvas.width * 0.5,
@@ -22,18 +22,17 @@ const createConstellationConfig = (canvas) => ({
   length: Math.trunc(window.innerWidth / 8),
   distance: 120,
   radius: (window.innerWidth / 5),
-  stars: []
+  stars: [],
 });
 
 class Constellation {
-  handlers = {
-    mousemove: this.mousemove.bind(this),
-    resize: this.resize.bind(this)
-  }
-
   constructor(canvas) {
     this.canvas = canvas;
     this.context = this.canvas.getContext('2d');
+    this.handlers = {
+      mousemove: this.mousemove.bind(this),
+      resize: this.resize.bind(this),
+    };
   }
 
   init() {
@@ -43,40 +42,40 @@ class Constellation {
     this.createStars();
     this.loop(this.animate.bind(this));
     this.handleEvent();
-  };
+  }
 
   setConfig() {
     this.config = createConstellationConfig(this.canvas);
-  };
+  }
 
   setCanvas() {
     this.canvas.width = this.config.width;
     this.canvas.height = this.config.height;
-  };
+  }
 
   setContext() {
     this.context.fillStyle = this.config.star.color;
     this.context.strokeStyle = this.config.line.color;
     this.context.lineWidth = this.config.line.width;
-  };
+  }
 
   createStars() {
     for (let i = 0; i < this.config.length; i++) {
       this.config.stars.push(this.createStar());
     }
-  };
+  }
 
   loop(callback) {
     callback();
     this.rAF = window.requestAnimationFrame(() => {
       this.loop(() => callback());
     });
-  };
+  }
 
   handleEvent() {
     window.addEventListener('mousemove', this.handlers.mousemove);
     window.addEventListener('resize', this.handlers.resize);
-  };
+  }
 
   animate() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -91,7 +90,7 @@ class Constellation {
       vx: (this.config.velocity - (Math.random() * 0.3)),
       vy: (this.config.velocity - (Math.random() * 0.3)),
       radius: Math.random() * this.config.star.width,
-    }
+    };
   }
 
   animateStars() {
@@ -104,24 +103,24 @@ class Constellation {
 
       star.x += star.vx;
       star.y += star.vy;
-      this.drawStar(star)
+      this.drawStar(star);
     });
   }
 
   animateLine() {
-    let length = this.config.length;
+    const { length } = this.config;
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length; j++) {
-        let iStar = this.config.stars[i];
-        let jStar = this.config.stars[j];
+        const iStar = this.config.stars[i];
+        const jStar = this.config.stars[j];
         if (
-          Math.abs(iStar.x - jStar.x) < Math.abs(this.config.distance) &&
-          Math.abs(iStar.y - jStar.y) < Math.abs(this.config.distance) &&
-          Math.abs(iStar.x - this.config.position.x) < Math.abs(this.config.radius) &&
-          Math.abs(iStar.y - this.config.position.y) < Math.abs(this.config.radius)
+          Math.abs(iStar.x - jStar.x) < Math.abs(this.config.distance)
+          && Math.abs(iStar.y - jStar.y) < Math.abs(this.config.distance)
+          && Math.abs(iStar.x - this.config.position.x) < Math.abs(this.config.radius)
+          && Math.abs(iStar.y - this.config.position.y) < Math.abs(this.config.radius)
         ) {
-          this.drawLine(iStar, jStar)
+          this.drawLine(iStar, jStar);
         }
       }
     }
@@ -144,7 +143,7 @@ class Constellation {
   mousemove(e) {
     this.config.position.x = e.clientX;
     this.config.position.y = e.clientY;
-  };
+  }
 
   resize() {
     window.cancelAnimationFrame(this.rAF);
@@ -156,23 +155,23 @@ class Constellation {
   }
 
   destroy() {
-    window.removeEventListener('mousemove', this.handlers.mousemove)
+    window.removeEventListener('mousemove', this.handlers.mousemove);
     window.removeEventListener('resize', this.handlers.resize);
   }
 }
 
-export function CanvasBgAnimation() {
+export default function CanvasBgAnimation() {
   const canvasRef = useRef();
   useEffect(() => {
-    let constellation = new Constellation(canvasRef.current);
+    const constellation = new Constellation(canvasRef.current);
     constellation.init();
 
     return () => {
       constellation.destroy();
-    }
-  }, [])
+    };
+  }, []);
 
   return (
-      <canvas ref={canvasRef} className={classes.canvas} />
-    )
+    <canvas ref={canvasRef} className={classes.canvas} />
+  );
 }

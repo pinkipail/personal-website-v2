@@ -1,7 +1,7 @@
-import React from "react";
-import "./ThemeButton.css";
+import React from 'react';
+import './ThemeButton.css';
 
-export default function ThemeButton({toggle}) {
+export default function ThemeButton({ toggle }) {
   return (
     <div className="toggle__wrap">
       <input

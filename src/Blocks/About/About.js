@@ -1,8 +1,8 @@
 import React from 'react';
-import "./About.css"
+import './About.css';
 
 export default function About() {
-  return(
+  return (
     <div className="block">
       <div className="block__content about">
         <div className="block__title">
@@ -10,10 +10,10 @@ export default function About() {
         </div>
 
         <div className="block__image">
-          <img src="img/map.png" alt="map"/>
+          <img src="img/map.png" alt="map" />
         </div>
         <div className="block__description">
-          Я вырос в небольшой деревни Новоегорьевское, что в Алтайском крае. 
+          Я вырос в небольшой деревни Новоегорьевское, что в Алтайском крае.
         </div>
 
         <div className="block__number">
@@ -21,5 +21,5 @@ export default function About() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Stats from 'stats.js';
+import Stats from 'stats-js';
 
 const { requestAnimationFrame, cancelAnimationFrame } = window;
 
@@ -7,7 +7,7 @@ class FpsCounter extends React.Component {
   componentDidMount() {
     const stats = new Stats();
     stats.showPanel(0);
-    this.refs.stats.appendChild(stats.dom);
+    this.stats.appendChild(stats.dom);
 
     const animate = () => {
       stats.begin();
@@ -22,9 +22,11 @@ class FpsCounter extends React.Component {
   }
 
   render() {
+    const { children } = this.props;
+
     return (
-      <div ref="stats">
-        {this.props.children}
+      <div ref={(ref) => { this.stats = ref; }}>
+        {children}
       </div>
     );
   }

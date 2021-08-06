@@ -1,19 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import CustomCursor from './CustomCursor';
-import "./Cursor.css";
+import './Cursor.css';
 
 export default function Cursor() {
-  useEffect(()=> {
-    console.log('Cursor :>> ');
-    const cursor = new CustomCursor(document.querySelector(".cursor"));
-  
-    [...document.querySelectorAll(".cursor-anumation")].forEach((el) => {
-      el.addEventListener("mouseenter", () => cursor.emit("enter"));
-      el.addEventListener("mouseleave", () => cursor.emit("leave"));
-    });
-  }, [])
+  useEffect(() => {
+    const cursor = new CustomCursor(document.querySelector('.cursor'));
 
-  
+    [...document.querySelectorAll('.cursor-anumation')].forEach((el) => {
+      el.addEventListener('mouseenter', () => cursor.emit('enter'));
+      el.addEventListener('mouseleave', () => cursor.emit('leave'));
+    });
+  }, []);
+
   return (
     <>
       <svg className="cursor" width="90" height="90" viewBox="0 0 90 90">
@@ -43,7 +41,7 @@ export default function Cursor() {
         </defs>
         <circle className="cursor__inner" cx="45" cy="45" r="40" />
       </svg>
-      <div className="cursor__dot"></div>
+      <div className="cursor__dot" />
     </>
   );
 }
