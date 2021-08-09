@@ -1,5 +1,4 @@
 import React from 'react';
-import generateId from '../../Common/func/generateId';
 import './Projects.css';
 
 const projects = [
@@ -33,7 +32,7 @@ export default function Projects() {
         <div className="block__title">ПРОЕКТЫ:</div>
 
         {projects.map((project) => (
-          <div className="project" key={generateId()}>
+          <div className="project" key={project.name}>
             <div className="project__date">
               {project.dateStart}
               {' '}

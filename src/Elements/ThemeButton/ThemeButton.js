@@ -8,10 +8,10 @@ export default function ThemeButton({ toggle }) {
         id="toggle-on"
         className="toggle toggle-left"
         name="toggle"
-        value="false"
+        value="true"
         type="radio"
         defaultChecked
-        onChange={() => toggle(false)}
+        onChange={() => toggle(true)}
       />
       <label htmlFor="toggle-on" className="toggle__btn cursor-anumation">
         dark
@@ -21,9 +21,9 @@ export default function ThemeButton({ toggle }) {
         id="toggle-off"
         className="toggle toggle-right"
         name="toggle"
-        value="true"
+        value="false"
         type="radio"
-        onChange={() => toggle(true)}
+        onChange={() => toggle(false)}
       />
       <label htmlFor="toggle-off" className="toggle__btn cursor-anumation">
         light

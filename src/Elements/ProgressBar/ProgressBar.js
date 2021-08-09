@@ -9,7 +9,7 @@ export default function ProgressBar() {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight
       - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100 * 1.5;
+    const scrolled = (winScroll / height) * 100 * 1.25;
     setScrollProgress(scrolled);
   }
 
@@ -31,7 +31,7 @@ export default function ProgressBar() {
         fill="none"
         stroke="#ffffff"
         strokeWidth="5"
-        strokeDasharray={`${scrollProgress}, 150`}
+        strokeDasharray={`${scrollProgress}, 125`}
       />
       <circle
         cx="25"
@@ -40,7 +40,7 @@ export default function ProgressBar() {
         fill="none"
         stroke="#ffffff59"
         strokeWidth="5"
-        strokeDasharray="150, 150"
+        strokeDasharray="125"
       />
     </svg>
   );

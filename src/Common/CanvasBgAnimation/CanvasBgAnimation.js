@@ -4,6 +4,8 @@ import React, {
 import classes from './CanvasBgAnimation.module.css';
 
 const createConstellationConfig = (canvas) => ({
+
+  // TODO: добавить светлую тему
   star: {
     color: 'rgba(255, 255, 255, .3)',
     width: 3,

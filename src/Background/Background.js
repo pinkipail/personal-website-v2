@@ -1,13 +1,12 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, {
   Suspense, useEffect, useRef, useState,
 } from 'react';
-import * as THREE from 'three';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import {
   useTexture,
   useCubeTexture,
   MeshDistortMaterial,
-  Icosahedron,
   Html,
 } from '@react-three/drei';
 import {
@@ -22,88 +21,15 @@ import { BlendFunction } from 'postprocessing';
 
 import './Background.css';
 import { TweenLite } from 'gsap/gsap-core';
-import SmoothScroll from '../Common/SmoothScroll/SmoothScroll';
-import Logo from '../Elements/Logo/Logo';
-import ProgressBar from '../Elements/ProgressBar/ProgressBar';
-import MainBlock from '../Blocks/MainBlock/MainBlock';
-import ThemeButton from '../Elements/ThemeButton/ThemeButton';
-import Footer from '../Blocks/Footer/Footer';
-import About from '../Blocks/About/About';
-import AboutJS from '../Blocks/AboutJS/AboutJS';
-import AboutMe from '../Blocks/AboutMe/AboutMe';
-import Skills from '../Blocks/Skills/Skills';
-import Projects from '../Blocks/Projects/Projects';
-import generateId from '../Common/func/generateId';
 
-function MainSphere({ material }) {
-  const main = useRef();
-  // main sphere rotates following the mouse position
-  useFrame(({ clock, mouse }) => {
-    main.current.rotation.z = clock.getElapsedTime();
-    main.current.rotation.y = THREE.MathUtils.lerp(
-      main.current.rotation.y,
-      mouse.x * Math.PI,
-      0.1,
-    );
-    main.current.rotation.x = THREE.MathUtils.lerp(
-      main.current.rotation.x,
-      mouse.y * Math.PI,
-      0.1,
-    );
-  });
-  return (
-    <Icosahedron
-      args={[1, 4]}
-      ref={main}
-      material={material}
-      position={[0, 0, 0]}
-    />
-  );
-}
+import MainSphere from './MainSphere/MainSphere';
+import SmallSpheres from './SmallSpheres/SmallSpheres';
 
-function Instances({ material }) {
-  // we use this array ref to store the spheres after creating them
-  const [sphereRefs] = useState(() => []);
-  // we use this array to initialize the background spheres
-  const initialPositions = [
-    [17, 6, -10],
-    [-16, -6, -10],
-    [12, -15, -10],
-    [-25, 15, -20],
-    [-17, 3, -20],
-    [8, 10, -20],
-    [15, -10, -25],
-    [-11, -20, -25],
-    [30, -30, -25],
-  ];
-  // smaller spheres movement
-  useFrame(() => {
-    // animate each sphere in the array
-    sphereRefs.map((sphere) => {
-      const el = sphere;
-      el.position.y += 0.05;
-      if (el.position.y > 20) el.position.y = -20;
-      el.rotation.x += 0.06;
-      el.rotation.y += 0.06;
-      el.rotation.z += 0.02;
-      return el;
-    });
-  });
-  return (
-    <>
-      <MainSphere material={material} />
-      {initialPositions.map((pos, i) => (
-        <Icosahedron
-          args={[1, 4]}
-          position={[pos[0], pos[1], pos[2]]}
-          material={material}
-          key={generateId()}
-          ref={(ref) => { sphereRefs[i] = ref; }}
-        />
-      ))}
-    </>
-  );
-}
+const themesMap = new Map([
+  ['default', { b: 0.02, g: 0.02, r: 0.02 }],
+  ['dark', { b: 0.02, g: 0.02, r: 0.02 }],
+  ['light', { b: 0.5, g: 0.5, r: 0.5 }],
+]);
 
 function Scene() {
   const bumpMap = useTexture('/bump.jpg');
@@ -111,8 +37,6 @@ function Scene() {
     ['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'],
     { path: '/cube/' },
   );
-  // We use `useResource` to be able to delay rendering the spheres until the material is ready
-  // const [materialRef, material] = useResource()
 
   const materialRef = useRef();
   const [material, setMaterial] = useState();
@@ -135,18 +59,26 @@ function Scene() {
         envMap={envMap}
         bumpMap={bumpMap}
       />
-      {material && <Instances material={material} />}
+      {material
+       && (
+       <>
+         <MainSphere material={material} />
+         <SmallSpheres material={material} />
+       </>
+       )}
     </>
   );
 }
 
-export default function Background() {
+export default function Background({ children, darkTheme }) {
   const background = useRef();
 
-  function toggleTheme(value) {
-    const color = value
-      ? { b: 0.5, g: 0.5, r: 0.5 }
-      : { b: 0.02, g: 0.02, r: 0.02 };
+  useEffect(() => {
+    toggleTheme();
+  }, [darkTheme]);
+
+  function toggleTheme() {
+    const color = darkTheme ? themesMap.get('dark') : themesMap.get('light');
     TweenLite.to(background.current, 1, { ...color, ease: 'power1.inOut' });
   }
 
@@ -193,26 +125,7 @@ export default function Background() {
           </EffectComposer>
         </Suspense>
       </Canvas>
-      <div className="content">
-        <header>
-          <Logo url="img/logo.svg" size="5.2rem" />
-          <Logo url="img/logo1.svg" size="5.55rem" />
-        </header>
-
-        <footer>
-          <ThemeButton toggle={toggleTheme} />
-          <ProgressBar />
-        </footer>
-        <SmoothScroll>
-          <MainBlock />
-          <About />
-          <AboutMe />
-          <AboutJS />
-          <Skills />
-          <Projects />
-          <Footer />
-        </SmoothScroll>
-      </div>
+      {children}
     </>
   );
 }
