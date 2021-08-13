@@ -1,33 +1,43 @@
-import { Icosahedron } from '@react-three/drei';
 import React, { useState } from 'react';
-import { useFrame } from 'react-three-fiber';
+import * as THREE from 'three';
+import { useWindowScroll } from 'react-use';
+import { Icosahedron } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+
+const initialPositions = [
+  [17, 6, -10],
+  [-16, -6, -10],
+  [12, -15, -10],
+  [-25, 15, -20],
+  [-17, 3, -20],
+  [8, 10, -20],
+  [15, -10, -25],
+  [-11, -20, -25],
+  [30, -30, -25],
+];
+
+const spheresPosition = initialPositions.map((item) => item[1]);
 
 export default function SmallSpheres({ material }) {
-  // we use this array ref to store the spheres after creating them
+  const { y: deltaScrollY } = useWindowScroll();
+
   const [sphereRefs] = useState(() => []);
-  // we use this array to initialize the background spheres
-  const initialPositions = [
-    [17, 6, -10],
-    [-16, -6, -10],
-    [12, -15, -10],
-    [-25, 15, -20],
-    [-17, 3, -20],
-    [8, 10, -20],
-    [15, -10, -25],
-    [-11, -20, -25],
-    [30, -30, -25],
-  ];
-  // smaller spheres movement
+
   useFrame(() => {
-    // animate each sphere in the array
-    sphereRefs.map((sphere) => {
-      const el = sphere;
-      el.position.y += 0.05;
-      if (el.position.y > 20) el.position.y = -20;
-      el.rotation.x += 0.06;
-      el.rotation.y += 0.06;
-      el.rotation.z += 0.02;
-      return el;
+    sphereRefs.forEach((sphere, i) => {
+      spheresPosition[i] += 0.05;
+      sphere.position.y = THREE.MathUtils.lerp(
+        sphere.position.y,
+        spheresPosition[i] + deltaScrollY / 100 - 20,
+        0.2,
+      );
+      if (sphere.position.y > 20) {
+        sphere.position.y = -20;
+        spheresPosition[i] = -20 - deltaScrollY / 100;
+      }
+      sphere.rotation.x += 0.06;
+      sphere.rotation.y += 0.06;
+      sphere.rotation.z += 0.02;
     });
   });
 
@@ -42,6 +52,7 @@ export default function SmallSpheres({ material }) {
           ref={(ref) => { sphereRefs[i] = ref; }}
         />
       ))}
+      {deltaScrollY}
     </>
   );
 }
