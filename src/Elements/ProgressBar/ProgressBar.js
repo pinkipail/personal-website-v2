@@ -1,27 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ProgressBar.css';
+import useScrollProgress from '../../Common/hooks/useScrollProgress';
 
 export default function ProgressBar() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  // TODO: Перименовать функцию
-  function myFunction() {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight
-      - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100 * 1.25;
-    setScrollProgress(scrolled);
-  }
-
-  function scrollHandler() {
-    window.addEventListener('scroll', myFunction);
-  }
-
-  // TODO: Отписаться от скролла
-  useEffect(() => {
-    scrollHandler();
-  }, []);
-
+  const scrolled = useScrollProgress() * 1.25;
   return (
     <svg className="spinner" viewBox="0 0 50 50">
       <circle
@@ -31,7 +13,7 @@ export default function ProgressBar() {
         fill="none"
         stroke="#ffffff"
         strokeWidth="5"
-        strokeDasharray={`${scrollProgress}, 125`}
+        strokeDasharray={`${scrolled}, 125`}
       />
       <circle
         cx="25"
