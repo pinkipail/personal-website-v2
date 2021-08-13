@@ -12,14 +12,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 
 .title {
-  font-size: 10rem;
+  font-size: 19rem;
   line-height: 0.9;
   font-weight: bold;
-  letter-spacing: 0.4rem;
+  letter-spacing: 1.5rem;
 }
 
 .title_outline {
@@ -28,15 +29,15 @@
 }
 
 .subtitle {
-  font-size: 3rem;
+  font-size: 5rem;
   letter-spacing: 0.7rem;
   font-weight: 300;
 }
 
 .description {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.5rem;
-  width: 570px;
+  width: 49.5rem;
   font-weight: 300;
   text-transform: lowercase;
   align-self: flex-end;
