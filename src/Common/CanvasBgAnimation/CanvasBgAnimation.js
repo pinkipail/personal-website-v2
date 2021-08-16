@@ -4,24 +4,23 @@ import React, {
 import classes from './CanvasBgAnimation.module.css';
 
 const createConstellationConfig = (canvas) => ({
-
   // TODO: добавить светлую тему
   star: {
     color: 'rgba(255, 255, 255, .3)',
-    width: 3,
+    radius: 3,
   },
   line: {
     color: 'rgba(255, 255, 255, .3)',
     width: 0.3,
   },
-  position: {
+  mausePos: {
     x: canvas.width * 0.5,
     y: canvas.height * 0.5,
   },
   width: window.innerWidth,
   height: window.innerHeight,
   velocity: 0.05,
-  length: Math.trunc(window.innerWidth / 8),
+  length: Math.trunc(window.innerWidth / 19.2),
   distance: 120,
   radius: (window.innerWidth / 5),
   stars: [],
@@ -91,7 +90,7 @@ class Constellation {
       y: Math.random() * this.canvas.height,
       vx: (this.config.velocity - (Math.random() * 0.3)),
       vy: (this.config.velocity - (Math.random() * 0.3)),
-      radius: Math.random() * this.config.star.width,
+      radius: Math.random() * this.config.star.radius,
     };
   }
 
@@ -110,22 +109,18 @@ class Constellation {
   }
 
   animateLine() {
-    const { length } = this.config;
-
-    for (let i = 0; i < length; i++) {
-      for (let j = 0; j < length; j++) {
-        const iStar = this.config.stars[i];
-        const jStar = this.config.stars[j];
+    this.config.stars.forEach((firstStar) => {
+      this.config.stars.forEach((secondStar) => {
         if (
-          Math.abs(iStar.x - jStar.x) < Math.abs(this.config.distance)
-          && Math.abs(iStar.y - jStar.y) < Math.abs(this.config.distance)
-          && Math.abs(iStar.x - this.config.position.x) < Math.abs(this.config.radius)
-          && Math.abs(iStar.y - this.config.position.y) < Math.abs(this.config.radius)
+          Math.abs(firstStar.x - secondStar.x) < this.config.distance
+          && Math.abs(firstStar.y - secondStar.y) < this.config.distance
+          && Math.abs(firstStar.x - this.config.mausePos.x) < this.config.radius
+          && Math.abs(firstStar.y - this.config.mausePos.y) < this.config.radius
         ) {
-          this.drawLine(iStar, jStar);
+          this.drawLine(firstStar, secondStar);
         }
-      }
-    }
+      });
+    });
   }
 
   drawStar(star) {
@@ -143,8 +138,8 @@ class Constellation {
   }
 
   mousemove(e) {
-    this.config.position.x = e.clientX;
-    this.config.position.y = e.clientY;
+    this.config.mausePos.x = e.clientX;
+    this.config.mausePos.y = e.clientY;
   }
 
   resize() {

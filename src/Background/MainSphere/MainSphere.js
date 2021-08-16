@@ -11,7 +11,7 @@ export default function MainSphere({ material }) {
   // TODO: Починить mouse
   useFrame(({ clock, mouse }) => {
     const elapsedTime = clock.getElapsedTime();
-    main.current.rotation.z = elapsedTime * 0.2;
+    main.current.rotation.z = elapsedTime * 0.1;
 
     main.current.rotation.y = THREE.MathUtils.lerp(
       main.current.rotation.y,

@@ -34,7 +34,7 @@ export default class CustomCursor extends EventEmitter {
     this.dot.style.left = `${this.renderedStyles.tx.current}px`;
     this.listen();
 
-    this.onMouseMoveEv = () => {
+    this.onMouseMove = () => {
       this.renderedStyles.tx.current = mouse.x - this.bounds.width / 2;
       this.renderedStyles.ty.current = mouse.y - this.bounds.height / 2;
 
@@ -47,11 +47,11 @@ export default class CustomCursor extends EventEmitter {
         opacity: 1,
       });
       requestAnimationFrame(() => this.render());
-      window.removeEventListener('mousemove', this.onMouseMoveEv);
+      window.removeEventListener('mousemove', this.onMouseMove);
     };
-    window.addEventListener('mousemove', this.onMouseMoveEv);
-    window.addEventListener('mouseup', () => this.onMouseUp());
-    window.addEventListener('mousedown', () => this.onMouseDown());
+    window.addEventListener('mousemove', this.onMouseMove);
+    window.addEventListener('mouseup', this.onMouseUp.bind(this));
+    window.addEventListener('mousedown', this.onMouseDown.bind(this));
   }
 
   render() {
@@ -81,7 +81,6 @@ export default class CustomCursor extends EventEmitter {
   }
 
   createTimeline() {
-    // init timeline
     this.tl = gsap
       .timeline({
         paused: true,
