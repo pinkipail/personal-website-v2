@@ -27,7 +27,7 @@ export default function App() {
     <>
       <Cursor />
       <FpsCounter />
-      <Background>
+      <Background darkTheme={darkTheme}>
         <div className="content">
           <header>
             <Logo url="img/logo.svg" size="5.2rem" />

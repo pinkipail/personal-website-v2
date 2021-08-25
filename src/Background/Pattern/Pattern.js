@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import { extend, useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
+import gsap from 'gsap/gsap-core';
 import fragment from './shaders/fragment';
 import useScrollProgress from '../../Common/hooks/useScrollProgress';
 
@@ -18,8 +19,9 @@ class PatternMaterial extends THREE.ShaderMaterial {
           type: 'f',
           value: 1.5,
         },
-        iScrollPos: { value: 0 },
+        iScrollPos: { type: 'f', value: 0 },
         iTexture: { type: 't', value: null },
+        iColorTheme: { type: 'f', value: 1 },
       },
       fragmentShader: fragment,
     });
@@ -28,7 +30,7 @@ class PatternMaterial extends THREE.ShaderMaterial {
 
 extend({ PatternMaterial });
 
-function Pattern() {
+function Pattern({ darkTheme }) {
   const meshRef = useRef();
   const textureMap = useTexture(TEXTURE_URL);
   const scrollProgress = useScrollProgress();
@@ -39,15 +41,34 @@ function Pattern() {
     meshRef.current.material.uniforms.iTexture.value = textureMap;
   }, []);
 
-  useFrame((state) => {
-    meshRef.current.material.uniforms.iTime.value = state.clock.elapsedTime;
+  useFrame(({ clock }) => {
+    animatingPattern(clock);
+    animatingScroll();
+    animatingThemeToggle();
+  });
 
-    meshRef.current.material.uniforms.iScrollPos.value = THREE.MathUtils.lerp(
+  function animatingPattern(clock) {
+    meshRef.current.material.uniforms.iTime.value = clock.elapsedTime;
+  }
+
+  function animatingScroll() {
+    meshRef.current.material.uniforms.iScrollPos.value = THREE.MathUtils.damp(
       meshRef.current.material.uniforms.iScrollPos.value,
       -scrollProgress,
-      0.3,
+      0.2,
+      0.7,
     );
-  });
+  }
+
+  function animatingThemeToggle() {
+    const color = darkTheme ? 1 : 0;
+    meshRef.current.material.uniforms.iColorTheme.value = THREE.MathUtils.damp(
+      meshRef.current.material.uniforms.iColorTheme.value,
+      color,
+      0.1,
+      0.7,
+    );
+  }
 
   return (
     <mesh ref={meshRef} scale={7}>

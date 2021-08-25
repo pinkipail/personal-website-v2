@@ -5,6 +5,7 @@ uniform float iResolution;
 uniform float iScrollPos;          
 uniform float iTime;          
 uniform float iMouse;          
+uniform float iColorTheme;          
 
 vec4 BS_A = vec4(3.0, -6.0, 0.0, 4.0) / 6.0;
 vec4 BS_B = vec4(-1.0, 6.0,-12.0, 8.0) / 6.0;
@@ -59,9 +60,12 @@ void main() {
     float k3 = isoline(val, lg, ref, 4.0, 10.0);
 
     vec3 col = vec3(1.); 
-
     col *= k1 * k2 * k3;
-    col = vec3(1) - col;
+    if (iColorTheme > 0.5) {
+        col = vec3(iColorTheme) - col;
+    } else {
+        col = vec3(iColorTheme) + col;
+    }
     gl_FragColor = vec4(col,1);
 }
 `;

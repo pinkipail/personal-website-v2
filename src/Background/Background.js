@@ -12,7 +12,7 @@ const GL_CONFIG = {
   depth: false,
 };
 
-export default function Background({ children }) {
+export default function Background({ darkTheme, children }) {
   return (
     <div className="canvas-wrap">
       <Canvas
@@ -21,7 +21,7 @@ export default function Background({ children }) {
         camera={{ position: [0, 0, 1] }}
       >
         <Suspense fallback={null}>
-          <Pattern />
+          <Pattern darkTheme={darkTheme} />
         </Suspense>
       </Canvas>
       <div className="overlay" />
