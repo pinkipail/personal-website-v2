@@ -43,8 +43,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  opacity: 0.8;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(4px);
 }
 
 .about-me .block__number {

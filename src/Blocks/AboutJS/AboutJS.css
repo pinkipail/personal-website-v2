@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+.wrap {
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/0236.jpg');
+}
+
 .block__content {
   margin: auto;
   width: 80vw;
@@ -51,10 +55,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-}
-
-.about-js .block__image img{
-    backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
 }
 
 .about-js .block__number {

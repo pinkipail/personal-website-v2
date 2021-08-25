@@ -10,7 +10,7 @@ export default function About() {
         </div>
 
         <div className="block__image">
-          <img src="img/map.png" alt="map" />
+          <img src="img/map.svg" alt="map" />
         </div>
         <div className="block__description">
           Я вырос в небольшой деревни Новоегорьевское, что в Алтайском крае.
