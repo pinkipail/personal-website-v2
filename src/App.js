@@ -3,7 +3,6 @@ import Background from './Background/Background';
 import './App.css';
 import Cursor from './Elements/Cursor/Cursor';
 import FpsCounter from './Common/FpsCounter/FpsCounter';
-import CanvasBgAnimation from './Common/CanvasBgAnimation/CanvasBgAnimation';
 
 import SmoothScroll from './Common/SmoothScroll/SmoothScroll';
 import Logo from './Elements/Logo/Logo';
@@ -18,6 +17,7 @@ import Skills from './Blocks/Skills/Skills';
 import Projects from './Blocks/Projects/Projects';
 
 export default function App() {
+  // TODO: Реализовать
   const [darkTheme, setDarkTheme] = useState(true);
   function toggleTheme(value) {
     setDarkTheme(value);
@@ -27,7 +27,7 @@ export default function App() {
     <>
       <Cursor />
       <FpsCounter />
-      <Background darkTheme={darkTheme}>
+      <Background>
         <div className="content">
           <header>
             <Logo url="img/logo.svg" size="5.2rem" />
@@ -49,7 +49,6 @@ export default function App() {
           </SmoothScroll>
         </div>
       </Background>
-      <CanvasBgAnimation />
     </>
   );
 }

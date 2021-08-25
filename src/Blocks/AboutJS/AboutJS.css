@@ -35,7 +35,6 @@
   color: transparent;
 
   -webkit-text-stroke: 3px rgba(255, 255, 255, 0.2);
-
 }
 
 .about-js {
@@ -52,8 +51,10 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  opacity: 0.8;
-  backdrop-filter: blur(30px);
+}
+
+.about-js .block__image img{
+    backdrop-filter: blur(3px);
 }
 
 .about-js .block__number {
