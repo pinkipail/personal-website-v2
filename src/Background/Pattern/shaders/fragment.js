@@ -63,8 +63,10 @@ void main() {
     col *= k1 * k2 * k3;
     if (iColorTheme > 0.5) {
         col = vec3(iColorTheme) - col;
+        col *= vec3(130.0, 137.0, 143.0) / 255.0; // TODO: remove
     } else {
         col = vec3(iColorTheme) + col;
+        col *= col * 0.5; // TODO: remove
     }
     gl_FragColor = vec4(col,1);
 }

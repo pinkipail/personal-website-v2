@@ -18,6 +18,7 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/jsx-one-expression-per-line': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-boolean-value': 0,
     'react/prop-types': 0,

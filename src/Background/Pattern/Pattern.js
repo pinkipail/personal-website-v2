@@ -1,10 +1,9 @@
 import * as THREE from 'three';
 import React, {
-  useRef, useLayoutEffect,
+  useRef, useLayoutEffect, useEffect,
 } from 'react';
 import { extend, useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
-import gsap from 'gsap/gsap-core';
 import fragment from './shaders/fragment';
 import useScrollProgress from '../../Common/hooks/useScrollProgress';
 
@@ -35,6 +34,10 @@ function Pattern({ darkTheme }) {
   const textureMap = useTexture(TEXTURE_URL);
   const scrollProgress = useScrollProgress();
 
+  useEffect(() => {
+    animatingThemeToggle();
+  }, [darkTheme]);
+
   useLayoutEffect(() => {
     textureMap.wrapS = THREE.RepeatWrapping;
     textureMap.wrapT = THREE.RepeatWrapping;
@@ -44,7 +47,6 @@ function Pattern({ darkTheme }) {
   useFrame(({ clock }) => {
     animatingPattern(clock);
     animatingScroll();
-    animatingThemeToggle();
   });
 
   function animatingPattern(clock) {
@@ -62,12 +64,7 @@ function Pattern({ darkTheme }) {
 
   function animatingThemeToggle() {
     const color = darkTheme ? 1 : 0;
-    meshRef.current.material.uniforms.iColorTheme.value = THREE.MathUtils.damp(
-      meshRef.current.material.uniforms.iColorTheme.value,
-      color,
-      0.1,
-      0.7,
-    );
+    meshRef.current.material.uniforms.iColorTheme.value = color;
   }
 
   return (

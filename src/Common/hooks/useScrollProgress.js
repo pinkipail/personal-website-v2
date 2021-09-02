@@ -7,7 +7,7 @@ export default function useScrollProgress() {
   useEffect(() => {
     const winScroll = scrollY;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPos = ((winScroll / height) * 100).toFixed(3);
+    const scrollPos = +((winScroll / height) * 100).toFixed(3);
     setScrolled(scrollPos);
   }, [scrollY]);
   return scrolled || 0;

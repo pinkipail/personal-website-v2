@@ -1,0 +1,21 @@
+.content {
+    position: relative;
+    padding: 3rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  header,
+  footer {
+    position: fixed;
+    width: calc(100% - 6rem);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  
+  footer {
+    bottom: 3rem;
+    align-items: flex-end;
+  }

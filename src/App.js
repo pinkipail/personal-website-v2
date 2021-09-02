@@ -1,54 +1,35 @@
-import React, { useState } from 'react';
-import Background from './Background/Background';
-import './App.css';
+import React, { Suspense, useState } from 'react';
+import { Transition } from 'react-transition-group';
 import Cursor from './Elements/Cursor/Cursor';
 import FpsCounter from './Common/FpsCounter/FpsCounter';
+import LoaderPage from './Elements/LoaderPage/LoaderPage';
+import './App.css';
 
-import SmoothScroll from './Common/SmoothScroll/SmoothScroll';
-import Logo from './Elements/Logo/Logo';
-import ProgressBar from './Elements/ProgressBar/ProgressBar';
-import MainBlock from './Blocks/MainBlock/MainBlock';
-import ThemeButton from './Elements/ThemeButton/ThemeButton';
-import Footer from './Blocks/Footer/Footer';
-import About from './Blocks/About/About';
-import AboutJS from './Blocks/AboutJS/AboutJS';
-import AboutMe from './Blocks/AboutMe/AboutMe';
-import Skills from './Blocks/Skills/Skills';
-import Projects from './Blocks/Projects/Projects';
+const MainPage = React.lazy(() => import('./page/MainPage/MainPage'));
 
 export default function App() {
-  // TODO: Реализовать
-  const [darkTheme, setDarkTheme] = useState(true);
-  function toggleTheme(value) {
-    setDarkTheme(value);
+  const [isLoading, setIsLoading] = useState(true);
+
+  function disablingLoader() {
+    setIsLoading(false);
   }
 
   return (
     <>
-      <Cursor />
       <FpsCounter />
-      <Background darkTheme={darkTheme}>
-        <div className="content">
-          <header>
-            <Logo url="img/logo.svg" size="5.2rem" />
-            <Logo url="img/logo1.svg" size="5.55rem" />
-          </header>
+      <Cursor />
+      <Transition
+        in={isLoading}
+        timeout={1000}
+        mountOnEnter
+        unmountOnExit
+      >
+        {(state) => (<LoaderPage animation={state} />)}
+      </Transition>
 
-          <footer>
-            <ThemeButton toggle={toggleTheme} />
-            <ProgressBar />
-          </footer>
-          <SmoothScroll>
-            <MainBlock />
-            <About />
-            <AboutMe />
-            <AboutJS />
-            <Skills />
-            <Projects />
-            <Footer />
-          </SmoothScroll>
-        </div>
-      </Background>
+      <Suspense fallback={null}>
+        <MainPage onLoading={disablingLoader} />
+      </Suspense>
     </>
   );
 }

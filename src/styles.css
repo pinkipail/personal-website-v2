@@ -28,6 +28,8 @@ body,
 body {
   font-family: 'Montserrat', sans-serif;
   color: rgb(255, 255, 255);
+  background: #000;
+  overflow-y: scroll;
 }
 
 #root:focus {
