@@ -63,7 +63,7 @@ void main() {
     col *= k1 * k2 * k3;
     if (iColorTheme > 0.5) {
         col = vec3(iColorTheme) - col;
-        col *= vec3(130.0, 137.0, 143.0) / 255.0; // TODO: remove
+        col *= vec3(130.0, 137.0, 143.0) / 255.0 * 0.7; // TODO: remove
     } else {
         col = vec3(iColorTheme) + col;
         col *= col * 0.5; // TODO: remove
