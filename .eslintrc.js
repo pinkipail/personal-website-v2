@@ -18,6 +18,7 @@ module.exports = {
     'react',
   ],
   rules: {
+    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-boolean-value': 0,
