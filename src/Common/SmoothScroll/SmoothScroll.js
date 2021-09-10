@@ -1,18 +1,17 @@
 import React, { useEffect, useRef } from 'react';
-
-import './SmoothScroll.css';
 import useWindowSize from './hooks/useWindowSize';
+import './SmoothScroll.css';
+
+const data = {
+  ease: 0.1,
+  current: 0,
+  previous: 0,
+  rounded: 0,
+};
 
 const SmoothScroll = ({ children }) => {
   const windowSize = useWindowSize();
   const scrollingContainerRef = useRef();
-
-  const data = {
-    ease: 0.15,
-    current: 0,
-    previous: 0,
-    rounded: 0,
-  };
 
   function setBodyHeight() {
     const { height } = scrollingContainerRef.current.getBoundingClientRect();
@@ -36,7 +35,7 @@ const SmoothScroll = ({ children }) => {
 
   useEffect(() => {
     requestAnimationFrame(() => smoothScrollingHandler());
-  });
+  }, []);
 
   return (
     <div className="parent">
