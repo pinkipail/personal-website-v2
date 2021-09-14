@@ -44,6 +44,7 @@ function Pattern({ darkTheme }) {
     meshRef.current.material.uniforms.iTexture.value = textureMap;
   }, []);
 
+  // TODO: add mouse animation
   useFrame(({ clock }) => {
     animatingPattern(clock);
     animatingScroll();

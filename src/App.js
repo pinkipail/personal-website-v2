@@ -1,6 +1,5 @@
 import React, { Suspense, useState } from 'react';
 import { Transition } from 'react-transition-group';
-import FpsCounter from './Common/FpsCounter/FpsCounter';
 import LoaderPage from './Elements/LoaderPage/LoaderPage';
 import './App.css';
 
@@ -16,8 +15,6 @@ export default function App() {
 
   return (
     <>
-      {/* <FpsCounter /> */}
-
       <Transition
         in={isLoading}
         timeout={1000}
