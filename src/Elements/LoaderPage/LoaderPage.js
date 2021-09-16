@@ -1,14 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap/gsap-core';
+import { useLockBodyScroll } from 'react-use';
 import LoadingLine from '../LoadingLine/LoadingLine';
 
 import classes from './LoaderPage.module.css';
 
+// TODO: refactoring year
 const year = new Date().getFullYear();
 
 function LoaderPage({ animation }) {
   const containerRef = useRef();
   const textRef = useRef();
+  const [isLocked, setIsLocked] = useState(true);
+  useLockBodyScroll(isLocked);
 
   useEffect(() => {
     if (animation === 'exiting') {
@@ -19,6 +23,9 @@ function LoaderPage({ animation }) {
   function animatingExit() {
     animatingOpacity(containerRef.current);
     animatingOpacity(textRef.current);
+    setTimeout(() => {
+      setIsLocked(false);
+    }, 900);
   }
 
   return (
