@@ -1,5 +1,4 @@
 import React from 'react';
-import './Logo.css';
 
 export default function Logo({ url, size: height }) {
   return (
@@ -14,4 +13,3 @@ export default function Logo({ url, size: height }) {
     </div>
   );
 }
-// "img/logo.svg"

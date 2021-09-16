@@ -1,21 +1,21 @@
 .content {
-    position: relative;
-    padding: 3rem;
-    box-sizing: border-box;
-    overflow: hidden;
-    height: 100vh;
-  }
-  
-  header,
-  footer {
-    position: fixed;
-    width: calc(100% - 6rem);
-    display: flex;
-    justify-content: space-between;
-    z-index: 2;
-  }
-  
-  footer {
-    bottom: 3rem;
-    align-items: flex-end;
-  }
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	height: 100vh;
+	padding: 3rem;
+}
+
+header,
+footer {
+	position: fixed;
+	z-index: 2;
+	display: flex;
+	justify-content: space-between;
+	width: calc(100% - 6rem);
+}
+
+footer {
+	bottom: 3rem;
+	align-items: flex-end;
+}
