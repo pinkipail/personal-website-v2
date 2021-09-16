@@ -58,8 +58,11 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  backdrop-filter: blur(4px);
 }
+
+.about .block__image img{
+    backdrop-filter: blur(4px);
+  }
 
 .about .block__number {
   position: absolute;

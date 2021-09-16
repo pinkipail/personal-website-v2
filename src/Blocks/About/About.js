@@ -1,4 +1,5 @@
 import React from 'react';
+import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import './About.css';
 
 export default function About() {
@@ -10,10 +11,17 @@ export default function About() {
         </div>
 
         <div className="block__image">
-          <img src="img/map.svg" alt="map" />
+          <ParallaxScrolling
+            deltaStart={-20}
+            deltaEnd={-80}
+          >
+            <img src="img/map.svg" alt="map" />
+          </ParallaxScrolling>
         </div>
         <div className="block__description">
-          Я вырос в небольшой деревни Новоегорьевское, что в Алтайском крае.
+          <ParallaxScrolling>
+            Я вырос в небольшой деревни Новоегорьевское, что в Алтайском крае.
+          </ParallaxScrolling>
         </div>
 
         <div className="block__number">

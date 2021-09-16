@@ -35,7 +35,7 @@
 
 .about-me .block__description {
   position: absolute;
-  top: 0;
+  top: 15%;
   left: 0;
 }
 
@@ -43,8 +43,11 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  backdrop-filter: blur(4px);
 }
+
+.about-me .block__image img{
+    backdrop-filter: blur(4px);
+  }
 
 .about-me .block__number {
   position: absolute;
