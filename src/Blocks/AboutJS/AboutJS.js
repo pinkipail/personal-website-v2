@@ -1,29 +1,26 @@
 import React from 'react';
-import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
-import './AboutJS.css';
+import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
+import BlockDescription from '../../Elements/BlockDescription/BlockDescription';
+import BlockImage from '../../Elements/BlockImage/BlockImage';
+import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
+import classes from './AboutJS.module.css';
 
 export default function AboutJS() {
   return (
-    <div className="block">
-      <div className="block__content about-js">
-        <div className="block__image">
-          <ParallaxScrolling
-            deltaStart={-20}
-            deltaEnd={-80}
-          >
-            <img src="img/js-logo.svg" alt="js-logo" />
-          </ParallaxScrolling>
-
-        </div>
-        <div className="block__description">
-          <ParallaxScrolling>
-            Мне нравиться постигать глубины javascript. Люблю работать с ES6+,
-            Typescript и современными фреймворк по типу angular.
-          </ParallaxScrolling>
-        </div>
-
-        <div className="block__number">03</div>
+    <BlockContainer>
+      <div className={classes.image}>
+        <BlockImage url="img/js-logo.svg" />
       </div>
-    </div>
+
+      <div className={classes.description}>
+        <BlockDescription>
+          Мне нравиться постигать глубины javascript. Люблю работать с ES6+,
+          Typescript и современными фреймворк по типу angular.
+        </BlockDescription>
+      </div>
+      <div className={classes.number}>
+        <BlockNumber number="3" />
+      </div>
+    </BlockContainer>
   );
 }

@@ -1,0 +1,20 @@
+.description {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 112rem;
+}
+
+.image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.number {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-right: -1rem;
+	line-height: 0.75;
+}

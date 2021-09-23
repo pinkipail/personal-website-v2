@@ -1,29 +1,26 @@
 import React from 'react';
-import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
-import './AboutMe.css';
+import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
+import BlockDescription from '../../Elements/BlockDescription/BlockDescription';
+import BlockImage from '../../Elements/BlockImage/BlockImage';
+import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
+import classes from './AboutMe.module.css';
 
 export default function AboutMe() {
   return (
-    <div className="block">
-      <div className="block__content about-me">
-        <div className="block__image">
-          <ParallaxScrolling
-            deltaStart={-20}
-            deltaEnd={-80}
-          >
-            <img src="img/photo-me.svg" alt="me" />
-          </ParallaxScrolling>
-
-        </div>
-        <div className="block__description">
-          <ParallaxScrolling>
-            Активно развиваюсь в web-разработке. Работаю с Angular,
-            параллельно изучаю React, читаю статьи, смотрю интервью.
-          </ParallaxScrolling>
-        </div>
-
-        <div className="block__number">02</div>
+    <BlockContainer>
+      <div className={classes.image}>
+        <BlockImage url="img/photo-me.svg" />
       </div>
-    </div>
+
+      <div className={classes.description}>
+        <BlockDescription>
+          Активно развиваюсь в web-разработке. Работаю с Angular,
+          параллельно изучаю React, читаю статьи, смотрю интервью.
+        </BlockDescription>
+      </div>
+      <div className={classes.number}>
+        <BlockNumber number="2" />
+      </div>
+    </BlockContainer>
   );
 }

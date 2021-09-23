@@ -35,13 +35,11 @@ function animateSmoothScrolling(container, deltaStart, deltaEnd) {
       y: deltaStart,
     },
     {
+      y: deltaEnd,
       scrollTrigger: {
         trigger: container,
-        markers: true,
         scrub: 0.5,
-
       },
-      y: deltaEnd,
     },
   );
 }

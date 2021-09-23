@@ -1,6 +1,38 @@
 import React from 'react';
-import './Skills.css';
+import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
+import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
+import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
 
+import classes from './Skills.module.css';
+
+function Skills() {
+  return (
+    <BlockContainer>
+      <div className={classes.title}>
+        <BlockTitle title="ТЕХНОЛОГИИ:" />
+      </div>
+      <div className={classes.bullets}>
+        {bullets.map((bullet) => (
+          <span
+            className={classes.bulletsItem}
+            key={bullet}
+          >
+            {bullet}
+          </span>
+        ))}
+      </div>
+      <div className={classes.number}>
+        <BlockNumber number="4" />
+      </div>
+      <div className={classes.text}>
+        {/* TODO: Поменять текст */}
+        и многое другое...
+      </div>
+    </BlockContainer>
+  );
+}
+
+// TODO: актуализировать Скилы
 const bullets = [
   'HTML ',
   'CSS ',
@@ -8,7 +40,7 @@ const bullets = [
   'Angular',
   'TypeScript',
   'RxJS ',
-  'HTMI',
+  'HTML',
   'React ',
   'Redux ',
   'JavaSсript ',
@@ -27,21 +59,4 @@ const bullets = [
   'Computer science',
 ];
 
-export default function Skills() {
-  return (
-    <div className="block">
-      <div className="block__content skills">
-        <div className="block__title">ТЕХНОЛОГИИ:</div>
-
-        <div className="bullets">
-          {bullets.map((bullet) => (
-            <span className="bullets__item" key={bullet}>{bullet}</span>
-          ))}
-        </div>
-
-        <div className="block__number">04</div>
-        <div className="block__text">и многое другое...</div>
-      </div>
-    </div>
-  );
-}
+export default Skills;

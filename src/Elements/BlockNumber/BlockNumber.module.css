@@ -1,0 +1,9 @@
+.number {
+	color: transparent;
+	font-weight: 900;
+	font-size: 30rem;
+	line-height: 0.75;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	-webkit-text-stroke: 3px rgba(255, 255, 255, 0.2);
+}
