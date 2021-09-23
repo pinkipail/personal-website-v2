@@ -1,0 +1,8 @@
+.wrap {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.container {
+	display: inline-block;
+}
