@@ -13,6 +13,7 @@ import AboutJS from '../../Blocks/AboutJS/AboutJS';
 import AboutMe from '../../Blocks/AboutMe/AboutMe';
 import Skills from '../../Blocks/Skills/Skills';
 import Projects from '../../Blocks/Projects/Projects';
+import RunningLine from '../../Elements/RunningLine/RunningLine';
 
 export default function MainPage({ onLoading }) {
   const [darkTheme, setDarkTheme] = useState(true);
@@ -39,6 +40,7 @@ export default function MainPage({ onLoading }) {
         </footer>
         <SmoothScroll>
           <MainBlock />
+          <RunningLine />
           <About />
           <AboutMe />
           <AboutJS />
