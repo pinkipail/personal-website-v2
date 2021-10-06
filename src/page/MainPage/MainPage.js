@@ -14,6 +14,7 @@ import AboutMe from '../../Blocks/AboutMe/AboutMe';
 import Skills from '../../Blocks/Skills/Skills';
 import Projects from '../../Blocks/Projects/Projects';
 import RunningLine from '../../Elements/RunningLine/RunningLine';
+import Hobby from '../../Blocks/Hobby/Hobby';
 
 export default function MainPage({ onLoading }) {
   const [darkTheme, setDarkTheme] = useState(true);
@@ -43,6 +44,7 @@ export default function MainPage({ onLoading }) {
           <RunningLine />
           <About />
           <AboutMe />
+          <Hobby />
           <AboutJS />
           <Skills />
           <Projects />

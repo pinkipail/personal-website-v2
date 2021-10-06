@@ -1,0 +1,29 @@
+.container {
+    margin: 0 20vh 5vh;
+}
+
+.title {
+    margin-bottom: 4rem;
+}
+
+.descriptionWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+}
+
+.text {
+    font-weight: bold;
+    font-size: 4.5rem;
+}
+
+.description {
+    font-size: 3rem;
+}
+
+.image {
+    display: inline-block;
+    justify-self: end;
+    filter: grayscale(100%);
+    transform: translateY(-25%);
+}
