@@ -8,7 +8,6 @@ import ProgressBar from '../../Elements/ProgressBar/ProgressBar';
 import MainBlock from '../../Blocks/MainBlock/MainBlock';
 import ThemeButton from '../../Elements/ThemeButton/ThemeButton';
 import Footer from '../../Blocks/Footer/Footer';
-import About from '../../Blocks/About/About';
 import AboutJS from '../../Blocks/AboutJS/AboutJS';
 import AboutMe from '../../Blocks/AboutMe/AboutMe';
 import Skills from '../../Blocks/Skills/Skills';
@@ -42,7 +41,6 @@ export default function MainPage({ onLoading }) {
         <SmoothScroll>
           <MainBlock />
           <RunningLine />
-          <About />
           <AboutMe />
           <Hobby />
           <AboutJS />
