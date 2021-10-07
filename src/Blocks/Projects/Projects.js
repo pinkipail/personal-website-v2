@@ -5,6 +5,7 @@ import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import classes from './Projects.module.css';
+import { trigerConfig } from '../../Common/consts/scrollAnimation';
 
 function Projects() {
   const linesRef = useRef([]);
@@ -13,15 +14,12 @@ function Projects() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    // surfacingText(firstTitleRef.current, 0);
-    // surfacingText(secondTitleRef.current, 0);
-    // surfacingText(locationsRef.current, 0.5, '-100%');
 
     descriptionsRef.current.forEach((item) => {
       surfacingText(item, item);
     });
     linesRef.current.forEach((item, i) => {
-      // surfacingLine(item, item);
+      surfacingLine(item, item);
     });
   }, []);
 
@@ -67,7 +65,7 @@ function Projects() {
       ))}
 
       <div className={classes.blockNumber}>
-        <BlockNumber number="5" />
+        <BlockNumber value="5" />
       </div>
     </BlockContainer>
   );
@@ -107,9 +105,7 @@ function surfacingText(element, trigger, delta = '100%') {
     {
       scrollTrigger: {
         trigger,
-        // markers: true,s
-        start: 'top 90%',
-        toggleActions: 'restart reset restart reset',
+        ...trigerConfig,
       },
       y: delta,
       duration: 0.5,
@@ -124,10 +120,22 @@ function surfacingLine(element, trigger) {
     {
       scrollTrigger: {
         trigger,
-        // markers: true,
-        start: 'bottom bottom',
-        end: 'top top',
-        toggleActions: 'restart reset restart reset',
+        ...trigerConfig,
+      },
+      width: '0%',
+      duration: 1,
+      ease: 'power1.inOut',
+    },
+  );
+}
+
+function surfacingLine1(element, trigger) {
+  gsap.from(
+    element,
+    {
+      scrollTrigger: {
+        trigger,
+        ...trigerConfig,
       },
       width: '0%',
       duration: 1,

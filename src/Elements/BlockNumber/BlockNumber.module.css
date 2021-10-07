@@ -1,9 +1,18 @@
-.number {
-    color: #000;
+.container {
+    color: rgba(0, 0, 0, 0.8);
     font-weight: 900;
-    font-size: 30rem;
+    font-size: 20rem;
     line-height: 0.75;
-    letter-spacing: 0.1em;
     text-transform: uppercase;
     -webkit-text-stroke: 3px rgba(255, 255, 255, 0.2);
+}
+
+.wrap {
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.5rem;
+}
+
+.number {
+    display: inline-block;
 }

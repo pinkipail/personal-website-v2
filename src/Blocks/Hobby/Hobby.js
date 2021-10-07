@@ -1,4 +1,5 @@
 import React from 'react';
+import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
 import classes from './Hobby.module.css';
 
@@ -27,6 +28,9 @@ function Hobby() {
           alt="ping-pong"
           height="358px"
         />
+        <div className={classes.blockNumber}>
+          <BlockNumber value="2" />
+        </div>
       </div>
     </div>
   );

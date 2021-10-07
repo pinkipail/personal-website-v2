@@ -1,6 +1,7 @@
 import { ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap/gsap-core';
 import React, { useEffect, useRef } from 'react';
+import { trigerConfig } from '../../consts/scrollAnimation';
 import classes from './TextSurfacing.module.css';
 
 function TextSurfacing({ children, ...config }) {
@@ -38,9 +39,7 @@ function surfacingText(element, config) {
     {
       scrollTrigger: {
         trigger: element,
-        toggleActions: 'none play none reset',
-        start: '-100% 110%',
-        end: '-100% 80%',
+        ...trigerConfig,
       },
       y: 0,
       duration: 0.8,

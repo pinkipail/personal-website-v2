@@ -18,6 +18,8 @@
 }
 
 .description {
+    position: relative;
+    z-index: 1;
     font-size: 3rem;
 }
 
@@ -26,4 +28,9 @@
     justify-self: end;
     filter: grayscale(100%);
     transform: translateY(-25%);
+}
+
+.blockNumber {
+    justify-self: end;
+    transform: translateY(-10%);
 }

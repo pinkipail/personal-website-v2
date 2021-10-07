@@ -23,7 +23,7 @@ export default function AboutMe() {
       </div>
       <BlockImage src="img/photo-me.svg" height="475px" />
       <div className={classes.number}>
-        <BlockNumber number="1" />
+        <BlockNumber value="1" />
       </div>
     </BlockContainer>
   );

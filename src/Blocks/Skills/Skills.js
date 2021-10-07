@@ -9,25 +9,27 @@ import classes from './Skills.module.css';
 function Skills() {
   return (
     <BlockContainer>
-      <div className={classes.title}>
-        <BlockTitle title="ТЕХНОЛОГИИ:" />
-      </div>
-      <div className={classes.bullets}>
-        {bullets.map((bullet) => (
-          <span
-            className={classes.bulletsItem}
-            key={bullet}
-          >
-            {bullet}
-          </span>
-        ))}
-      </div>
-      <div className={classes.footer}>
-        <div className={classes.textCircle}>
-          <TextCircle />
+      <div className={classes.wrap}>
+        <div className={classes.title}>
+          <BlockTitle title="ТЕХНОЛОГИИ:" />
         </div>
-        <div className={classes.number}>
-          <BlockNumber number="4" />
+        <div className={classes.bullets}>
+          {bullets.map((bullet) => (
+            <span
+              className={classes.bulletsItem}
+              key={bullet}
+            >
+              {bullet}
+            </span>
+          ))}
+        </div>
+        <div className={classes.footer}>
+          <div className={classes.textCircle}>
+            <TextCircle />
+          </div>
+          <div className={classes.number}>
+            <BlockNumber value="4" />
+          </div>
         </div>
       </div>
     </BlockContainer>

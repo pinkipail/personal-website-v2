@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/all';
 import gsap, { Timeline } from 'gsap/gsap-core';
+import { trigerConfig } from '../consts/scrollAnimation';
 
 function SurfacingTextSymbol({ children }) {
   const tl = useRef(new Timeline({ pause: true }));
@@ -12,9 +13,7 @@ function SurfacingTextSymbol({ children }) {
 
     const scrollTrigger = ScrollTrigger.create({
       trigger: containerRef.current,
-      toggleActions: 'none play none reset',
-      start: '0% 110%',
-      end: '0% 80%',
+      ...trigerConfig,
       onEnter: () => tl.current.pause(0),
       onLeave: () => tl.current.play(),
     });
