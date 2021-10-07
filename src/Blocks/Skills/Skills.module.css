@@ -3,8 +3,7 @@
 }
 
 .number {
-    float: right;
-    transform: translateY(-35%);
+    margin-left: auto;
 }
 
 .bullets {
@@ -34,4 +33,14 @@
     font-size: 3.5rem;
     letter-spacing: 0.1em;
     backdrop-filter: blur(5.43403px);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.textCircle {
+    align-self: flex-end;
+    margin: 0 auto;
 }

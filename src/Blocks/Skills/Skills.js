@@ -2,6 +2,7 @@ import React from 'react';
 import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
+import TextCircle from '../../Elements/TextCircle/TextCircle';
 
 import classes from './Skills.module.css';
 
@@ -21,8 +22,13 @@ function Skills() {
           </span>
         ))}
       </div>
-      <div className={classes.number}>
-        <BlockNumber number="4" />
+      <div className={classes.footer}>
+        <div className={classes.textCircle}>
+          <TextCircle />
+        </div>
+        <div className={classes.number}>
+          <BlockNumber number="4" />
+        </div>
       </div>
     </BlockContainer>
   );
