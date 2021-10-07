@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap/gsap-core';
 import { ScrollTrigger } from 'gsap/all';
 import classes from './MainBlock.module.css';
 import ScrollMessage from '../../Elements/ScrollMessage/ScrollMessage';
 
+// TODO: add animation
 export default function MainBlock() {
   const firstTitleRef = useRef();
   const secondTitleRef = useRef();

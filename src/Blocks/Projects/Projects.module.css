@@ -23,7 +23,7 @@
     overflow: hidden;
 }
 
-.projectLine {
+.projectUnderline {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -64,10 +64,14 @@
     font-weight: 500;
     font-size: 2rem;
     letter-spacing: 0.1em;
+    text-transform: capitalize;
     opacity: 0.5;
 }
 
-.locationWrap {
-    flex-shrink: 0;
-    overflow: hidden;
+.line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #333;
 }

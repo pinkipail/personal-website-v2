@@ -24,9 +24,3 @@
     line-height: 0.75;
     transform: translateY(-100%);
 }
-
-.imageWrap {
-    z-index: 0;
-    display: flex;
-    justify-content: space-around;
-}

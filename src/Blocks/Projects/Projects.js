@@ -10,16 +10,15 @@ import { trigerConfig } from '../../Common/consts/scrollAnimation';
 function Projects() {
   const linesRef = useRef([]);
   const descriptionsRef = useRef([]);
-  const locationsRef = useRef([]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     descriptionsRef.current.forEach((item) => {
-      surfacingText(item, item);
+      surfacingText(item);
     });
-    linesRef.current.forEach((item, i) => {
-      surfacingLine(item, item);
+    linesRef.current.forEach((item) => {
+      surfacingLine(item);
     });
   }, []);
 
@@ -39,8 +38,7 @@ function Projects() {
             ref={(ref) => { descriptionsRef.current[i] = ref; }}
           >
             <div className={classes.projectDate}>
-              {project.dateStart} —
-              <br />
+              {project.dateStart} — <br />
               {project.dateEnd}
             </div>
             <div className={classes.projectDescription}>
@@ -51,14 +49,13 @@ function Projects() {
                 {project.description}
               </div>
             </div>
-            <div className={classes.locationWrap}>
-              <div className={classes.projectLocation}>
-                {project.location}
-              </div>
+            <div className={classes.projectLocation}>
+              {project.location}
             </div>
           </div>
+          <div className={classes.projectUnderline} />
           <div
-            className={classes.projectLine}
+            className={classes.line}
             ref={(ref) => { linesRef.current[i] = ref; }}
           />
         </div>
@@ -72,10 +69,10 @@ function Projects() {
 }
 
 // constants
-
+// TODO: Подправить описание
 const projects = [
   {
-    dateStart: '02.2020',
+    dateStart: '12.2019',
     dateEnd: '05.2020',
     name: 'ФРИЛАНС',
     description: 'создание и верстка лендингов, разработка SPA на React.',
@@ -97,51 +94,50 @@ const projects = [
   },
 ];
 
+const duration = 0.7;
+
 // utils
 
-function surfacingText(element, trigger, delta = '100%') {
+function surfacingText(element) {
   gsap.from(
     element,
     {
       scrollTrigger: {
-        trigger,
+        trigger: element,
         ...trigerConfig,
       },
-      y: delta,
-      duration: 0.5,
-      ease: 'power1.inOut',
+      autoAlpha: 0,
+      duration: 0,
+      delay: duration,
     },
   );
 }
 
-function surfacingLine(element, trigger) {
-  gsap.from(
-    element,
-    {
-      scrollTrigger: {
-        trigger,
-        ...trigerConfig,
-      },
-      width: '0%',
-      duration: 1,
-      ease: 'power1.inOut',
+function surfacingLine(element) {
+  gsap.fromTo(element, {
+    right: '100%',
+  }, {
+    scrollTrigger: {
+      trigger: element,
+      ...trigerConfig,
     },
-  );
-}
+    right: '0%',
+    duration,
+    ease: 'power1.inOut',
+  });
 
-function surfacingLine1(element, trigger) {
-  gsap.from(
-    element,
-    {
-      scrollTrigger: {
-        trigger,
-        ...trigerConfig,
-      },
-      width: '0%',
-      duration: 1,
-      ease: 'power1.inOut',
+  gsap.fromTo(element, {
+    left: '0%',
+  }, {
+    scrollTrigger: {
+      trigger: element,
+      ...trigerConfig,
     },
-  );
+    left: '100%',
+    duration,
+    delay: duration,
+    ease: 'power1.inOut',
+  });
 }
 
 export default Projects;
