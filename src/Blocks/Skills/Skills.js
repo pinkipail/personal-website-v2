@@ -24,39 +24,43 @@ function Skills() {
       <div className={classes.number}>
         <BlockNumber number="4" />
       </div>
-      <div className={classes.text}>
-        {/* TODO: Поменять текст */}
-        и многое другое...
-      </div>
     </BlockContainer>
   );
 }
 
 // TODO: актуализировать Скилы
 const bullets = [
-  'HTML ',
-  'CSS ',
+  'HTML',
+  'CSS',
   'JavaScript',
+  'ES6+',
+  'W3C',
+  'Babel',
+  'Webpack',
+  'npm',
+  'yarn',
   'Angular',
   'TypeScript',
-  'RxJS ',
-  'HTML',
+  'RxJS',
   'React ',
   'Redux ',
-  'JavaSсript ',
-  'Webpack ',
-  'Git ',
-  'Linux ',
-  'ООП ',
-  'TypeSсript',
+  'Next ',
+  'PWA ',
+  'UI/UX ',
+  'Photoshop ',
+  'Illustrator ',
   'SASS ',
-  'Кроссбраузерная верстка ',
-  'Адаптивная верстка ',
-  'JavaScrlpt',
-  'Adobe Photoshop ',
-  'Adobe Illustrator ',
-  'Figma ',
-  'Computer science',
+  'BEM ',
+  'ESLint ',
+  'THREE.js',
+  'GSAP',
+  'WEBGL',
+  'Git ',
+  'CI/CD',
+  'Docker',
+  'Linux',
+  'SVG-animation',
+  // 'ООП',
 ];
 
 export default Skills;

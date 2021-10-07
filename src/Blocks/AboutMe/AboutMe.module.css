@@ -1,20 +1,32 @@
-.description {
-	position: absolute;
-	top: 15%;
-	left: 0;
-	width: 110rem;
+.container {
+    display: flex;
+    flex-direction: column;
 }
 
-.image {
-	position: absolute;
-	right: 0;
-	bottom: 0;
+.content {
+    position: relative;
+    margin: 20rem 18rem 0;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    right: 10rem;
+    z-index: 1;
+    font-weight: 500;
+    font-size: 3rem;
+    text-transform: uppercase;
 }
 
 .number {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	margin-right: -1rem;
-	line-height: 0.75;
+    position: relative;
+    float: right;
+    line-height: 0.75;
+    transform: translateY(-100%);
+}
+
+.imageWrap {
+    z-index: 0;
+    display: flex;
+    justify-content: space-around;
 }

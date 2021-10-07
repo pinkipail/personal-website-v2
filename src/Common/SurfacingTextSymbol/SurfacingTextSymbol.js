@@ -53,8 +53,8 @@ function animateLetter(letter, trigger, timeline, index) {
       y: '-50%',
       autoAlpha: 1,
       scrollTrigger: trigger,
-      duration: 0.1,
-      delay: index * 0.015,
+      duration: 0.07,
+      delay: index * 0.005,
     },
   );
 }

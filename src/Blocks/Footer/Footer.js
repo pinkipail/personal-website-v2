@@ -2,6 +2,7 @@
 // заменить div на footer
 // анимировать ссылки
 // вынести год в переменную
+// переписать на css модули
 import React from 'react';
 import './Footer.css';
 
@@ -9,9 +10,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="footer__title">
-        Связяться
-        {' '}
-        <br />
+        Связяться <br />
         со мной:
       </div>
       <div className="spliter" />
@@ -51,11 +50,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="version">
+        v0.1.2
+      </div>
       <div className="copyright">
-        Copyright
-        {' '}
-        {new Date().getFullYear()}
-        {' '}
+        Copyright {new Date().getFullYear()}
         by Fedorov Vasiliy. All rights reserved.
       </div>
     </div>

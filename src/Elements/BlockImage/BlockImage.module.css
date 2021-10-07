@@ -1,5 +1,5 @@
 .image {
-	display: block;
-	height: 575px;
-	backdrop-filter: blur(4px);
+    display: block;
+    transform: scale(1.1);
+    backdrop-filter: blur(4px);
 }

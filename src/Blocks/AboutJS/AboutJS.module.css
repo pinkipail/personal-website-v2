@@ -1,20 +1,32 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin-left: 15rem;
+}
+
 .description {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 112rem;
+    position: relative;
+    z-index: 1;
+    width: 95rem;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 130%;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    transform: translate(10%, 8%);
 }
 
 .image {
-	position: absolute;
-	bottom: 0;
-	left: 0;
+    transform: translateX(-10%);
 }
 
 .number {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	margin-right: -1rem;
-	line-height: 0.75;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 0.75;
+    transform: translate(20%, -10%);
 }

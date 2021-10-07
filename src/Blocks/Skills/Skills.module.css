@@ -1,37 +1,37 @@
 .title {
-	position: absolute;
-	top: 0;
-	left: 15rem;
+    margin-left: 15rem;
 }
 
 .number {
-	position: absolute;
-	bottom: 0;
-	left: 0;
+    float: right;
+    transform: translateY(-35%);
 }
 
 .bullets {
-	position: relative;
-	top: 17rem;
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 3rem;
 }
 
 .text {
-  position: absolute;
-	right: 0;
-	bottom: 0;
-	font-size: 3rem;
-	opacity: 0.5;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 3rem;
+    opacity: 0.5;
 }
 
 .bulletsItem {
-	margin-right: 3.5rem;
-	margin-bottom: 4rem;
-	padding: 0 8px;
-	background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
-	font-size: 3.5rem;
-	letter-spacing: 0.1em;
-	backdrop-filter: blur(5.43403px);
+    margin-right: 3.5rem;
+    margin-bottom: 4rem;
+    padding: 0 8px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    font-size: 3.5rem;
+    letter-spacing: 0.1em;
+    backdrop-filter: blur(5.43403px);
 }

@@ -40,7 +40,7 @@ vec4 texture_Bicubic(vec2 t) {
 }
 
 float eval(vec2 uv, float time) {
-    return cos(iTime * 0.05) + 11.0*texture_Bicubic(vec2(cos(time), sin(time)) + uv).x;
+    return cos(iTime * 0.05) + 11.0*texture_Bicubic(vec2(1., time) + uv).x;
 }
 
 float isoline(float val, float lg, float ref, float pas, float tickness) {

@@ -1,74 +1,70 @@
 .block {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .blockContent {
-	/* height: 65vh; */
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	width: 70vw;
-	margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 70vw;
+    margin: auto;
 }
 
 .title {
-	font-weight: bold;
-	font-size: 22rem;
-	line-height: 0.9;
-	letter-spacing: 1.5rem;
+    font-weight: bold;
+    font-size: 22rem;
+    line-height: 0.9;
+    letter-spacing: 1.5rem;
 }
 
 .titleOutline {
-	color: transparent;
-	font-weight: bold;
-	font-size: 22rem;
-	line-height: 0.9;
-	letter-spacing: 1.5rem;
-	-webkit-text-stroke: 2px rgb(255, 255, 255);
+    width: 100%;
+    color: transparent;
+    font-weight: bold;
+    font-size: 22rem;
+    line-height: 0.9;
+    letter-spacing: 1.5rem;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
 }
 
 .textWrapper {
-	overflow: hidden;
-	margin-bottom: 10vh;
+    overflow: hidden;
+    margin-bottom: 10vh;
+    transform-origin: center bottom;
 }
 
 .titleWrap {
-	overflow: hidden;
+    overflow: hidden;
+    transform-origin: left center;
 }
 
 .subtitle {
-	font-weight: 300;
-	font-size: 5rem;
-	letter-spacing: 0.7rem;
+    font-weight: 300;
+    font-size: 5rem;
+    letter-spacing: 0.7rem;
+    letter-spacing: inherit;
 }
 
 .description {
-	align-self: flex-end;
-	width: 50rem;
-	font-weight: 300;
-	font-size: 2.5rem;
-	letter-spacing: 0.5rem;
-	text-transform: lowercase;
+    align-self: flex-end;
+    width: 50rem;
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    text-transform: lowercase;
 }
 
-/* .descriptionText{
-    display: inline-block;
-    margin: 0.1rem;
-    padding-left: 0.4rem;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4px);
-    white-space: nowrap;
-} */
-
 .scrollText {
-	position: relative;
-	bottom: -10vh;
-	font-weight: 500;
-	font-size: 2rem;
-	letter-spacing: 0.3rem;
-	opacity: 0.5;
+    position: relative;
+    bottom: -10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.5;
 }

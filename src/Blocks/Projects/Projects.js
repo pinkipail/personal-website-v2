@@ -1,11 +1,85 @@
-import React from 'react';
-import './Projects.css';
+import { ScrollTrigger } from 'gsap/all';
+import gsap from 'gsap/gsap-core';
+import React, { useEffect, useRef } from 'react';
+import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
+import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
+import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
+import classes from './Projects.module.css';
+
+function Projects() {
+  const linesRef = useRef([]);
+  const descriptionsRef = useRef([]);
+  const locationsRef = useRef([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    // surfacingText(firstTitleRef.current, 0);
+    // surfacingText(secondTitleRef.current, 0);
+    // surfacingText(locationsRef.current, 0.5, '-100%');
+
+    descriptionsRef.current.forEach((item) => {
+      surfacingText(item, item);
+    });
+    linesRef.current.forEach((item, i) => {
+      // surfacingLine(item, item);
+    });
+  }, []);
+
+  return (
+    <BlockContainer>
+      <div className={classes.title}>
+        <BlockTitle title="ПРОЕКТЫ:" />
+      </div>
+
+      {projects.map((project, i) => (
+        <div
+          className={classes.project}
+          key={project.name}
+        >
+          <div
+            className={classes.textWrap}
+            ref={(ref) => { descriptionsRef.current[i] = ref; }}
+          >
+            <div className={classes.projectDate}>
+              {project.dateStart} —
+              <br />
+              {project.dateEnd}
+            </div>
+            <div className={classes.projectDescription}>
+              <div className={classes.projectDescriptionTitle}>
+                {project.name}
+              </div>
+              <div className={classes.projectDescriptionText}>
+                {project.description}
+              </div>
+            </div>
+            <div className={classes.locationWrap}>
+              <div className={classes.projectLocation}>
+                {project.location}
+              </div>
+            </div>
+          </div>
+          <div
+            className={classes.projectLine}
+            ref={(ref) => { linesRef.current[i] = ref; }}
+          />
+        </div>
+      ))}
+
+      <div className={classes.blockNumber}>
+        <BlockNumber number="5" />
+      </div>
+    </BlockContainer>
+  );
+}
+
+// constants
 
 const projects = [
   {
     dateStart: '02.2020',
     dateEnd: '05.2020',
-    name: 'фриланс',
+    name: 'ФРИЛАНС',
     description: 'создание и верстка лендингов, разработка SPA на React.',
     location: 'удаленка',
   },
@@ -25,40 +99,41 @@ const projects = [
   },
 ];
 
-export default function Projects() {
-  return (
-    <div className="block">
-      <div className="block__wrap projects">
-        <div className="block__title">ПРОЕКТЫ:</div>
+// utils
 
-        {projects.map((project) => (
-          <div className="project" key={project.name}>
-            <div className="project__date">
-              {project.dateStart}
-              {' '}
-              —
-              {' '}
-              <br />
-              {project.dateEnd}
-            </div>
-
-            <div className="project-description">
-              <div className="project-description__title">
-                {project.name}
-              </div>
-              <div className="project-description__text">
-                {project.description}
-              </div>
-            </div>
-
-            <div className="project__location">
-              {project.location}
-            </div>
-          </div>
-        ))}
-
-        <div className="block__number">05</div>
-      </div>
-    </div>
+function surfacingText(element, trigger, delta = '100%') {
+  gsap.from(
+    element,
+    {
+      scrollTrigger: {
+        trigger,
+        // markers: true,s
+        start: 'top 90%',
+        toggleActions: 'restart reset restart reset',
+      },
+      y: delta,
+      duration: 0.5,
+      ease: 'power1.inOut',
+    },
   );
 }
+
+function surfacingLine(element, trigger) {
+  gsap.from(
+    element,
+    {
+      scrollTrigger: {
+        trigger,
+        // markers: true,
+        start: 'bottom bottom',
+        end: 'top top',
+        toggleActions: 'restart reset restart reset',
+      },
+      width: '0%',
+      duration: 1,
+      ease: 'power1.inOut',
+    },
+  );
+}
+
+export default Projects;

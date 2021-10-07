@@ -1,76 +1,73 @@
-.block {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}
-
-.blockWrap {
-	position: relative;
-	width: 80vw;
-	margin: auto;
-}
-
-.blockTitle {
-	margin-bottom: 3rem;
-	margin-left: 15rem;
-	color: transparent;
-	font-weight: 900;
-	font-size: 10rem;
-	letter-spacing: 0.1rem;
-	-webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+.title {
+    margin-bottom: 3rem;
+    margin-left: 15rem;
 }
 
 .blockNumber {
-	float: right;
-	margin-top: 5rem;
-	margin-right: -1rem;
-	margin-left: auto;
-	color: transparent;
-	font-weight: 900;
-	font-size: 30rem;
-	line-height: 0.75;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	-webkit-text-stroke: 3px rgba(255, 255, 255, 0.2);
+    float: right;
+    transform: translateY(-25%);
+}
+
+.textWrap {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 3rem 0 2rem;
 }
 
 .project {
-	position: relative;
-	display: flex;
-	padding: 3rem 0 2rem;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.projectLine {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    opacity: 0.5;
 }
 
 .projectDate {
-	flex-shrink: 0;
-	width: 27rem;
-	margin-right: 2rem;
-	font-weight: 500;
-	font-size: 3rem;
-	letter-spacing: 0.1em;
-	opacity: 0.5;
+    flex-shrink: 0;
+    width: 27rem;
+    margin-right: 2rem;
+    font-weight: 500;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
 }
 
 .projectDescription {
-	flex-grow: 1;
+    flex-grow: 1;
+    height: 100%;
 }
 
 .projectDescriptionTitle {
-	font-weight: 500;
-	font-size: 3rem;
-	letter-spacing: 0.1em;
+    font-weight: 500;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
 }
 
 .projectDescriptionText {
-	font-weight: 300;
-	font-size: 3rem;
-	letter-spacing: 0.1em;
+    font-weight: 300;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
 }
 
 .projectLocation {
-	flex-grow: 0;
-	font-weight: 500;
-	font-size: 2rem;
-	letter-spacing: 0.1em;
-	opacity: 0.5;
+    flex-grow: 0;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+}
+
+.locationWrap {
+    flex-shrink: 0;
+    overflow: hidden;
 }

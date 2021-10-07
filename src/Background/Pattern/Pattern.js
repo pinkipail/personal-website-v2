@@ -45,6 +45,7 @@ function Pattern({ darkTheme }) {
   }, []);
 
   // TODO: add mouse animation
+  // https://tympanus.net/Development/FlowmapDeformation/index.html
   useFrame(({ clock }) => {
     animatingPattern(clock);
     animatingScroll();
