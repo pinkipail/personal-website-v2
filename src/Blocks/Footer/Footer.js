@@ -2,20 +2,19 @@
 // заменить div на footer
 // анимировать ссылки
 // вынести год в переменную
-// переписать на css модули
 import React from 'react';
-import './Footer.css';
+import classes from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <div className="footer">
-      <div className="footer__title">
+    <div className={classes.footer}>
+      <div className={classes.title}>
         Связяться <br />
         со мной:
       </div>
-      <div className="spliter" />
-      <div className="footer__contacts">
-        <div className="footer__contacts-item">
+      <div className={classes.spliter} />
+      <div className={classes.contacts}>
+        <div className={classes.contactsItem}>
           <svg
             width="32"
             height="24"
@@ -28,11 +27,11 @@ export default function Footer() {
               fill="white"
             />
           </svg>
-          <div className="footer-link cursor-anumation">
+          <div className={classes.link}>
             info@vasiliy-fedorov.ru
           </div>
         </div>
-        <div className="footer__contacts-item">
+        <div className={classes.contactsItem}>
           <svg
             width="27"
             height="32"
@@ -45,17 +44,16 @@ export default function Footer() {
               fill="white"
             />
           </svg>
-          <div className="footer-link cursor-anumation">
+          <div className={classes.link}>
             github.com/pinkipail
           </div>
         </div>
       </div>
-      <div className="version">
+      <div className={classes.version}>
         v0.1.2
       </div>
-      <div className="copyright">
-        Copyright {new Date().getFullYear()}
-        by Fedorov Vasiliy. All rights reserved.
+      <div className={classes.copyright}>
+        Copyright {new Date().getFullYear()} by Fedorov Vasiliy. All rights reserved.
       </div>
     </div>
   );

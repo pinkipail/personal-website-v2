@@ -28,27 +28,25 @@ export default function MainPage({ onLoading }) {
 
   return (
     <Background darkTheme={darkTheme}>
-      <div className={classes.content}>
-        <header>
-          <Logo url="img/logo.svg" size="5.2rem" />
-          <Logo url="img/logo1.svg" size="5.55rem" />
-        </header>
+      <header>
+        <Logo url="img/logo.svg" size="5.2rem" />
+        <Logo url="img/logo1.svg" size="5.55rem" />
+      </header>
 
-        <footer>
-          <ThemeButton toggle={toggleTheme} />
-          <ProgressBar />
-        </footer>
-        <SmoothScroll>
-          <MainBlock />
-          <RunningLine />
-          <AboutMe />
-          <Hobby />
-          <AboutJS />
-          <Skills />
-          <Projects />
-          <Footer />
-        </SmoothScroll>
-      </div>
+      <footer>
+        <ThemeButton toggle={toggleTheme} />
+        <ProgressBar />
+      </footer>
+      <SmoothScroll>
+        <MainBlock />
+        <RunningLine />
+        <AboutMe />
+        <Hobby />
+        <AboutJS />
+        <Skills />
+        <Projects />
+        <Footer />
+      </SmoothScroll>
     </Background>
   );
 }

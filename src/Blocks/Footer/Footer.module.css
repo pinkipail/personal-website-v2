@@ -12,7 +12,7 @@
     backdrop-filter: blur(6px);
 }
 
-.footer__title {
+.title {
     color: #fff;
     font-weight: 500;
     font-size: 6.5rem;
@@ -21,12 +21,12 @@
     text-transform: uppercase;
 }
 
-.footer__contacts-item {
+.contactsItem {
     display: flex;
     align-items: center;
 }
 
-.footer-link {
+.link {
     margin-left: 1rem;
     font-weight: 500;
     font-size: 3rem;
@@ -44,7 +44,7 @@
 
 .version {
     position: absolute;
-    bottom: 0.2rem;
+    bottom: 0.7rem;
     left: 0;
     color: #ffffff80;
     font-weight: 300;
@@ -55,7 +55,7 @@
 .copyright {
     position: absolute;
     right: 0;
-    bottom: 0.2rem;
+    bottom: 0.7rem;
     color: #ffffff80;
     font-weight: 300;
     font-size: 1.5rem;
