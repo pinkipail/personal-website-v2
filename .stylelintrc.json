@@ -2,7 +2,7 @@
   "extends": "stylelint-config-standard",
   "plugins": ["stylelint-order"],
   "rules": {
-    "indentation": "tab",  
+    "indentation":[4],
     "order/order": [
       [
         "dollar-variables",

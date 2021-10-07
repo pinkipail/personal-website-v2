@@ -1,55 +1,55 @@
 * {
-	/* box-sizing: border-box; */
-	outline: none;
+    /* box-sizing: border-box; */
+    outline: none;
 }
 
 *,
 *:hover {
-	cursor: none !important;
+    cursor: none !important;
 }
 
 ::selection {
-	background: #727272cc;
+    background: #727272cc;
 }
 
 html {
-	font-size: 10px;
+    font-size: 10px;
 }
 
 html,
 body,
 #root {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	overflow-y: scroll;
-	background: #000;
-	color: rgb(255, 255, 255);
-	font-family: "Montserrat", sans-serif;
-	scrollbar-width: thin;
-	scrollbar-color: #808080 #000;
+    overflow-y: scroll;
+    background: #000;
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #808080 #000;
 }
 
 #root:focus {
-	outline: none;
+    outline: none;
 }
 
 /* SCROLL BAR */
 
 ::-webkit-scrollbar {
-	width: 0.8rem;
+    width: 0.8rem;
 }
 
 ::-webkit-scrollbar-track {
-	background: #000;
+    background: #000;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #808080;
+    background-color: #808080;
 }
 
 /* SCROLL BAR */

@@ -1,21 +1,21 @@
 .content {
-	position: relative;
-	overflow: hidden;
-	box-sizing: border-box;
-	height: 100vh;
-	padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 3rem;
 }
 
 header,
 footer {
-	position: fixed;
-	z-index: 2;
-	display: flex;
-	justify-content: space-between;
-	width: calc(100% - 6rem);
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 6rem);
 }
 
 footer {
-	bottom: 3rem;
-	align-items: flex-end;
+    bottom: 3rem;
+    align-items: flex-end;
 }
