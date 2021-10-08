@@ -24,7 +24,7 @@ function Hobby() {
         </div>
         <img
           className={classes.image}
-          src="/img/ping-pong.gif"
+          src="img/ping-pong.gif"
           alt="ping-pong"
           height="358px"
         />

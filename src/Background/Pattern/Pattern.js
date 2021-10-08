@@ -7,7 +7,7 @@ import { useTexture } from '@react-three/drei';
 import fragment from './shaders/fragment';
 import useScrollProgress from '../../Common/hooks/useScrollProgress';
 
-const TEXTURE_URL = '/img/texture.jpg';
+const TEXTURE_URL = 'img/texture.jpg';
 
 class PatternMaterial extends THREE.ShaderMaterial {
   constructor() {

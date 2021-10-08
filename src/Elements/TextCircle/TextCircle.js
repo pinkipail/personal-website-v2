@@ -12,7 +12,7 @@ function TextCircle() {
   return (
     <img
       ref={circleRef}
-      src="/img/circle.svg"
+      src="img/circle.svg"
       alt="skill"
     />
   );
