@@ -2,6 +2,8 @@
 // заменить div на footer
 // анимировать ссылки
 // вынести год в переменную
+// добавить анимацию
+// сделать на всю страницу
 import React from 'react';
 import classes from './Footer.module.css';
 

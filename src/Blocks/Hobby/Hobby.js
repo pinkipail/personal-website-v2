@@ -1,4 +1,5 @@
 import React from 'react';
+import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
 import classes from './Hobby.module.css';
@@ -9,7 +10,9 @@ function Hobby() {
       <div className={classes.descriptionWrap}>
         <div />
         <div className={classes.title}>
-          <BlockTitle title="хобби:" />
+          <ParallaxScrolling deltaStart="0" deltaEnd="50">
+            <BlockTitle title="хобби:" />
+          </ParallaxScrolling>
         </div>
         <div className={classes.text}>
           Люблю хорошие <br />

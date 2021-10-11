@@ -5,8 +5,8 @@ import classes from './ParallaxScrolling.module.css';
 export default function ParallaxScrolling(props) {
   const {
     children,
-    deltaStart = 100,
-    deltaEnd = -100,
+    deltaStart = 70,
+    deltaEnd = -70,
   } = props;
 
   const containerRef = useRef();

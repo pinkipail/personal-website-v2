@@ -1,6 +1,7 @@
 import { gsap, ScrollTrigger } from 'gsap/all';
 import React, { useEffect, useRef } from 'react';
 import { trigerConfig } from '../../Common/consts/scrollAnimation';
+import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import classes from './BlockNumber.module.css';
 
 export default function BlockNumber({ value }) {
@@ -12,24 +13,26 @@ export default function BlockNumber({ value }) {
     });
   }, []);
   return (
-    <div className={classes.container}>
-      <div className={classes.wrap}>
-        <div
-          ref={(ref) => { numberRef.current[0] = ref; }}
-          className={classes.value}
-        >
-          0
+    <ParallaxScrolling deltaStart="50" deltaEnd="-50">
+      <div className={classes.container}>
+        <div className={classes.wrap}>
+          <div
+            ref={(ref) => { numberRef.current[0] = ref; }}
+            className={classes.value}
+          >
+            0
+          </div>
+        </div>
+        <div className={classes.wrap}>
+          <div
+            ref={(ref) => { numberRef.current[1] = ref; }}
+            className={classes.value}
+          >
+            {value}
+          </div>
         </div>
       </div>
-      <div className={classes.wrap}>
-        <div
-          ref={(ref) => { numberRef.current[1] = ref; }}
-          className={classes.value}
-        >
-          {value}
-        </div>
-      </div>
-    </div>
+    </ParallaxScrolling>
   );
 }
 

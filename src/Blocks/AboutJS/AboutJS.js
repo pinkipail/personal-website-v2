@@ -1,6 +1,6 @@
 import React from 'react';
-import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
+import BlockDescription from '../../Elements/BlockDescription/BlockDescription';
 import BlockImage from '../../Elements/BlockImage/BlockImage';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
@@ -14,13 +14,13 @@ export default function AboutJS() {
       </div>
       <div className={classes.container}>
         <div className={classes.description}>
-          <ParallaxScrolling>
-            Мне нравится создавать интерактивные WEB-
-            приложения с акцентом на анимированный
-            контент, производительность и отзывчивость.
-            Люблю работать с актуальными технологиями:
-            ES6+, Typescript, angular и REACT.
-          </ParallaxScrolling>
+          <BlockDescription>
+            Мне нравится создавать интерактивные WEB-<br />
+            приложения с акцентом на анимированный<br />
+            контент, производительность и отзывчивость.<br />
+            Люблю работать с актуальными технологиями:<br />
+            ES6+, Typescript, angular и REACT.<br />
+          </BlockDescription>
         </div>
 
         <div className={classes.image}>

@@ -10,12 +10,9 @@
 
 .description {
     position: absolute;
-    top: 0;
-    right: 10rem;
+    top: 5rem;
+    right: 5rem;
     z-index: 1;
-    font-weight: 500;
-    font-size: 3rem;
-    text-transform: uppercase;
 }
 
 .number {

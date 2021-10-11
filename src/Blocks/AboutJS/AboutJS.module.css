@@ -10,12 +10,6 @@
 .description {
     position: relative;
     z-index: 1;
-    width: 95rem;
-    font-weight: 400;
-    font-size: 3rem;
-    line-height: 130%;
-    letter-spacing: 0.1em;
-    text-transform: lowercase;
     transform: translate(10%, 8%);
 }
 

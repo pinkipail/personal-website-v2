@@ -1,5 +1,6 @@
 import React from 'react';
 import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
+import BlockDescription from '../../Elements/BlockDescription/BlockDescription';
 import BlockImage from '../../Elements/BlockImage/BlockImage';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
@@ -14,12 +15,14 @@ export default function AboutMe() {
       </div>
 
       <div className={classes.description}>
-        Привет️, меня зовут Василий. Мне 22 года. <br />
-        Я вырос в совсем небольшой деревни <br />
-        Новоегорьевское, что в Алтайском крае. И <br />
-        я работаю разработчиком. На третьем <br />
-        курсе бросил универ и  уехал навсегда из <br />
-        России(недалеко правда)<br />
+        <BlockDescription>
+          Привет️, меня зовут Василий. Мне 22 года. <br />
+          Я вырос в совсем небольшой деревни <br />
+          Новоегорьевское, что в Алтайском крае. И <br />
+          я работаю разработчиком. На третьем <br />
+          курсе бросил универ и  уехал навсегда из <br />
+          России(недалеко правда)<br />
+        </BlockDescription>
       </div>
       <BlockImage src="img/photo-me.svg" height="475px" />
       <div className={classes.number}>
