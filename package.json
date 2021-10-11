@@ -2,7 +2,6 @@
   "name": "bubble-animation",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pinkipail.github.io/personal-website-v2/",
   "dependencies": {
     "@react-three/drei": "^5.2.1",
     "@react-three/fiber": "^6.2.2",
