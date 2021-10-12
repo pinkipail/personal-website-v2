@@ -28,15 +28,15 @@ export default function MainPage({ onLoading }) {
 
   return (
     <Background darkTheme={darkTheme}>
-      <header>
+      <div className={classes.header}>
         <Logo url="img/logo.svg" size="5.2rem" />
         <Logo url="img/logo1.svg" size="5.55rem" />
-      </header>
+      </div>
 
-      <footer>
+      <div className={classes.footer}>
         <ThemeButton toggle={toggleTheme} />
         <ProgressBar />
-      </footer>
+      </div>
       <SmoothScroll>
         <MainBlock />
         <RunningLine />

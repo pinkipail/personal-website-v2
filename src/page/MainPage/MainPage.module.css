@@ -1,5 +1,5 @@
-header,
-footer {
+.header,
+.footer {
     position: fixed;
     z-index: 2;
     display: flex;
@@ -8,10 +8,10 @@ footer {
     margin: 3rem;
 }
 
-header {
+.header {
     top: 0;
 }
 
-footer {
+.footer {
     bottom: 0;
 }
