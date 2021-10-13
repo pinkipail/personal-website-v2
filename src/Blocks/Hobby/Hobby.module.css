@@ -20,8 +20,6 @@
 .description {
     position: relative;
     z-index: 1;
-    font-size: 3rem;
-    letter-spacing: 0.07;
 }
 
 .image {

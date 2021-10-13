@@ -4,6 +4,7 @@
 // вынести год в переменную
 // наполнить страницу
 import React from 'react';
+import SurfacingText from '../../Common/animation/SurfacingText/SurfacingText';
 import TextWave from '../../Elements/TextWave/TextWave';
 import classes from './Footer.module.css';
 
@@ -15,8 +16,10 @@ export default function Footer() {
       </div>
       <div className={classes.footer}>
         <div className={classes.title}>
-          Связяться <br />
-          со мной:
+          <SurfacingText sequence={false}>
+            Связяться <br />
+            со мной:
+          </SurfacingText>
         </div>
         <div className={classes.spliter} />
         <div className={classes.contacts}>

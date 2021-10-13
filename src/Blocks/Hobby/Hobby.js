@@ -1,5 +1,6 @@
 import React from 'react';
 import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
+import BlockDescription from '../../Elements/BlockDescription/BlockDescription';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
 import classes from './Hobby.module.css';
@@ -15,15 +16,19 @@ function Hobby() {
           </ParallaxScrolling>
         </div>
         <div className={classes.text}>
-          Люблю хорошие <br />
-          вещи
+          <ParallaxScrolling deltaStart={40} deltaEnd={0}>
+            Люблю хорошие <br />
+            вещи
+          </ParallaxScrolling>
         </div>
         <div className={classes.description}>
-          Люблю в прохладное время года собираться<br />
-          играть в настолки по вечерам в хорошей<br />
-          компании, а ️летом выбираться на природу.<br />
-          Люблю посиделки в баре. Люблю настольный<br />
-          тенис и атмосферные сюжетные видеоигры.<br />
+          <BlockDescription deltaStart={40} deltaEnd={0}>
+            Люблю в прохладное время года собираться<br />
+            играть в настолки по вечерам в хорошей<br />
+            компании, а ️летом выбираться на природу.<br />
+            Люблю посиделки в баре. Люблю настольный<br />
+            тенис и атмосферные сюжетные видеоигры.<br />
+          </BlockDescription>
         </div>
         <img
           className={classes.image}
