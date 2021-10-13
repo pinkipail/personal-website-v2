@@ -26,6 +26,16 @@
     backdrop-filter: blur(6px);
 }
 
+.footerItem {
+    width: 100%;
+}
+
+.footerBlock {
+    float: right;
+    width: 100%;
+    text-align: right;
+}
+
 .title {
     color: #fff;
     font-weight: 500;
@@ -35,18 +45,10 @@
     text-transform: uppercase;
 }
 
-.contactsItem {
+.contacts {
     display: flex;
-    align-items: center;
-}
-
-.link {
-    margin-left: 1rem;
-    font-weight: 500;
-    font-size: 3rem;
-    line-height: 200%;
-    letter-spacing: 0.1em;
-    text-decoration-line: underline;
+    flex-direction: column;
+    width: fit-content;
 }
 
 .spliter {

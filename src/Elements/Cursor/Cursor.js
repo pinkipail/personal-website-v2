@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import CustomCursor from './CustomCursor';
 import './Cursor.css';
 
+// TODO: отрефакторить
 export default function Cursor() {
   useEffect(() => {
     const cursor = new CustomCursor(document.querySelector('.cursor'));
@@ -10,7 +11,7 @@ export default function Cursor() {
       el.addEventListener('mouseenter', () => cursor.emit('enter'));
       el.addEventListener('mouseleave', () => cursor.emit('leave'));
     });
-  }, []);
+  });
 
   return (
     <>
