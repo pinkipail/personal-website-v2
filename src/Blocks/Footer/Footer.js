@@ -37,10 +37,6 @@ function Footer() {
               text="github.com/pinkipail"
               icon="img/icons/github.svg"
             />
-            <ContactLink
-              text="linkedin.com/itbeard"
-              icon="img/icons/linkedin.svg"
-            />
           </div>
         </div>
         <div className={classes.version}>
