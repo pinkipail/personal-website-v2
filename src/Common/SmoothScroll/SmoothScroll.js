@@ -10,7 +10,7 @@ const data = {
 };
 
 const SmoothScroll = ({ children }) => {
-  const windowSize = useWindowSize();
+  useWindowSize();
   const scrollingContainerRef = useRef();
 
   function setBodyHeight() {
@@ -31,7 +31,7 @@ const SmoothScroll = ({ children }) => {
 
   useEffect(() => {
     setBodyHeight();
-  }, [windowSize.height]);
+  });
 
   useEffect(() => {
     requestAnimationFrame(() => smoothScrollingHandler());

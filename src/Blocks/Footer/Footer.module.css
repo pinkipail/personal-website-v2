@@ -8,7 +8,6 @@
     position: relative;
     display: flex;
     flex-grow: 1;
-    align-items: start;
     justify-content: center;
     width: 100%;
     padding-top: 10rem;
@@ -59,8 +58,8 @@
 
 .version {
     position: absolute;
-    bottom: 0.7rem;
-    left: 0;
+    bottom: 0.2rem;
+    left: 0.2rem;
     color: #ffffff80;
     font-weight: 300;
     font-size: 1.5rem;
@@ -70,7 +69,7 @@
 .copyright {
     position: absolute;
     right: 0;
-    bottom: 0.7rem;
+    bottom: 0.2rem;
     color: #ffffff80;
     font-weight: 300;
     font-size: 1.5rem;

@@ -4,6 +4,7 @@
     color: transparent;
     font-weight: bold;
     font-size: 10rem;
+    line-height: 1;
     white-space: nowrap;
     opacity: 0.5;
     -webkit-text-stroke: 2px rgb(255, 255, 255);
