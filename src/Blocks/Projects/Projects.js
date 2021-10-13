@@ -1,63 +1,42 @@
-import { ScrollTrigger } from 'gsap/all';
-import gsap from 'gsap/gsap-core';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import classes from './Projects.module.css';
-import { trigerConfig } from '../../Common/consts/scrollAnimation';
+import RevealAnimation from '../../Common/animation/RevealAnimation/RevealAnimation';
 
 function Projects() {
-  const linesRef = useRef([]);
-  const descriptionsRef = useRef([]);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    descriptionsRef.current.forEach((item) => {
-      surfacingText(item);
-    });
-    linesRef.current.forEach((item) => {
-      surfacingLine(item);
-    });
-  }, []);
-
   return (
     <BlockContainer>
       <div className={classes.title}>
         <BlockTitle title="ПРОЕКТЫ:" />
       </div>
 
-      {projects.map((project, i) => (
+      {projects.map((project) => (
         <div
           className={classes.project}
           key={project.name}
         >
-          <div
-            className={classes.textWrap}
-            ref={(ref) => { descriptionsRef.current[i] = ref; }}
-          >
-            <div className={classes.projectDate}>
-              {project.dateStart} — <br />
-              {project.dateEnd}
-            </div>
-            <div className={classes.projectDescription}>
-              <div className={classes.projectDescriptionTitle}>
-                {project.name}
+          <RevealAnimation>
+            <div className={classes.textWrap}>
+              <div className={classes.projectDate}>
+                {project.dateStart} — <br />
+                {project.dateEnd}
               </div>
-              <div className={classes.projectDescriptionText}>
-                {project.description}
+              <div className={classes.projectDescription}>
+                <div className={classes.projectDescriptionTitle}>
+                  {project.name}
+                </div>
+                <div className={classes.projectDescriptionText}>
+                  {project.description}
+                </div>
+              </div>
+              <div className={classes.projectLocation}>
+                {project.location}
               </div>
             </div>
-            <div className={classes.projectLocation}>
-              {project.location}
-            </div>
-          </div>
-          <div className={classes.projectUnderline} />
-          <div
-            className={classes.line}
-            ref={(ref) => { linesRef.current[i] = ref; }}
-          />
+            <div className={classes.projectUnderline} />
+          </RevealAnimation>
         </div>
       ))}
 
@@ -68,7 +47,6 @@ function Projects() {
   );
 }
 
-// constants
 // TODO: Подправить описание
 const projects = [
   {
@@ -93,51 +71,5 @@ const projects = [
     location: 'гродно',
   },
 ];
-
-const duration = 0.7;
-
-// utils
-
-function surfacingText(element) {
-  gsap.from(
-    element,
-    {
-      scrollTrigger: {
-        trigger: element,
-        ...trigerConfig,
-      },
-      autoAlpha: 0,
-      duration: 0,
-      delay: duration,
-    },
-  );
-}
-
-function surfacingLine(element) {
-  gsap.fromTo(element, {
-    right: '100%',
-  }, {
-    scrollTrigger: {
-      trigger: element,
-      ...trigerConfig,
-    },
-    right: '0%',
-    duration,
-    ease: 'power1.inOut',
-  });
-
-  gsap.fromTo(element, {
-    left: '0%',
-  }, {
-    scrollTrigger: {
-      trigger: element,
-      ...trigerConfig,
-    },
-    left: '100%',
-    duration,
-    delay: duration,
-    ease: 'power1.inOut',
-  });
-}
 
 export default Projects;

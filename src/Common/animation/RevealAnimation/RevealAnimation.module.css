@@ -1,0 +1,18 @@
+.project {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #333;
+}
+
+.textWrap {
+    position: relative;
+    overflow: hidden;
+}
