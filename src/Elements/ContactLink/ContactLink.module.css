@@ -3,14 +3,38 @@
     align-items: center;
 }
 
+.linkWrap {
+    position: relative;
+    margin: 0.5rem;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition-timing-function: ease;
+    transition-duration: 0.8s;
+}
+
+.linkWrap:hover .underline {
+    width: 100%;
+}
+
 .link {
-    margin-left: 1rem;
+    color: inherit;
     font-weight: 500;
     font-size: 2rem;
-    line-height: 200%;
     letter-spacing: 0.1em;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: inherit;
 }
 
 .icon {
     width: 24px;
+    margin-right: 1rem;
 }

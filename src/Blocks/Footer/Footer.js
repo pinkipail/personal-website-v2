@@ -1,5 +1,4 @@
 // TODO
-// анимировать ссылки
 // наполнить страницу
 import React from 'react';
 import SurfacingText from '../../Common/animation/SurfacingText/SurfacingText';
@@ -28,14 +27,17 @@ function Footer() {
             <ContactLink
               text="fyodorov_vasya@list.ru"
               icon="img/icons/mail.svg"
+              href="mailto:fyodorov_vasya@list.ru"
             />
             <ContactLink
               text="@twenty_seventh"
               icon="img/icons/telegram.svg"
+              href="https://t.me/twenty_seventh"
             />
             <ContactLink
               text="github.com/pinkipail"
               icon="img/icons/github.svg"
+              href="https://github.com/pinkipail"
             />
           </div>
         </div>
