@@ -7,14 +7,14 @@ export default function BlockImage({ src, height }) {
   return (
     <div style={{ overflow: 'hidden' }}>
       <ParallaxScrolling
-        deltaStart={50}
-        deltaEnd={-50}
+        deltaStart="5rem"
+        deltaEnd="-5rem"
       >
         <img
           className={classes.image}
           src={src}
           alt={imageName}
-          height={height}
+          style={{ height }}
         />
       </ParallaxScrolling>
     </div>

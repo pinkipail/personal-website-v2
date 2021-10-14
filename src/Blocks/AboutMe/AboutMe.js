@@ -24,7 +24,7 @@ export default function AboutMe() {
           России(недалеко правда)<br />
         </BlockDescription>
       </div>
-      <BlockImage src="img/photo-me.svg" height="475px" />
+      <BlockImage src="img/photo-me.svg" height="47.5rem" />
       <div className={classes.number}>
         <BlockNumber value="1" />
       </div>

@@ -11,18 +11,18 @@ function Hobby() {
       <div className={classes.descriptionWrap}>
         <div />
         <div className={classes.title}>
-          <ParallaxScrolling deltaStart="0" deltaEnd="50">
+          <ParallaxScrolling deltaStart="0" deltaEnd="5rem">
             <BlockTitle title="хобби:" />
           </ParallaxScrolling>
         </div>
         <div className={classes.text}>
-          <ParallaxScrolling deltaStart={40} deltaEnd={0}>
+          <ParallaxScrolling deltaStart="4rem" deltaEnd="0">
             Люблю хорошие <br />
             вещи
           </ParallaxScrolling>
         </div>
         <div className={classes.description}>
-          <BlockDescription deltaStart={40} deltaEnd={0}>
+          <BlockDescription deltaStart="4rem" deltaEnd="0">
             Люблю в прохладное время года собираться<br />
             играть в настолки по вечерам в хорошей<br />
             компании, а ️летом выбираться на природу.<br />
@@ -34,7 +34,7 @@ function Hobby() {
           className={classes.image}
           src="img/ping-pong.gif"
           alt="ping-pong"
-          height="358px"
+          style={{ height: '36rem' }}
         />
         <div className={classes.blockNumber}>
           <BlockNumber value="2" />

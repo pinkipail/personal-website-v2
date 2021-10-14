@@ -24,7 +24,7 @@ export default function AboutJS() {
         </div>
 
         <div className={classes.image}>
-          <BlockImage src="img/js-logo.svg" height="575px" />
+          <BlockImage src="img/js-logo.svg" height="57.5rem" />
         </div>
       </div>
 

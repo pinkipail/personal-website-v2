@@ -2,18 +2,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100%;
     border: 2px solid transparent;
     background: transparent;
     color: #fff;
     outline: 1px solid #fff;
-    font-size: 1.5rem;
+    font-size: 15px;
 }
 
 .toggle__btn {
     position: relative;
     display: inline-block;
-    padding: 0.3rem;
+    padding: 3px;
     text-align: center;
     transition: background 600ms ease-out;
 }
@@ -23,8 +22,8 @@ input[type="radio"].toggle {
 }
 
 input[type="radio"].toggle + label {
-    min-width: 5rem;
-    letter-spacing: 0.1rem;
+    min-width: 50px;
+    letter-spacing: 1px;
 }
 
 input[type="radio"].toggle + label:hover {

@@ -13,7 +13,7 @@ export default function BlockNumber({ value }) {
     });
   }, []);
   return (
-    <ParallaxScrolling deltaStart="50" deltaEnd="-50">
+    <ParallaxScrolling deltaStart="5rem" deltaEnd="-5rem">
       <div className={classes.container}>
         <div className={classes.wrap}>
           <div
