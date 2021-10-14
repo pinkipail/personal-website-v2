@@ -47,27 +47,26 @@ function Projects() {
   );
 }
 
-// TODO: Подправить описание
 const projects = [
   {
     dateStart: '12.2019',
     dateEnd: '05.2020',
     name: 'ФРИЛАНС',
-    description: 'создание и верстка лендингов, разработка SPA на React.',
+    description: 'Дизайн и верстка лендингов, разработка приложений на React.',
     location: 'удаленка',
   },
   {
     dateStart: '06.2020',
     dateEnd: '05.2021',
     name: 'РТИ',
-    description: 'Разработка на Angular, много чего делал, и еще немного текста, чуть больше текста',
+    description: 'Работа на аутсорс проектах. Разработка приложений на Angular.',
     location: 'калуга',
   },
   {
     dateStart: '06.2021',
     dateEnd: 'по настоящее время',
     name: 'SENLA',
-    description: 'Разработка на Angula и React',
+    description: 'Аутстаффинг. Разработка приложений на Angular и React.',
     location: 'гродно',
   },
 ];

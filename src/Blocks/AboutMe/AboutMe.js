@@ -9,19 +9,17 @@ import classes from './AboutMe.module.css';
 export default function AboutMe() {
   return (
     <BlockContainer>
-
       <div className={classes.title}>
         <BlockTitle title="ОБО МНЕ:" />
       </div>
-
       <div className={classes.description}>
         <BlockDescription>
-          Привет️, меня зовут Василий. Мне 22 года. <br />
-          Я вырос в совсем небольшой деревни <br />
-          Новоегорьевское, что в Алтайском крае. И <br />
-          я работаю разработчиком. На третьем <br />
-          курсе бросил универ и  уехал навсегда из <br />
-          России(недалеко правда)<br />
+          Привет️, меня зовут Василий. Мне 22 года.<br />
+          Вырос в небольшой деревни Новоегорьевское,<br />
+          что в Алтайском крае, на задворках России.<br />
+          В вузе учился по специальности «Программная<br />
+          инженерия», но на третьем курсе бросил универ<br />
+          и переехал на запад Белоруси, в Гродно.<br />
         </BlockDescription>
       </div>
       <BlockImage src="img/photo-me.svg" height="47.5rem" />

@@ -15,11 +15,11 @@ export default function AboutJS() {
       <div className={classes.container}>
         <div className={classes.description}>
           <BlockDescription>
-            Мне нравится создавать интерактивные WEB-<br />
+            Сейчас работаю фронтенд-разработчиком.<br />
+            Мне нравится создавать интерактивные веб-<br />
             приложения с акцентом на анимированный<br />
-            контент, производительность и отзывчивость.<br />
-            Люблю работать с актуальными технологиями:<br />
-            ES6+, Typescript, angular и REACT.<br />
+            контент, производительность и отзывчивость<br />
+            с помощью современных технологий.<br />
           </BlockDescription>
         </div>
 
