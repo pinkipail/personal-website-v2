@@ -4,7 +4,7 @@
     font-size: 20rem;
     line-height: 0.75;
     text-transform: uppercase;
-    -webkit-text-stroke: 3px rgba(255, 255, 255, 0.2);
+    -webkit-text-stroke: 0.3rem rgba(255, 255, 255, 0.2);
 }
 
 .wrap {

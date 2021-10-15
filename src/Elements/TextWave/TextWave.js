@@ -47,11 +47,11 @@ const colors = ['#111111', '#333333', '#666666', '#999999', '#EEEEEE'];
 
 function animateWave(tl, char, i, j) {
   tl.fromTo(char, {
-    x: `${i * -7}px`,
+    x: `${i * -0.7}rem`,
     y: '-55%',
   }, {
     yoyo: true,
-    x: `${i * -7}px`,
+    x: `${i * -0.7}rem`,
     y: '55%',
     duration: 0.8,
     delay: (i * -0.03) + (j * 0.2),

@@ -35,7 +35,7 @@
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
     font-size: 3.5rem;
     letter-spacing: 0.1em;
-    backdrop-filter: blur(5.43403px);
+    backdrop-filter: blur(5.5);
 }
 
 .footer {

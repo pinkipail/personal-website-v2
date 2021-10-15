@@ -19,10 +19,14 @@ function ScrollChangeText() {
 
   useEffect(() => {
     surfacingText(text1Ref.current, text2Ref.current);
-    setTimeout(() => {
+    const setTimeoutId = setTimeout(() => {
       animationLines(text1Ref.current, text2Ref.current, tlRef.current);
       tlRef.current.play();
     }, 10000);
+
+    return () => {
+      clearTimeout(setTimeoutId);
+    };
   }, []);
 
   function getTitle() {

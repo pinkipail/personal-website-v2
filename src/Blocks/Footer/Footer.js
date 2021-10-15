@@ -41,9 +41,6 @@ function Footer() {
             />
           </div>
         </div>
-        <div className={classes.version}>
-          v0.1.2
-        </div>
         <div className={classes.copyright}>
           Copyright 2021 by Fedorov Vasiliy. All rights reserved.
         </div>

@@ -21,3 +21,14 @@
     line-height: 0.75;
     transform: translateY(-100%);
 }
+
+@media (max-width: 769px) {
+    .title {
+        margin-bottom: 10rem;
+    }
+
+    .description {
+        top: 10rem;
+        right: 0;
+    }
+}

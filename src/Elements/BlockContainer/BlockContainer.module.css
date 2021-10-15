@@ -1,12 +1,15 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 .content {
     position: relative;
-    width: 80vw;
-    height: 75vh;
-    margin: auto;
+    margin: 12.5vw 10vw;
+}
+
+@media (max-width: 576px) {
+    .content {
+        margin: 12.5vw 2vw;
+    }
 }

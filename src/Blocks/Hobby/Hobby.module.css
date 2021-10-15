@@ -3,16 +3,25 @@
 }
 
 .title {
+    grid-area: title;
     margin-bottom: 5rem;
 }
 
 .descriptionWrap {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-areas:
+        ".  title"
+        "text  description"
+        "text  description"
+        "image  number "
+        "image  number ";
+    grid-template-rows: repeat(3, fit-content);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
 }
 
 .text {
+    grid-area: text;
     font-weight: bold;
     font-size: 4.5rem;
 }
@@ -20,16 +29,39 @@
 .description {
     position: relative;
     z-index: 1;
+    grid-area: description;
 }
 
 .image {
     display: inline-block;
+    grid-area: image;
     justify-self: end;
     filter: grayscale(100%);
     transform: translateY(-25%);
 }
 
 .blockNumber {
+    grid-area: number;
     justify-self: end;
     transform: translateY(-10%);
+}
+
+@media (max-width: 769px) {
+    .descriptionWrap {
+        grid-template-areas:
+            "title ."
+            "text text"
+            "description description"
+            "image  number "
+            "image  number ";
+    }
+
+    .text,
+    .description {
+        justify-self: center;
+    }
+
+    .text {
+        margin: 5rem;
+    }
 }
