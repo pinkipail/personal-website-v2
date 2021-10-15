@@ -1,0 +1,29 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    line-height: 1;
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 0.5rem;
+    color: transparent;
+    font-weight: bold;
+    font-size: 22rem;
+    line-height: 0.9;
+    letter-spacing: 1.5rem;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+}
+
+.textHidden {
+    width: 100%;
+    color: transparent;
+    font-weight: bold;
+    font-size: 22rem;
+    line-height: 0.9;
+    letter-spacing: 1.5rem;
+    visibility: hidden;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+}

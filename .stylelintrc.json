@@ -2,6 +2,7 @@
   "extends": "stylelint-config-standard",
   "plugins": ["stylelint-order"],
   "rules": {
+    "value-keyword-case": null,
     "indentation":[4],
     "order/order": [
       [

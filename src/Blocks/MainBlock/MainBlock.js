@@ -3,10 +3,10 @@ import gsap from 'gsap/gsap-core';
 import { ScrollTrigger } from 'gsap/all';
 import classes from './MainBlock.module.css';
 import ScrollMessage from '../../Elements/ScrollMessage/ScrollMessage';
+import ScrollChangeText from '../../Elements/ScrollChangeText/ScrollChangeText';
 
 // TODO: add animation
 export default function MainBlock() {
-  const firstTitleRef = useRef();
   const secondTitleRef = useRef();
   const subtitleRef = useRef();
   const subtitleWrapRef = useRef();
@@ -15,7 +15,6 @@ export default function MainBlock() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    surfacingText(firstTitleRef.current, 0);
     surfacingText(secondTitleRef.current, 0);
     surfacingText(subtitleRef.current, 0.5, '-100%');
     hideScroll(scrollMessageRef.current);
@@ -29,14 +28,7 @@ export default function MainBlock() {
           className={classes.textWrapper}
           ref={textRef}
         >
-          <div className={classes.titleWrap}>
-            <div
-              ref={firstTitleRef}
-              className={classes.titleOutline}
-            >
-              FRONTEND-
-            </div>
-          </div>
+          <ScrollChangeText />
           <div className={classes.titleWrap}>
             <div
               ref={secondTitleRef}
