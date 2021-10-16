@@ -1,5 +1,14 @@
-.image {
-    display: block;
+.wrap {
+    overflow: hidden;
+}
+
+.container {
+    display: inline-block;
     transform: scale(1.1);
     backdrop-filter: blur(4px);
+}
+
+.image {
+    display: block;
+    opacity: 0.7;
 }

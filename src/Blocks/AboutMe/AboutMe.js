@@ -22,7 +22,7 @@ export default function AboutMe() {
           и переехал на запад Белоруси, в Гродно.<br />
         </BlockDescription>
       </div>
-      <BlockImage src="img/photo-me.svg" height="47.5rem" />
+      <BlockImage src="img/photo-me.jpg" height="47.5rem" />
       <div className={classes.number}>
         <BlockNumber value="1" />
       </div>
