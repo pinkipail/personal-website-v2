@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { ScrollTrigger } from 'gsap/all';
 import useWindowSize from './hooks/useWindowSize';
 import './SmoothScroll.css';
 
@@ -16,6 +17,7 @@ const SmoothScroll = ({ children }) => {
   function setBodyHeight() {
     const { height } = scrollingContainerRef.current.getBoundingClientRect();
     document.body.style.height = `${height}px`;
+    ScrollTrigger.refresh(true);
   }
 
   function smoothScrollingHandler() {
@@ -30,6 +32,10 @@ const SmoothScroll = ({ children }) => {
   }
 
   useEffect(() => {
+    // TODO: find better way
+    setTimeout(() => {
+      setBodyHeight();
+    }, 1000);
     setBodyHeight();
   });
 

@@ -60,3 +60,14 @@
     letter-spacing: 0.3rem;
     opacity: 0.5;
 }
+
+@media (max-width: 769px) {
+    .block {
+        font-size: 0.5vw;
+    }
+
+    .description {
+        top: 10rem;
+        right: 0;
+    }
+}
