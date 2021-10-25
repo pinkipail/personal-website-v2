@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import gsap from 'gsap/gsap-core';
 import React, { useEffect, useRef, useState } from 'react';
 import classes from './ScrollChangeText.module.css';
@@ -46,14 +47,13 @@ function ScrollChangeText() {
         FRONTEND-
       </span>
       <span
-        className={classes.text}
+        className={`${classes.text} ${classes[secondTitle.className]}`}
         ref={text2Ref}
-        style={{ fontSize: secondTitle.fontSize }}
       >
         {secondTitle.value}
       </span>
       <span className={classes.textHidden}>
-        DEVELOPER
+        FRONTEND-
       </span>
     </div>
   );
@@ -62,14 +62,14 @@ function ScrollChangeText() {
 // const
 
 const secondTitles = [
-  { value: 'FRAMEWORK-', fontSize: '18.5rem' },
-  { value: 'ANGULAR-', fontSize: '22rem' },
-  { value: 'REACT-', fontSize: '22rem' },
-  { value: 'WEB-', fontSize: '22rem' },
-  { value: 'HTML-CSS-JS-', fontSize: '18.5rem' },
-  { value: 'JAVASCRIPT-', fontSize: '20rem' },
-  { value: 'CONSOLE.LOG-', fontSize: '17rem' },
-  { value: 'STACKOVERFLOW-', fontSize: '13rem' },
+  { value: 'FRAMEWORK-', className: 'FRAMEWORK' },
+  { value: 'ANGULAR-', className: 'ANGULAR' },
+  { value: 'REACT-', className: 'REACT' },
+  { value: 'WEB-', className: 'WEB' },
+  { value: 'HTML-CSS-JS-', className: 'HTML' },
+  { value: 'JAVASCRIPT-', className: 'JAVASCRIPT' },
+  { value: 'CONSOLE.LOG-', className: 'CONSOLE' },
+  { value: 'STACKOVERFLOW-', className: 'STACKOVERFLOW' },
 ];
 
 // animations

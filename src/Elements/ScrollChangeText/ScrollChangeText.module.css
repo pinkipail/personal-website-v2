@@ -7,23 +7,45 @@
 .text {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    padding: 0 0.5rem;
-    color: transparent;
-    font-weight: bold;
-    font-size: 22rem;
-    line-height: 0.9;
-    letter-spacing: 1.5rem;
-    -webkit-text-stroke: 0.2rem rgb(255, 255, 255);
 }
 
 .textHidden {
-    width: 100%;
-    color: transparent;
-    font-weight: bold;
-    font-size: 22rem;
-    line-height: 0.9;
-    letter-spacing: 1.5rem;
     visibility: hidden;
+}
+
+.text,
+.textHidden {
+    display: inline-block;
+    width: 100%;
+    padding: 0 0.5rem;
+    color: transparent;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: 0.9;
+    letter-spacing: 0.03em;
     -webkit-text-stroke: 0.2rem rgb(255, 255, 255);
+}
+
+.FRAMEWORK { font-size: 0.84em; }
+.ANGULAR { font-size: 1em; }
+.REACT { font-size: 1em; }
+.WEB { font-size: 1em; }
+.HTML { font-size: 0.87em; }
+.JAVASCRIPT { font-size: 0.93em; }
+.CONSOLE { font-size: 0.8em; }
+.STACKOVERFLOW { font-size: 0.65em; }
+
+@media (max-width: 769px) {
+    .text,
+    .textHidden {
+        letter-spacing: 0.1em;
+    }
+    .FRAMEWORK { font-size: 0.8em; }
+    .ANGULAR { font-size: 1em; }
+    .REACT { font-size: 1em; }
+    .WEB { font-size: 0.73em; }
+    .HTML { font-size: 0.72em; }
+    .JAVASCRIPT { font-size: 0.6em; }
+    .CONSOLE { font-size: 0.7em; }
+    .STACKOVERFLOW { font-size: 0.77em; }
 }
