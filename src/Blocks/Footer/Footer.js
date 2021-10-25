@@ -11,7 +11,6 @@ function Footer() {
     <div className={classes.wrap}>
       <div className={classes.container}>
         <TextWave />
-        {/* TODO: Добавить адаптивность  */}
       </div>
       <div className={classes.footer}>
         <div className={classes.footerBlock}>

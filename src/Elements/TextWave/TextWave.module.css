@@ -1,5 +1,6 @@
 .container {
     position: relative;
+    margin: 7rem;
 }
 
 .word {
@@ -11,11 +12,19 @@
     line-height: 6rem;
     pointer-events: none;
     user-select: none;
-    transform: translate(calc(-50%), 0);
+    transform: translate(-50%, 0);
 }
 
 .char {
     position: relative;
     margin-left: -1rem;
     -webkit-text-stroke: 0.2rem #000;
+}
+
+.textHidden {
+    font-weight: 900;
+    font-size: 15rem;
+    line-height: 6rem;
+    visibility: hidden;
+    transform: translate(-50%, 0);
 }

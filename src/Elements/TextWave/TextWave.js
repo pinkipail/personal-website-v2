@@ -34,6 +34,9 @@ function TextWave() {
           ))}
         </span>
       ))}
+      <span className={classes.textHidden}>
+        {word}
+      </span>
     </span>
   );
 }
