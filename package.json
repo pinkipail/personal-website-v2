@@ -5,27 +5,18 @@
   "dependencies": {
     "@react-three/drei": "^5.2.1",
     "@react-three/fiber": "^6.2.2",
-    "@react-three/postprocessing": "^2.0.3",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "gsap": "^3.6.1",
-    "postprocessing": "^6.22.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
-    "react-scroll": "^1.8.2",
-    "react-scrollbars-custom": "^4.0.25",
     "react-transition-group": "^4.4.2",
     "react-use": "^17.2.4",
     "stats-js": "^1.0.1",
-    "three": "^0.128.0",
-    "web-vitals": "^1.0.1"
+    "three": "^0.128.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
