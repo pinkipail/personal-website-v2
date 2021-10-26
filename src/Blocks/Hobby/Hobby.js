@@ -35,7 +35,7 @@ function Hobby() {
           className={classes.image}
           src="img/ping-pong.gif"
           alt="ping-pong"
-          style={{ height: '36rem' }}
+          style={{ height: '36rem', width: '36rem' }}
         />
         <div className={classes.blockNumber}>
           <BlockNumber value="2" />

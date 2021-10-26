@@ -2,7 +2,9 @@ import React from 'react';
 import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import classes from './BlockImage.module.css';
 
-export default function BlockImage({ src, height, opacity }) {
+export default function BlockImage({
+  src, height, width, opacity,
+}) {
   const imageName = src.split('/').pop();
   return (
     <div className={classes.wrap}>
@@ -15,7 +17,7 @@ export default function BlockImage({ src, height, opacity }) {
             className={classes.image}
             src={src}
             alt={imageName}
-            style={{ height, opacity }}
+            style={{ height, width, opacity }}
           />
         </span>
       </ParallaxScrolling>

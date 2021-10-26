@@ -14,7 +14,7 @@ function TextCircle() {
       ref={circleRef}
       src="img/circle.svg"
       alt="skill"
-      style={{ height: '20rem' }}
+      style={{ height: '20rem', width: '20rem' }}
     />
   );
 }

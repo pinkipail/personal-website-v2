@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Background from '../../Background/Background';
 import classes from './MainPage.module.css';
 
@@ -29,24 +29,27 @@ export default function MainPage({ onLoading }) {
   return (
     <Background darkTheme={darkTheme}>
       <div className={classes.header}>
-        <Logo url="img/logo.svg" size="5.2rem" />
-        <Logo url="img/logo1.svg" size="5.55rem" />
+        <Logo url="img/logo.svg" height="5.2rem" width="9.66rem" />
+        <Logo url="img/logo1.svg" height="5.55rem" width="14rem" />
       </div>
 
       <div className={classes.footer}>
         <ThemeButton toggle={toggleTheme} />
         <ProgressBar />
       </div>
-      <SmoothScroll>
-        <MainBlock />
-        <RunningLine />
-        <AboutMe />
-        <Hobby />
-        <AboutJS />
-        <Skills />
-        <Projects />
-        <Footer />
-      </SmoothScroll>
+      <Suspense>
+
+        <SmoothScroll>
+          <MainBlock />
+          <RunningLine />
+          <AboutMe />
+          <Hobby />
+          <AboutJS />
+          <Skills />
+          <Projects />
+          <Footer />
+        </SmoothScroll>
+      </Suspense>
     </Background>
   );
 }

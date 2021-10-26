@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Logo({ url, size: height }) {
+export default function Logo({ url, height, width }) {
   return (
     <img
       src={url}
-      style={{ height }}
+      style={{ height, width }}
       alt="logo"
     />
   );
