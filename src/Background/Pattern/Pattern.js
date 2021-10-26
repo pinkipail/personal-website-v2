@@ -1,7 +1,5 @@
 import * as THREE from 'three';
-import React, {
-  useRef, useLayoutEffect, useEffect,
-} from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import { extend, useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import fragment from './shaders/fragment';
@@ -29,14 +27,10 @@ class PatternMaterial extends THREE.ShaderMaterial {
 
 extend({ PatternMaterial });
 
-function Pattern({ darkTheme }) {
+function Pattern() {
   const meshRef = useRef();
   const textureMap = useTexture(TEXTURE_URL);
   const scrollProgress = useScrollProgress();
-
-  useEffect(() => {
-    animatingThemeToggle();
-  }, [darkTheme]);
 
   useLayoutEffect(() => {
     textureMap.wrapS = THREE.RepeatWrapping;
@@ -62,11 +56,6 @@ function Pattern({ darkTheme }) {
       0.2,
       0.7,
     );
-  }
-
-  function animatingThemeToggle() {
-    const color = darkTheme ? 1 : 0;
-    meshRef.current.material.uniforms.iColorTheme.value = color;
   }
 
   return (

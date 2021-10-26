@@ -26,8 +26,11 @@ export default function AboutJS() {
         <div className={classes.image}>
           <BlockImage
             src="img/js-logo.png"
-            height="57.5rem"
-            opacity="0.2"
+            style={{
+              height: '57.5rem',
+              width: '57.5rem',
+              opacity: '0.2',
+            }}
           />
         </div>
       </div>

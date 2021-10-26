@@ -24,8 +24,12 @@ export default function AboutMe() {
       </div>
       <BlockImage
         src="img/photo-me.jpg"
-        height="47.5rem"
-        width="72.2rem"
+        style={{
+          height: '47.5rem',
+          width: '72.2rem',
+          opacity: 0.7,
+        }}
+        invert={true}
       />
       <div className={classes.number}>
         <BlockNumber value="1" />
