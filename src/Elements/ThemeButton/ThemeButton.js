@@ -1,7 +1,10 @@
 import React from 'react';
+import useDarkTheme from '../../Common/hooks/useDarkTheme';
 import './ThemeButton.css';
 
 export default function ThemeButton({ toggle }) {
+  const [darkTheme] = useDarkTheme();
+
   return (
     <div>
       <div className="toggle__wrap">
@@ -11,7 +14,7 @@ export default function ThemeButton({ toggle }) {
           name="toggle"
           value="true"
           type="radio"
-          defaultChecked
+          defaultChecked={darkTheme}
           onChange={() => toggle(true)}
         />
         <label htmlFor="toggle-on" className="toggle__btn cursor-anumation">
@@ -24,6 +27,7 @@ export default function ThemeButton({ toggle }) {
           name="toggle"
           value="false"
           type="radio"
+          defaultChecked={!darkTheme}
           onChange={() => toggle(false)}
         />
         <label htmlFor="toggle-off" className="toggle__btn cursor-anumation">
