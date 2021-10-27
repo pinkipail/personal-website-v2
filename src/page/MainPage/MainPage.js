@@ -49,7 +49,6 @@ export default function MainPage({ onLoading }) {
         <ProgressBar />
       </div>
       <Suspense>
-
         <SmoothScroll>
           <MainBlock />
           <RunningLine />

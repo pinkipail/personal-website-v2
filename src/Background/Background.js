@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Pattern from './Pattern/Pattern';
-import classes from './Background.module.css';
 
 const GL_CONFIG = {
   powerPreference: 'high-performance',
@@ -13,7 +12,7 @@ const GL_CONFIG = {
 
 function Background({ children }) {
   return (
-    <div className={classes.canvasWrap}>
+    <>
       <Canvas
         style={{ position: 'fixed', zIndex: 0 }}
         gl={GL_CONFIG}
@@ -24,7 +23,7 @@ function Background({ children }) {
         </Suspense>
       </Canvas>
       {children}
-    </div>
+    </>
   );
 }
 
