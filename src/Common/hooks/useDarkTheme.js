@@ -1,15 +1,41 @@
-import { getThemeFromLocalStorage, setThemeToLocalStorage } from '../consts/localStorage';
-import useForceUpdate from './useForceUpdate';
+import { gsap } from 'gsap/all';
+import { useEffect, useState } from 'react';
+import {
+  defaultDarkTheme,
+  getThemeFromLocalStorage,
+  setThemeToLocalStorage,
+} from '../consts/themeLocalStorage';
 
-let state = getThemeFromLocalStorage();
+export const NEED_INVERT = 'need-invert';
 
-export default function useDarkTheme() {
-  const forceUpdate = useForceUpdate();
+export function useDarkTheme() {
+  const [state, setState] = useState(getThemeFromLocalStorage());
 
-  function setState(value) {
-    state = value;
+  useEffect(() => {
+    if (state !== defaultDarkTheme) {
+      setTheme(state);
+    }
+  }, []);
+
+  function setTheme(value) {
     setThemeToLocalStorage(value);
-    forceUpdate(value);
+    animatingThemeToggle(value);
+    setState(value);
   }
-  return [state, setState];
+  return [state, setTheme];
+}
+
+function animatingThemeToggle(value) {
+  const elements = document.getElementsByClassName(NEED_INVERT);
+  Array.from(elements).forEach((element) => {
+    animatingElementInvert(element, value);
+  });
+}
+
+function animatingElementInvert(element, darkTheme) {
+  gsap.to(element, {
+    filter: `invert(${+!darkTheme})`,
+    duration: 1,
+    ease: 'power2.inOut',
+  });
 }

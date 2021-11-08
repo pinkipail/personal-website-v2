@@ -1,23 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-import animatingElementInvert from '../../Common/functions/animatingElementInvert';
-import useDarkTheme from '../../Common/hooks/useDarkTheme';
+import React, { useRef } from 'react';
+import { NEED_INVERT } from '../../Common/hooks/useDarkTheme';
 import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import classes from './BlockImage.module.css';
 
+// todo: fix image invert on ios
 export default function BlockImage({ src, invert, style }) {
   const imageName = src.split('/').pop();
   const imageRef = useRef();
-  const [darkTheme] = useDarkTheme();
-
-  useEffect(() => {
-    animatingImageInvert();
-  }, [darkTheme]);
-
-  function animatingImageInvert() {
-    if (invert) {
-      animatingElementInvert(imageRef.current, darkTheme);
-    }
-  }
 
   return (
     <div className={classes.wrap}>
@@ -28,7 +17,7 @@ export default function BlockImage({ src, invert, style }) {
         <span className={classes.container}>
           <img
             ref={imageRef}
-            className={classes.image}
+            className={`${classes.image} ${invert ? NEED_INVERT : null}`}
             src={src}
             alt={imageName}
             style={style}

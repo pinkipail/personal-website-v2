@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/all';
 import useWindowSize from './hooks/useWindowSize';
 import './SmoothScroll.css';
+import { NEED_INVERT } from '../hooks/useDarkTheme';
 
 const data = {
   ease: 0.1,
@@ -44,7 +45,7 @@ const SmoothScroll = ({ children }) => {
   }, []);
 
   return (
-    <div className="parent">
+    <div className={`parent ${NEED_INVERT}`}>
       <div ref={scrollingContainerRef}>{children}</div>
     </div>
   );

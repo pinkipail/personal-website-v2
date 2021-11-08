@@ -1,5 +1,5 @@
 const THEME_KEY = 'theme';
-const defaultDarkTheme = true;
+export const defaultDarkTheme = true;
 
 export function getThemeFromLocalStorage() {
   const value = localStorage.getItem(THEME_KEY) ?? defaultDarkTheme;

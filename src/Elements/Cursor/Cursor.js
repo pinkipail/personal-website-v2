@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import CustomCursor from './CustomCursor';
 import './Cursor.css';
+import { NEED_INVERT } from '../../Common/hooks/useDarkTheme';
 
 // TODO: отрефакторить
 export default function Cursor() {
@@ -15,7 +16,7 @@ export default function Cursor() {
 
   return (
     <>
-      <svg className="cursor" width="90" height="90" viewBox="0 0 90 90">
+      <svg className={`cursor ${NEED_INVERT}`} width="90" height="90" viewBox="0 0 90 90">
         <defs>
           <filter
             id="filter-1"
