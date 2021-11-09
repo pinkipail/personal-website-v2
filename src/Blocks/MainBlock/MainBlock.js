@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap/gsap-core';
 import { ScrollTrigger } from 'gsap/all';
+import { useTranslation } from 'react-i18next';
 import classes from './MainBlock.module.css';
 import ScrollMessage from '../../Elements/ScrollMessage/ScrollMessage';
 import ScrollChangeText from '../../Elements/ScrollChangeText/ScrollChangeText';
@@ -9,9 +10,10 @@ import ScrollChangeText from '../../Elements/ScrollChangeText/ScrollChangeText';
 export default function MainBlock() {
   const secondTitleRef = useRef();
   const subtitleRef = useRef();
-  const subtitleWrapRef = useRef();
   const textRef = useRef();
   const scrollMessageRef = useRef();
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -37,15 +39,12 @@ export default function MainBlock() {
               DEVELOPER
             </div>
           </div>
-          <div
-            className={classes.titleWrap}
-            ref={subtitleWrapRef}
-          >
+          <div className={classes.titleWrap}>
             <div
               ref={subtitleRef}
               className={classes.subtitle}
             >
-              ФЕДОРОВ ВАСИЛИЙ
+              {t('my name')}
             </div>
           </div>
         </div>

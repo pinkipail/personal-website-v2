@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
@@ -7,11 +8,13 @@ import TextCircle from '../../Elements/TextCircle/TextCircle';
 import classes from './Skills.module.css';
 
 function Skills() {
+  const { t } = useTranslation();
+
   return (
     <BlockContainer>
       <div className={classes.wrap}>
         <div className={classes.title}>
-          <BlockTitle title="ТЕХНОЛОГИИ:" />
+          <BlockTitle title={t('about technologies:')} />
         </div>
         <div className={classes.bullets}>
           {bullets.map((bullet) => (
@@ -69,6 +72,7 @@ const bullets = [
   'Linux',
   'SVG-animation',
   // 'ООП',
+  // i18n,
 ];
 
 export default Skills;

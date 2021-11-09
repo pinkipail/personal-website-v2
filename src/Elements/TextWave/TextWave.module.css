@@ -17,6 +17,7 @@
 
 .char {
     position: relative;
+    min-width: 4rem;
     margin-left: -1rem;
     -webkit-text-stroke: 0.2rem #000;
 }

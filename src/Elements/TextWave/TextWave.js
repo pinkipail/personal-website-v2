@@ -2,18 +2,32 @@ import gsap from 'gsap/gsap-core';
 import React, { useEffect, useRef } from 'react';
 import classes from './TextWave.module.css';
 
-function TextWave() {
+// todo: fix for i18n
+function TextWave({ value: text }) {
   const tlRef = useRef(gsap.timeline({ paused: true }));
   const charsRef = useRef(createMatrix());
 
   useEffect(() => {
+    addAnimation();
+    playAnimation();
+    return clearAnimation;
+  }, [text]);
+
+  function addAnimation() {
     colors.forEach((color, i) => {
-      word.split('').forEach((char, j) => {
+      text.split('').forEach((char, j) => {
         animateWave(tlRef.current, charsRef.current[i][j], i, j);
       });
     });
+  }
+
+  function playAnimation() {
     tlRef.current.play();
-  }, []);
+  }
+
+  function clearAnimation() {
+    tlRef.current.clear();
+  }
 
   return (
     <span className={classes.container}>
@@ -23,7 +37,7 @@ function TextWave() {
           style={{ color }}
           key={i}
         >
-          {word.split('').map((char, j) => (
+          {text.split('').map((char, j) => (
             <span
               className={classes.char}
               ref={(ref) => { charsRef.current[i][j] = ref; }}
@@ -35,7 +49,7 @@ function TextWave() {
         </span>
       ))}
       <span className={classes.textHidden}>
-        {word}
+        {text}
       </span>
     </span>
   );
@@ -43,7 +57,6 @@ function TextWave() {
 
 // constansts
 
-const word = 'КОНЕЦ';
 const colors = ['#111111', '#333333', '#666666', '#999999', '#EEEEEE'];
 
 // animations

@@ -16,7 +16,7 @@ function SurfacingText({ children, reverse, sequence = true }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     initText();
-  }, []);
+  }, [children]);
 
   useEffect(() => {
     animationText();

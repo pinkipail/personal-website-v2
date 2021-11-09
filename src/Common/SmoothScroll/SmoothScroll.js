@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ScrollTrigger } from 'gsap/all';
 import useWindowSize from './hooks/useWindowSize';
 import './SmoothScroll.css';
@@ -13,6 +14,8 @@ const data = {
 
 const SmoothScroll = ({ children }) => {
   useWindowSize();
+  useTranslation();
+
   const scrollingContainerRef = useRef();
 
   function setBodyHeight() {

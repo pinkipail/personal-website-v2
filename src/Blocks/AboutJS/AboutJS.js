@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
 import BlockDescription from '../../Elements/BlockDescription/BlockDescription';
 import BlockImage from '../../Elements/BlockImage/BlockImage';
@@ -7,19 +8,19 @@ import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
 import classes from './AboutJS.module.css';
 
 export default function AboutJS() {
+  const { t } = useTranslation();
+
   return (
     <BlockContainer>
       <div className={classes.title}>
-        <BlockTitle title="О РАБОТЕ:" />
+        <BlockTitle title={t('about work:')} />
       </div>
       <div className={classes.container}>
         <div className={classes.description}>
           <BlockDescription>
-            Сейчас работаю фронтенд-разработчиком.<br />
-            Мне нравится создавать интерактивные веб-<br />
-            приложения с акцентом на анимированный<br />
-            контент, производительность и отзывчивость<br />
-            с помощью современных технологий.<br />
+            {Array(5).fill('').map((item, index) => (
+              t(`about work description.${index}`)
+            ))}
           </BlockDescription>
         </div>
 

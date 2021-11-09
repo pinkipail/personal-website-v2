@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
 import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
 import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
@@ -6,33 +7,35 @@ import classes from './Projects.module.css';
 import RevealAnimation from '../../Common/animation/RevealAnimation/RevealAnimation';
 
 function Projects() {
+  const { t } = useTranslation();
+
   return (
     <BlockContainer>
       <div className={classes.title}>
-        <BlockTitle title="ПРОЕКТЫ:" />
+        <BlockTitle title={t('about projects:')} />
       </div>
 
-      {projects.map((project) => (
+      {Array(3).fill('').map((item, index) => (
         <div
           className={classes.project}
-          key={project.name}
+          key={t(`projects items.${index}.description`)}
         >
           <RevealAnimation>
             <div className={classes.textWrap}>
               <div className={classes.projectDate}>
-                {project.dateStart} — <br />
-                {project.dateEnd}
+                {t(`projects items.${index}.dateStart`)} — <br />
+                {t(`projects items.${index}.dateEnd`)}
               </div>
               <div className={classes.projectDescription}>
                 <div className={classes.projectDescriptionTitle}>
-                  {project.name}
+                  {t(`projects items.${index}.name`)}
                 </div>
                 <div className={classes.projectDescriptionText}>
-                  {project.description}
+                  {t(`projects items.${index}.description`)}
                 </div>
               </div>
               <div className={classes.projectLocation}>
-                {project.location}
+                {t(`projects items.${index}.location`)}
               </div>
             </div>
             <div className={classes.projectUnderline} />
@@ -46,29 +49,5 @@ function Projects() {
     </BlockContainer>
   );
 }
-
-const projects = [
-  {
-    dateStart: '12.2019',
-    dateEnd: '05.2020',
-    name: 'ФРИЛАНС',
-    description: 'Дизайн и верстка лендингов, разработка приложений на React.',
-    location: 'удаленка',
-  },
-  {
-    dateStart: '06.2020',
-    dateEnd: '05.2021',
-    name: 'РТИ',
-    description: 'Работа на аутсорс проектах. Разработка приложений на Angular.',
-    location: 'калуга',
-  },
-  {
-    dateStart: '06.2021',
-    dateEnd: 'по настоящее время',
-    name: 'SENLA',
-    description: 'Аутстаффинг. Разработка приложений на Angular и React.',
-    location: 'гродно',
-  },
-];
 
 export default Projects;

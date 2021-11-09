@@ -1,23 +1,26 @@
 // TODO
 // наполнить страницу
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import SurfacingText from '../../Common/animation/SurfacingText/SurfacingText';
 import ContactLink from '../../Elements/ContactLink/ContactLink';
 import TextWave from '../../Elements/TextWave/TextWave';
 import classes from './Footer.module.css';
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <div className={classes.wrap}>
       <div className={classes.container}>
-        <TextWave />
+        <TextWave value={t('footer.end')} />
       </div>
       <div className={classes.footer}>
         <div className={classes.footerBlock}>
           <div className={classes.title}>
             <SurfacingText sequence={false}>
-              Связяться <br />
-              со мной:
+              {t('footer.contact')} <br />
+              {t('footer.me')}
             </SurfacingText>
           </div>
         </div>

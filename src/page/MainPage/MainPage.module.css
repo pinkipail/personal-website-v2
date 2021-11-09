@@ -8,10 +8,23 @@
     margin: 3rem;
 }
 
+.selectWrap {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    z-index: 3;
+}
+
 .header {
     top: 0;
 }
 
 .footer {
     bottom: 0;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

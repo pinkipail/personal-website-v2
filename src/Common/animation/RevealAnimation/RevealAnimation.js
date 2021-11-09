@@ -9,7 +9,6 @@ function RevealAnimation({ children }) {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     surfacingText(descriptionsRef.current);
     surfacingLine(linesRef.current);
   }, []);
