@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { ScrollTrigger } from 'gsap/all';
 import useWindowSize from './hooks/useWindowSize';
 import './SmoothScroll.css';
-import { NEED_INVERT } from '../hooks/useDarkTheme';
 
 const data = {
   ease: 0.1,
@@ -48,7 +47,7 @@ const SmoothScroll = ({ children }) => {
   }, []);
 
   return (
-    <div className={`parent ${NEED_INVERT}`}>
+    <div className="parent">
       <div ref={scrollingContainerRef}>{children}</div>
     </div>
   );

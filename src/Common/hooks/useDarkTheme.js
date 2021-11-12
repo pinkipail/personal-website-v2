@@ -26,6 +26,9 @@ export function useDarkTheme() {
 }
 
 function animatingThemeToggle(value) {
+  const html = document.documentElement;
+  animatingElementInvert(html, value);
+
   const elements = document.getElementsByClassName(NEED_INVERT);
   Array.from(elements).forEach((element) => {
     animatingElementInvert(element, value);

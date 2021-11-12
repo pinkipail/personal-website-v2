@@ -91,7 +91,7 @@ function animationHidingOptions(options) {
     gsap.to(option, {
       y: '0%',
       duration: 0.4,
-      delay: (options.length - i) * 0.05,
+      delay: (options.length - i) * 0.1,
       ease: 'power1.out',
     });
   });

@@ -3,7 +3,6 @@ import { NEED_INVERT } from '../../Common/hooks/useDarkTheme';
 import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import classes from './BlockImage.module.css';
 
-// todo: fix image invert on ios
 export default function BlockImage({ src, invert, style }) {
   const imageName = src.split('/').pop();
   const imageRef = useRef();

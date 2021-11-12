@@ -14,10 +14,11 @@ import Skills from '../../Blocks/Skills/Skills';
 import Projects from '../../Blocks/Projects/Projects';
 import RunningLine from '../../Elements/RunningLine/RunningLine';
 import Hobby from '../../Blocks/Hobby/Hobby';
-import { NEED_INVERT } from '../../Common/hooks/useDarkTheme';
 import LanguageSelect from '../../Elements/LanguageSelect/LanguageSelect';
+import useDetectBrowser from '../../Common/hooks/useDetectBrowser';
 
 export default function MainPage({ onLoading }) {
+  const browser = useDetectBrowser();
   useEffect(() => {
     onLoading();
   }, []);
@@ -25,20 +26,16 @@ export default function MainPage({ onLoading }) {
   return (
     <Background>
       <div className={classes.selectWrap}>
-        <div className={`${NEED_INVERT}`}>
-          <LanguageSelect />
-        </div>
+        <LanguageSelect />
       </div>
-      <div className={`${classes.header} ${NEED_INVERT}`}>
+      <div className={classes.header}>
         <Logo url="img/logo.svg" height="5rem" width="10.2" />
         <Logo url="img/logo1.svg" height="5rem" width="12.5" />
       </div>
 
       <div className={classes.footer}>
-        <div className={`${classes.footerContainer} ${NEED_INVERT}`}>
-          <ThemeButton />
-          <ProgressBar />
-        </div>
+        {!isFirefox(browser) && <ThemeButton />}
+        <ProgressBar />
       </div>
       <Suspense>
         <SmoothScroll>
@@ -54,4 +51,10 @@ export default function MainPage({ onLoading }) {
       </Suspense>
     </Background>
   );
+}
+
+// utils
+
+function isFirefox(browser) {
+  return browser.includes('Firefox');
 }
