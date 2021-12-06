@@ -77,14 +77,14 @@ i18n
           "let's meet": "«let's meet • let's meet • let's meet»",
           'about me:': 'about me:',
           'about me description': {
-            0: 'Hi, my name is Vasily. I am 22 years old.',
+            0: 'Hi, my name is Vasiliy. I am 22 years old.',
             1: 'I grew up in the small village of Novoegoryevskoye,',
             2: 'in the Altai Territory, on the outskirts of Russia.',
             3: 'Studied at the university with a degree in Software',
             4: 'Engineering, but in the third year dropped out ',
             5: 'of university and moved to Grodno, Belarus',
           },
-          'hobby :': 'hobby:',
+          'about hobby:': 'hobby:',
           'what fascinates me': 'what fascinates me',
           'hobby description': {
             0: 'I like to spend time with friends, get out ',
