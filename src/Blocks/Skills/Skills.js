@@ -1,78 +1,43 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import BlockContainer from '../../Elements/BlockContainer/BlockContainer';
-import BlockNumber from '../../Elements/BlockNumber/BlockNumber';
-import BlockTitle from '../../Elements/BlockTitle/BlockTitle';
-import TextCircle from '../../Elements/TextCircle/TextCircle';
+import React, { useEffect, useRef } from 'react';
 
-import classes from './Skills.module.css';
+import './Skills.css';
+import gsap from 'gsap/all';
+import ICONS_NAME from './consts/ICONS_NAME';
 
-function Skills() {
-  const { t } = useTranslation();
+const displayedIcons = 5;
+const ALL_ICONS_NAME = [...ICONS_NAME, ...ICONS_NAME.filter((item, i) => i < displayedIcons)];
+const iconsNumber = ICONS_NAME.length;
+const speed = 3;
+
+export default function Skills() {
+  const iconsRef = useRef();
+
+  useEffect(() => {
+    scrollingLine(iconsRef.current);
+  }, []);
 
   return (
-    <BlockContainer>
-      <div className={classes.wrap}>
-        <div className={classes.title}>
-          <BlockTitle title={t('about technologies:')} />
-        </div>
-        <div className={classes.bullets}>
-          {bullets.map((bullet) => (
-            <span
-              className={classes.bulletsItem}
-              key={bullet}
-            >
-              {bullet}
-            </span>
-          ))}
-        </div>
-        <div className={classes.footer}>
-          <div className={classes.textCircle}>
-            <TextCircle />
+    <div className="line">
+      <div className="line-content" ref={iconsRef}>
+        {ALL_ICONS_NAME.map((icon, i) => (
+          <div key={icon + i}>
+            <img src={`img/icons/skills/${icon}_icon.png`} alt={icon} />
           </div>
-          <div className={classes.number}>
-            <BlockNumber value="4" />
-          </div>
-        </div>
+        ))}
       </div>
-    </BlockContainer>
+    </div>
   );
 }
 
-// TODO: актуализировать Скилы
-const bullets = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'ES6+',
-  'W3C',
-  'Babel',
-  'Webpack',
-  'npm',
-  'yarn',
-  'Angular',
-  'TypeScript',
-  'RxJS',
-  'React ',
-  'Redux ',
-  'Next ',
-  'PWA ',
-  'UI/UX ',
-  'Photoshop ',
-  'Illustrator ',
-  'SASS ',
-  'BEM ',
-  'ESLint ',
-  'THREE.js',
-  'GSAP',
-  'WEBGL',
-  'Git ',
-  'CI/CD',
-  'Docker',
-  'Linux',
-  'SVG-animation',
-  // 'ООП',
-  // i18n,
-];
+// animations
 
-export default Skills;
+function scrollingLine(icons) {
+  gsap.fromTo(icons,
+    { x: 0 },
+    {
+      x: `${(-100 / displayedIcons) * iconsNumber}vw`,
+      repeat: -1,
+      duration: iconsNumber * speed,
+      ease: 'linear',
+    });
+}

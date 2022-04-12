@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap, { ScrollTrigger } from 'gsap/all';
 
+// todo: use in the future or delete
 function TextCircle() {
   const circleRef = useRef();
 

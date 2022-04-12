@@ -44,7 +44,7 @@ function Projects() {
       ))}
 
       <div className={classes.blockNumber}>
-        <BlockNumber value="5" />
+        <BlockNumber value="4" />
       </div>
     </BlockContainer>
   );

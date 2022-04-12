@@ -38,7 +38,6 @@ i18n
             3: 'контент, производительность и отзывчивость',
             4: 'с помощью современных технологий.',
           },
-          'about technologies:': 'технологии:',
           'about projects:': 'проекты:',
           'projects items': {
             0: {
@@ -103,7 +102,6 @@ i18n
             3: 'on animated content, performance and ',
             4: 'responsiveness using modern technologies.',
           },
-          'about technologies:': 'technologies:',
           'about projects:': 'projects:',
           'projects items': {
             0: {
