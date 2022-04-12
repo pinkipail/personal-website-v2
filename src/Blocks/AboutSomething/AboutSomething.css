@@ -1,0 +1,52 @@
+.line {
+    --width: 100vw;
+    --height: 12vw;
+    --icons-displayed: 5;
+    --element-width: calc(var(--width) / var(--icons-displayed));
+
+    position: relative;
+    overflow: hidden;
+    width: var(--width);
+    height: var(--height);
+    margin: 10vh 0;
+    background-color: #1c1c1c;
+    color: #eee;
+}
+
+.line::before,
+.line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 10vw;
+    height: 100%;
+}
+
+.line::before {
+    left: 0;
+    background: linear-gradient(to right, #111 0%, transparent 100%);
+}
+
+.line::after {
+    right: 0;
+    background: linear-gradient(to left, #111 0%, transparent 100%);
+}
+
+.line-content {
+    display: flex;
+    height: 100%;
+    filter: invert(0.9);
+}
+
+.line-content > div {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--element-width);
+}
+
+.line-content > div img {
+    height: calc(var(--height) * 0.7);
+}
