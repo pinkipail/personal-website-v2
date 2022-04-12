@@ -1,5 +1,6 @@
 // TODO
 // наполнить страницу
+// поправить год
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SurfacingText from '../../Common/animation/SurfacingText/SurfacingText';
