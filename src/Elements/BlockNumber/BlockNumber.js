@@ -1,6 +1,6 @@
 import { gsap, ScrollTrigger } from 'gsap/all';
 import React, { useEffect, useRef } from 'react';
-import { trigerConfig } from '../../Common/consts/scrollAnimation';
+import { triggerConfig } from '../../Common/consts/scrollAnimation';
 import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import classes from './BlockNumber.module.css';
 
@@ -43,7 +43,7 @@ function animateNumber(circle) {
     x: '-100%',
     scrollTrigger: {
       trigger: circle,
-      ...trigerConfig,
+      ...triggerConfig,
       start: '0% 125%',
       end: '0% 90%',
     },

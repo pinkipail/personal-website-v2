@@ -1,6 +1,6 @@
 import { gsap, ScrollTrigger } from 'gsap/all';
 import React, { useEffect, useRef } from 'react';
-import { trigerConfig } from '../../consts/scrollAnimation';
+import { triggerConfig } from '../../consts/scrollAnimation';
 import classes from './RevealAnimation.module.css';
 
 function RevealAnimation({ children }) {
@@ -38,7 +38,7 @@ function surfacingText(element) {
     {
       scrollTrigger: {
         trigger: element,
-        ...trigerConfig,
+        ...triggerConfig,
         start: '0% 125%',
         end: '0% 90%',
       },
@@ -58,7 +58,7 @@ function surfacingLine(element) {
   }, {
     scrollTrigger: {
       trigger: element,
-      ...trigerConfig,
+      ...triggerConfig,
       start: '0% 125%',
       end: '0% 90%',
     },
@@ -72,7 +72,7 @@ function surfacingLine(element) {
   }, {
     scrollTrigger: {
       trigger: element,
-      ...trigerConfig,
+      ...triggerConfig,
       start: '0% 125%',
       end: '0% 90%',
     },

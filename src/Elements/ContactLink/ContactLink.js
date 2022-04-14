@@ -5,7 +5,7 @@ import classes from './ContactLink.module.css';
 function ContactLink({ text, icon, href }) {
   return (
     <RevealAnimation>
-      <div className={`${classes.container} cursor-anumation`}>
+      <div className={`${classes.container} cursor-animation`}>
         <img
           className={classes.icon}
           src={icon}
@@ -13,7 +13,7 @@ function ContactLink({ text, icon, href }) {
         />
         <div className={classes.linkWrap}>
           <a
-            className={`${classes.link} cursor-anumation`}
+            className={`${classes.link} cursor-animation`}
             href={href}
             target="_blank"
             rel="noreferrer"

@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import CustomCursor from './CustomCursor';
 import './Cursor.css';
 
-// TODO: отрефакторить
+// TODO: рефакторинг
 export default function Cursor() {
   useEffect(() => {
     const cursor = new CustomCursor(document.querySelector('.cursor'));
 
-    [...document.querySelectorAll('.cursor-anumation')].forEach((el) => {
+    [...document.querySelectorAll('.cursor-animation')].forEach((el) => {
       el.addEventListener('mouseenter', () => cursor.emit('enter'));
       el.addEventListener('mouseleave', () => cursor.emit('leave'));
     });

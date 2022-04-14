@@ -1,10 +1,5 @@
-// Map number x from range [a, b] to [c, d]
-const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
-
 // Linear interpolation
 const interpolation = (a, b, n) => (1 - n) * a + n * b;
-
-const calcWinsize = () => ({ width: window.innerWidth, height: window.innerHeight });
 
 // Gets the mouse position
 const getMousePos = (e) => ({
@@ -13,5 +8,5 @@ const getMousePos = (e) => ({
 });
 
 export {
-  map, interpolation, calcWinsize, getMousePos,
+  interpolation, getMousePos,
 };

@@ -1,12 +1,13 @@
 // TODO
 // наполнить страницу
-// поправить год
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SurfacingText from '../../Common/animation/SurfacingText/SurfacingText';
 import ContactLink from '../../Elements/ContactLink/ContactLink';
 import TextWave from '../../Elements/TextWave/TextWave';
 import classes from './Footer.module.css';
+
+const year = new Date().getFullYear();
 
 function Footer() {
   const { t } = useTranslation();
@@ -25,7 +26,7 @@ function Footer() {
             </SurfacingText>
           </div>
         </div>
-        <div className={classes.spliter} />
+        <div className={classes.splitter} />
         <div className={classes.footerItem}>
           <div className={classes.contacts}>
             <ContactLink
@@ -46,7 +47,7 @@ function Footer() {
           </div>
         </div>
         <div className={classes.copyright}>
-          Copyright 2021 by Fedorov Vasiliy. All rights reserved.
+          Copyright {year} by Fedorov Vasiliy. All rights reserved.
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default function ThemeButton() {
           defaultChecked={darkTheme}
           onChange={() => setDarkTheme(true)}
         />
-        <label htmlFor="toggle-on" className="toggle__btn cursor-anumation">
+        <label htmlFor="toggle-on" className="toggle__btn cursor-animation">
           dark
         </label>
 
@@ -30,7 +30,7 @@ export default function ThemeButton() {
           defaultChecked={!darkTheme}
           onChange={() => setDarkTheme(false)}
         />
-        <label htmlFor="toggle-off" className="toggle__btn cursor-anumation">
+        <label htmlFor="toggle-off" className="toggle__btn cursor-animation">
           light
         </label>
       </div>

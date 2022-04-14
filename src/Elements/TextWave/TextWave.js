@@ -2,7 +2,6 @@ import gsap from 'gsap/gsap-core';
 import React, { useEffect, useRef } from 'react';
 import classes from './TextWave.module.css';
 
-// todo: fix for i18n
 function TextWave({ value: text }) {
   const tlRef = useRef(gsap.timeline({ paused: true }));
   const charsRef = useRef(createMatrix());
@@ -14,7 +13,7 @@ function TextWave({ value: text }) {
   }, [text]);
 
   function addAnimation() {
-    colors.forEach((color, i) => {
+    colors.forEach((_, i) => {
       text.split('').forEach((char, j) => {
         animateWave(tlRef.current, charsRef.current[i][j], i, j);
       });
@@ -55,7 +54,7 @@ function TextWave({ value: text }) {
   );
 }
 
-// constansts
+// constants
 
 const colors = ['#111111', '#333333', '#666666', '#999999', '#EEEEEE'];
 

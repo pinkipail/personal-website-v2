@@ -1,6 +1,6 @@
 import { gsap, ScrollTrigger } from 'gsap/all';
 import React, { useEffect, useRef, useState } from 'react';
-import { trigerConfig } from '../../consts/scrollAnimation';
+import { triggerConfig } from '../../consts/scrollAnimation';
 import classes from './SurfacingText.module.css';
 
 function SurfacingText({ children, reverse, sequence = true }) {
@@ -76,7 +76,7 @@ function surfacingText(element, trigger, config, index) {
   }, {
     scrollTrigger: {
       trigger,
-      ...trigerConfig,
+      ...triggerConfig,
       start: '0% 125%',
       end: '-0% 90%',
     },

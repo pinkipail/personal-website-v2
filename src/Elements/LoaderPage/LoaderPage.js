@@ -3,7 +3,6 @@ import gsap from 'gsap/gsap-core';
 import LoadingLine from '../LoadingLine/LoadingLine';
 
 // TODO: Улучшить анимация загрузки https://www.behance.net/gallery/63574251/Personal-Portfolio-Website-Design?tracking_source=search_projects_recommended%7Cwebsite%20personal
-// поправить ©Copyright масло масленое
 import classes from './LoaderPage.module.css';
 
 const year = new Date().getFullYear();
@@ -32,9 +31,9 @@ function LoaderPage({ animation }) {
         ref={textRef}
         className={classes.loaderContent}
       >
-        VASILIIY FEDOROV
+        VASILIY FEDOROV
         <br />
-        ©Copyright — {year}
+        Copyright — {year}
       </div>
       <div className={classes.lineWrap}>
         <LoadingLine animation={animation} />

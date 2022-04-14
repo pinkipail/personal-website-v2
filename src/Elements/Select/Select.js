@@ -43,10 +43,10 @@ function Select({ options, defaultOption, onChange }) {
     <div className={classes.wrap}>
       <div ref={selectRef} className={classes.select}>
         <div
-          className={`${classes.label} cursor-anumation ${isOpen ? classes.active : ''}`}
+          className={`${classes.label} cursor-animation ${isOpen ? classes.active : ''}`}
           onClick={toggleSelect}
         >
-          <img src="img/icons/earthg.svg" alt="earthg" />
+          <img src="img/icons/earth.svg" alt="earth" />
           <div className={classes.labelText}>
             {selectedOption.name}
           </div>
@@ -57,7 +57,7 @@ function Select({ options, defaultOption, onChange }) {
             <div
               ref={(ref) => { optionsRef.current[i] = ref; }}
               key={option.value}
-              className={`${classes.optionsItem} cursor-anumation ${option.value === selectedOption.value ? classes.active : ''}`}
+              className={`${classes.optionsItem} cursor-animation ${option.value === selectedOption.value ? classes.active : ''}`}
               rel={option.value}
               style={{ zIndex: options.length - i }}
               onClick={() => selectOption(option)}
