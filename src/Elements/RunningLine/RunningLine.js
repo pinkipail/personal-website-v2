@@ -18,7 +18,6 @@ function RunningLine() {
       ref={lineRef}
     >
       {t("let's meet")}
-      «давайте знакомиться • давайте знакомиться»
     </div>
   );
 }

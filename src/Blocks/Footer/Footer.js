@@ -47,7 +47,7 @@ function Footer() {
           </div>
         </div>
         <div className={classes.copyright}>
-          Copyright {year} by Fedorov Vasiliy. All rights reserved.
+          Copyright {year} by Vasiliy Fedorov. All rights reserved.
         </div>
       </div>
     </div>

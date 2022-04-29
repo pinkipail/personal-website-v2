@@ -41,11 +41,11 @@ i18n
           'about projects:': 'проекты:',
           'projects items': {
             0: {
-              dateStart: '12.2019',
-              dateEnd: '05.2020',
-              name: 'ФРИЛАНС',
-              description: 'Дизайн и верстка лендингов, разработка приложений на React.',
-              location: 'удаленка',
+              dateStart: '06.2021',
+              dateEnd: 'по настоящее время',
+              name: 'SENLA',
+              description: 'Аутстаффинг. Разработка приложений на Angular и React.',
+              location: 'гродно',
             },
             1: {
               dateStart: '06.2020',
@@ -55,11 +55,11 @@ i18n
               location: 'калуга',
             },
             2: {
-              dateStart: '06.2021',
-              dateEnd: 'по настоящее время',
-              name: 'SENLA',
-              description: 'Аутстаффинг. Разработка приложений на Angular и React.',
-              location: 'гродно',
+              dateStart: '12.2019',
+              dateEnd: '05.2020',
+              name: 'ФРИЛАНС',
+              description: 'Дизайн и верстка лендингов, разработка приложений на React.',
+              location: 'удаленка',
             },
           },
           'footer': {
@@ -105,11 +105,11 @@ i18n
           'about projects:': 'projects:',
           'projects items': {
             0: {
-              dateStart: '12.2019',
-              dateEnd: '05.2020',
-              name: 'FREELANCE',
-              description: 'Creating landing pages, application development on React.',
-              location: 'remote',
+              dateStart: '06.2021',
+              dateEnd: 'to the present',
+              name: 'SENLA',
+              description: 'Outstaffing. Application development in Angular and React.',
+              location: 'Grodno',
             },
             1: {
               dateStart: '06.2020',
@@ -119,11 +119,11 @@ i18n
               location: 'Kaluga',
             },
             2: {
-              dateStart: '06.2021',
-              dateEnd: 'to the present',
-              name: 'SENLA',
-              description: 'Outstaffing. Application development in Angular and React.',
-              location: 'Grodno',
+              dateStart: '12.2019',
+              dateEnd: '05.2020',
+              name: 'FREELANCE',
+              description: 'Creating landing pages, application development on React.',
+              location: 'remote',
             },
           },
           'footer': {

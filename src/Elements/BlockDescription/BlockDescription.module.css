@@ -1,5 +1,6 @@
 .description {
     font-size: 3rem;
+    line-height: 1.35;
     letter-spacing: 0.07em;
     white-space: nowrap;
 }
