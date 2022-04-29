@@ -5,7 +5,6 @@ uniform float iResolution;
 uniform float iScrollPos;          
 uniform float iTime;          
 uniform float iMouse;          
-uniform float iColorTheme;          
 
 vec4 BS_A = vec4(3.0, -6.0, 0.0, 4.0) / 6.0;
 vec4 BS_B = vec4(-1.0, 6.0,-12.0, 8.0) / 6.0;
@@ -61,13 +60,9 @@ void main() {
 
     vec3 col = vec3(1.); 
     col *= k1 * k2 * k3;
-    if (iColorTheme > 0.5) {
-        col = vec3(iColorTheme) - col;
-        col *= vec3(130.0, 137.0, 143.0) / 255.0 * 0.7; // TODO: remove
-    } else {
-        col = vec3(iColorTheme) + col;
-        col *= col * 0.5; // TODO: remove
-    }
+    col = 1.0 - col;
+    col *= vec3(130.0, 137.0, 143.0) / 255.0 * 0.6; // TODO: remove
+
     gl_FragColor = vec4(col,1);
 }
 `;

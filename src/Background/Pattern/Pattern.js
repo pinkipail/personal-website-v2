@@ -18,7 +18,6 @@ class PatternMaterial extends THREE.ShaderMaterial {
         },
         iScrollPos: { type: 'f', value: 0 },
         iTexture: { type: 't', value: null },
-        iColorTheme: { type: 'f', value: 1 },
       },
       fragmentShader: fragment,
     });
