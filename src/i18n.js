@@ -91,8 +91,8 @@ i18n
             2: 'years of hanging out in the evenings at ',
             3: 'the board games or sitting in the bar. I like ',
             4: 'to play video games with an atmospheric plot. ',
-            5: 'I like to throw a party at us during breaks ',
-            6: 'at work- table tennis. I like to eat and sleep.',
+            5: 'I like to play table tennis during breaks ',
+            6: 'at work. I like to eat and sleep.',
           },
           'about work:': 'about work:',
           'about work description': {
