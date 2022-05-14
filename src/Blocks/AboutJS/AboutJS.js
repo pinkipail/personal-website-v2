@@ -12,26 +12,30 @@ export default function AboutJS() {
 
   return (
     <BlockContainer>
-      <div className={classes.title}>
-        <BlockTitle title={t('about work:')} />
-      </div>
       <div className={classes.container}>
-        <div className={classes.description}>
-          <BlockDescription>
-            {Array(5).fill('').map((item, index) => (
-              t(`about work description.${index}`)
-            ))}
-          </BlockDescription>
+        <div>
+          <div className={classes.title}>
+            <BlockTitle title={t('about work:')} />
+          </div>
+          <div className={classes.description}>
+            <BlockDescription>
+              {Array(5).fill('').map((item, index) => (
+                t(`about work description.${index}`)
+              ))}
+            </BlockDescription>
+          </div>
         </div>
 
         <div className={classes.image}>
           <BlockImage
             src="img/js-logo.png"
             style={{
-              height: '57.5rem',
-              width: '57.5rem',
+              height: '60rem',
+              width: '60rem',
               opacity: '0.2',
             }}
+            deltaStart="0"
+            deltaEnd="0"
           />
         </div>
       </div>

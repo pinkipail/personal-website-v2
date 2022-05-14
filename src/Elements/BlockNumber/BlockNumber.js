@@ -4,7 +4,7 @@ import { triggerConfig } from '../../Common/consts/scrollAnimation';
 import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import classes from './BlockNumber.module.css';
 
-export default function BlockNumber({ value }) {
+export default function BlockNumber({ value, deltaStart = '5rem', deltaEnd = '-5rem' }) {
   const numberRef = useRef([]);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +13,10 @@ export default function BlockNumber({ value }) {
     });
   }, []);
   return (
-    <ParallaxScrolling deltaStart="5rem" deltaEnd="-5rem">
+    <ParallaxScrolling
+      deltaStart={deltaStart}
+      deltaEnd={deltaEnd}
+    >
       <div className={classes.container}>
         <div className={classes.wrap}>
           <div

@@ -3,15 +3,17 @@ import { NEED_INVERT } from '../../Common/hooks/useDarkTheme';
 import ParallaxScrolling from '../../Common/ParallaxScrolling/ParallaxScrolling';
 import classes from './BlockImage.module.css';
 
-export default function BlockImage({ src, invert, style }) {
+export default function BlockImage({
+  src, invert, style, deltaStart = '5rem', deltaEnd = '-5rem',
+}) {
   const imageName = src.split('/').pop();
   const imageRef = useRef();
 
   return (
     <div className={classes.wrap}>
       <ParallaxScrolling
-        deltaStart="5rem"
-        deltaEnd="-5rem"
+        deltaStart={deltaStart}
+        deltaEnd={deltaEnd}
       >
         <span className={classes.container}>
           <img

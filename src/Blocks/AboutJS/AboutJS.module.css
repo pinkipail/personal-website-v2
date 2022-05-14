@@ -5,18 +5,15 @@
 }
 
 .title {
-    margin-left: 15rem;
+    margin-top: -1rem;
+    margin-left: 27.5rem;
 }
 
 .description {
     position: relative;
     z-index: 1;
     margin-top: 5rem;
-    transform: translate(10%, 8%);
-}
-
-.image {
-    transform: translateX(-10%);
+    transform: translateY(8%);
 }
 
 .number {
@@ -24,7 +21,6 @@
     bottom: 0;
     left: 0;
     line-height: 0.75;
-    transform: translate(30%, 0);
 }
 
 @media (max-width: 769px) {

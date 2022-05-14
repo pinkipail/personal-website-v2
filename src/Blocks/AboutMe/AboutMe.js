@@ -32,7 +32,11 @@ export default function AboutMe() {
         invert={true}
       />
       <div className={classes.number}>
-        <BlockNumber value="1" />
+        <BlockNumber
+          value="1"
+          deltaStart="0"
+          deltaEnd="0"
+        />
       </div>
     </BlockContainer>
   );
