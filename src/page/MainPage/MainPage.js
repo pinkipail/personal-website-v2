@@ -25,12 +25,10 @@ export default function MainPage({ onLoading }) {
 
   return (
     <Background>
-      <div className={classes.selectWrap}>
-        <LanguageSelect />
-      </div>
+
       <div className={classes.header}>
         <Logo url="img/logo.svg" height="5rem" width="10.2" />
-        <Logo url="img/logo1.svg" height="5rem" width="12.5" />
+        <LanguageSelect />
       </div>
 
       <div className={classes.footer}>

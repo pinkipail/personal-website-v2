@@ -8,13 +8,6 @@
     margin: 3rem;
 }
 
-.selectWrap {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    z-index: 3;
-}
-
 .header {
     top: 0;
 }
