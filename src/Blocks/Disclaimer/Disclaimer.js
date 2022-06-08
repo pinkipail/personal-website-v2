@@ -11,7 +11,9 @@ export default function Disclaimer() {
         <div className={classes.disclaimer}>
           {t('disclaimer title.first')}<br />
           {t('disclaimer title.second')}
-
+        </div>
+        <div className={`${classes.disclaimer} ${classes.disclaimerFull}`}>
+          {t('disclaimer title.full')}<br />
         </div>
         <BlockDescription
           deltaStart={0}

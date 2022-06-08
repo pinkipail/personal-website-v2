@@ -5,3 +5,9 @@
     letter-spacing: 0.07em;
     white-space: nowrap;
 }
+
+@media (max-width: 769px) {
+    .description {
+        font-size: 4rem;
+    }
+}

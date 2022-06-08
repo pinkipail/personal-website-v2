@@ -11,6 +11,7 @@ i18n
           'my name': 'ВАСИЛИЙ ФЕДОРОВ',
           "let's meet": '«давайте знакомиться • давайте знакомиться»',
           'disclaimer title': {
+            'full': 'ДИСКЛЕЙМЕР:',
             'first': 'ДИСКЛ-',
             'second': 'ЕЙМЕР:',
           },
@@ -87,6 +88,7 @@ i18n
           'my name': 'VASILIY FEDOROV',
           "let's meet": "«let's meet • let's meet • let's meet»",
           'disclaimer title': {
+            'full': 'DISCLAIMER:',
             'first': 'DISCL-',
             'second': 'AIMER',
           },
