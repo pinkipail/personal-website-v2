@@ -6,5 +6,9 @@
 .wrapBlurred {
     overflow: hidden;
     padding: 0 1rem;
+}
+
+.wrapBlurred div {
+    display: inline-block;
     backdrop-filter: blur(4px);
 }
