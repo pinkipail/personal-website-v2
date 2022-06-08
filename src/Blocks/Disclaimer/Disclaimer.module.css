@@ -1,0 +1,17 @@
+.wrap {
+    margin: 0 10vw 22vw;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.disclaimer {
+    margin-top: -1.3rem;
+    font-weight: 900;
+    font-size: 13rem;
+    line-height: 107%;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+}

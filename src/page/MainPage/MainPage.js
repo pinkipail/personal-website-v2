@@ -16,6 +16,7 @@ import RunningLine from '../../Elements/RunningLine/RunningLine';
 import Hobby from '../../Blocks/Hobby/Hobby';
 import LanguageSelect from '../../Elements/LanguageSelect/LanguageSelect';
 import useDetectBrowser from '../../Common/hooks/useDetectBrowser';
+import Disclaimer from '../../Blocks/Disclaimer/Disclaimer';
 
 export default function MainPage({ onLoading }) {
   const browser = useDetectBrowser();
@@ -37,6 +38,7 @@ export default function MainPage({ onLoading }) {
       <Suspense>
         <SmoothScroll>
           <MainBlock />
+          <Disclaimer />
           <RunningLine />
           <AboutMe />
           <Hobby />
