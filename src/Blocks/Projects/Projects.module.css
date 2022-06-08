@@ -14,6 +14,7 @@
     flex-grow: 1;
     overflow: hidden;
     padding: 2rem 0 2rem;
+    backdrop-filter: blur(4px);
 }
 
 .project {

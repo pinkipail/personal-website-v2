@@ -11,6 +11,7 @@
     margin: 10vh 0;
     background-color: #1c1c1c;
     color: #eee;
+    backdrop-filter: blur(6px);
 }
 
 .line::before,

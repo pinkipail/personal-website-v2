@@ -25,7 +25,6 @@ export default function MainPage({ onLoading }) {
 
   return (
     <Background>
-
       <div className={classes.header}>
         <Logo url="img/logo.svg" height="5rem" width="10.2" />
         <LanguageSelect />

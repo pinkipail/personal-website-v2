@@ -20,7 +20,7 @@ function Footer() {
       <div className={classes.footer}>
         <div className={classes.footerBlock}>
           <div className={classes.title}>
-            <SurfacingText sequence={false}>
+            <SurfacingText sequence={false} backBlur={false}>
               {t('footer.contact')} <br />
               {t('footer.me')}
             </SurfacingText>

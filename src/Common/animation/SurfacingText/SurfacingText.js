@@ -3,7 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { triggerConfig } from '../../consts/scrollAnimation';
 import classes from './SurfacingText.module.css';
 
-function SurfacingText({ children, reverse, sequence = true }) {
+function SurfacingText({
+  children, reverse, sequence = true, backBlur = true,
+}) {
   const textsRef = useRef([]);
   const wrapRef = useRef();
   const [texts, setTexts] = useState([]);
@@ -44,7 +46,7 @@ function SurfacingText({ children, reverse, sequence = true }) {
     <div ref={wrapRef}>
       {texts.map((text, i) => (
         <div
-          className={classes.wrap}
+          className={backBlur ? classes.wrapBlurred : classes.wrap}
           key={text}
         >
           <div ref={(ref) => { textsRef.current[i] = ref; }}>
