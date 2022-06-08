@@ -42,8 +42,8 @@ float eval(vec2 uv, float time) {
     return cos(iTime * 0.05) + 11.0*texture_Bicubic(vec2(1., time) + uv).x;
 }
 
-float isoline(float val, float lg, float ref, float pas, float tickness) {
-    float v = abs(mod(val-ref+pas*0.5, pas)-pas*0.5)/lg - 0.1*tickness + 0.3;
+float isoline(float val, float lg, float ref, float quantity, float thickness) {
+    float v = abs(mod(val - ref + quantity * 0.5, quantity) - quantity * 0.5) / lg - thickness;
     return smoothstep(0.0,1.0, v);
 }
 
@@ -54,14 +54,14 @@ void main() {
     float lg = 2.*length(vec2(dFdx(val), dFdy(val)));
     float ref = 1.0;
     
-    float k1 = isoline(val, lg, ref, 0.5, 1.0);
-    float k2 = isoline(val, lg, ref, 2.0, 3.0);
-    float k3 = isoline(val, lg, ref, 4.0, 10.0);
+    float k1 = isoline(val, lg, ref, 1.0, 0.2);
+    float k2 = isoline(val, lg, ref, 3.0, 0.7);
+    float k3 = isoline(val, lg, ref, 6.0, 1.5);
 
     vec3 col = vec3(1.); 
     col *= k1 * k2 * k3;
     col = 1.0 - col;
-    col *= vec3(130.0, 137.0, 143.0) / 255.0 * 0.6; // TODO: remove
+    col *= vec3(130.0, 137.0, 143.0) / 255.0 * 0.6;
 
     gl_FragColor = vec4(col,1);
 }
