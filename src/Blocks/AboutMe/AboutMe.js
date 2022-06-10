@@ -17,7 +17,7 @@ export default function AboutMe() {
       </div>
       <div className={classes.description}>
         <BlockDescription>
-          {Array(6).fill('').map((item, index) => (
+          {Array(8).fill('').map((item, index) => (
             t(`about me description.${index}`)
           ))}
         </BlockDescription>
