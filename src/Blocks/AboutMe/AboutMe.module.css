@@ -16,10 +16,10 @@
 }
 
 .number {
-    position: relative;
-    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     line-height: 0.75;
-    transform: translateY(-95%);
 }
 
 @media (max-width: 769px) {

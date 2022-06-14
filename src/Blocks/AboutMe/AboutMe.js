@@ -25,8 +25,8 @@ export default function AboutMe() {
       <BlockImage
         src="img/photo-me.jpg"
         style={{
-          height: '47.5rem',
-          width: '72.2rem',
+          height: '48.5rem',
+          width: '74rem',
           opacity: 0.7,
         }}
         invert={true}

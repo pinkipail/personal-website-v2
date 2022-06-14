@@ -1,5 +1,7 @@
 .wrap {
+    display: inline-block;
     overflow: hidden;
+    border-radius: 0.8rem;
 }
 
 .container {
