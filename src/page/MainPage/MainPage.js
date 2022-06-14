@@ -17,6 +17,7 @@ import Hobby from '../../Blocks/Hobby/Hobby';
 import LanguageSelect from '../../Elements/LanguageSelect/LanguageSelect';
 import useDetectBrowser from '../../Common/hooks/useDetectBrowser';
 import Disclaimer from '../../Blocks/Disclaimer/Disclaimer';
+import FavoriteQuote from '../../Blocks/FavoriteQuote/FavoriteQuote';
 
 export default function MainPage({ onLoading }) {
   const browser = useDetectBrowser();
@@ -42,6 +43,7 @@ export default function MainPage({ onLoading }) {
           <RunningLine />
           <AboutMe />
           <Hobby />
+          <FavoriteQuote />
           <AboutJS />
           <Skills />
           <Projects />

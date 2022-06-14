@@ -53,6 +53,15 @@ i18n
             'контент, производительность и отзывчивость',
             'с помощью современных технологий.',
           ],
+          'favorite quote': 'любимая цитата',
+          'favorite quote description': [
+            '«На своём веку я много встречал разных серьёзных людей.',
+            'Я долго жил среди взрослых. Я видел их совсем близко.',
+            'И от этого, признаться, не стал думать о них лучше»',
+          ],
+          'little prince': '«Маленький принц»',
+          'little prince author': 'Антуан де Сент-Экзюпери',
+
           'about projects:': 'проекты:',
           'projects items': {
             0: {
@@ -124,6 +133,16 @@ i18n
             'I like to play table tennis during breaks ',
             'at work. I like to eat and sleep.',
           ],
+          'favorite quote': 'favorite quote',
+          'favorite quote description': [
+            '«In the course of this life I have had a great many encounters',
+            'with a great many people who have been concerned with',
+            'matters of consequence. I have lived a great deal among',
+            'grown-ups. I have seen them intimately, close at hand.',
+            "And that hasn't much improved my opinion of them»",
+          ],
+          'little prince': '«The Little Prince»',
+          'little prince author': 'Antoine de Saint Exupery',
           'about work:': 'about work:',
           'about work description': [
             'I am currently working as a frontend ',

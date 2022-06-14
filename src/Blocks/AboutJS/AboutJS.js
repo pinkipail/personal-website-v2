@@ -41,7 +41,7 @@ export default function AboutJS() {
       </div>
 
       <div className={classes.number}>
-        <BlockNumber value="3" />
+        <BlockNumber value="4" />
       </div>
     </BlockContainer>
   );

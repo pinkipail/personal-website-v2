@@ -1,0 +1,66 @@
+.container {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        ". text"
+        "image  description"
+        "image  author";
+    grid-template-rows: repeat(3, fit-content);
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    margin: 10vw 10vw;
+}
+
+.text {
+    grid-area: text;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 4.5rem;
+}
+
+.text span {
+    padding: 0 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.description {
+    position: relative;
+    z-index: 1;
+    grid-area: description;
+    justify-self: end;
+    margin-top: -0.7rem;
+}
+
+.author {
+    position: relative;
+    z-index: 1;
+    grid-area: author;
+    justify-self: end;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 125%;
+    letter-spacing: 0.1rem;
+}
+
+.image {
+    display: inline-block;
+    grid-area: image;
+    margin-right: 3rem;
+    border-radius: 0.8rem;
+}
+
+.blockNumber {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+@media (max-width: 769px) {
+    .container {
+        grid-template-areas:
+            ". text"
+            "description  description"
+            ".  author"
+            "image  image";
+    }
+}
