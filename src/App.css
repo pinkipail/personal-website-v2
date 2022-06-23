@@ -1,0 +1,6 @@
+:root {
+    --background: #00000040;
+    --background-hover: #ffffff40;
+    --background-active: white;
+    --backdrop-filter: blur(4px);
+}

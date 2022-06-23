@@ -5,10 +5,10 @@
 
 .wrapBlurred {
     overflow: hidden;
-    padding: 0 1rem;
 }
 
 .wrapBlurred div {
     display: inline-block;
+    padding: 0 1rem;
     backdrop-filter: blur(4px);
 }

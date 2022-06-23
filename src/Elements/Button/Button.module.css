@@ -1,0 +1,26 @@
+.button {
+    height: 50px;
+    padding: 0 24px;
+    border: none;
+    border: 3px solid #fff;
+    border-radius: 6px;
+    background: white;
+    color: black;
+    font-size: 28px;
+}
+
+.button:hover {
+    background: var(--background-hover);
+    color: white;
+    transition-duration: 0.3s;
+    backdrop-filter: blur(4px);
+}
+
+.button:active {
+    background: var(--background);
+}
+
+.button:disabled {
+    background: rgb(156, 156, 156);
+    color: rgb(78, 76, 76);
+}

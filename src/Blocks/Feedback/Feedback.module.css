@@ -1,0 +1,60 @@
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "text  description description"
+        "face description description"
+        "face textarea starRating"
+        "face textarea button"
+        "face . .";
+    grid-template-columns: 60rem 1fr auto;
+    margin: 15vw 10vw 4vw;
+}
+
+.text {
+    grid-area: text;
+    margin-bottom: 19rem;
+    font-weight: bold;
+    font-size: 4.5rem;
+    line-height: 0.9;
+}
+
+.text span {
+    padding: 0 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.face {
+    grid-area: face;
+    align-self: end;
+    justify-self: center;
+    margin-right: 10rem;
+    opacity: 0.8;
+    transform: translateY(-10rem);
+}
+
+.face img {
+    height: 32rem;
+}
+
+.description {
+    grid-area: description;
+    margin-bottom: 4rem;
+}
+
+.textarea {
+    grid-area: textarea;
+    margin-right: 10rem;
+    margin-left: 1rem;
+}
+
+.starRating {
+    grid-area: starRating;
+    justify-self: end;
+}
+
+.button {
+    grid-area: button;
+    align-self: end;
+    justify-self: end;
+}

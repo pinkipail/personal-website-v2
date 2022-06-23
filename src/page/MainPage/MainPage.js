@@ -11,13 +11,13 @@ import Footer from '../../Blocks/Footer/Footer';
 import AboutJS from '../../Blocks/AboutJS/AboutJS';
 import AboutMe from '../../Blocks/AboutMe/AboutMe';
 import Skills from '../../Blocks/Skills/Skills';
-import Projects from '../../Blocks/Projects/Projects';
 import RunningLine from '../../Elements/RunningLine/RunningLine';
 import Hobby from '../../Blocks/Hobby/Hobby';
 import LanguageSelect from '../../Elements/LanguageSelect/LanguageSelect';
 import useDetectBrowser from '../../Common/hooks/useDetectBrowser';
 import Disclaimer from '../../Blocks/Disclaimer/Disclaimer';
 import FavoriteQuote from '../../Blocks/FavoriteQuote/FavoriteQuote';
+import Feedback from '../../Blocks/Feedback/Feedback';
 
 export default function MainPage({ onLoading }) {
   const browser = useDetectBrowser();
@@ -46,7 +46,7 @@ export default function MainPage({ onLoading }) {
           <FavoriteQuote />
           <AboutJS />
           <Skills />
-          <Projects />
+          <Feedback />
           <Footer />
         </SmoothScroll>
       </Suspense>

@@ -86,12 +86,19 @@ i18n
               location: 'удаленка',
             },
           },
+          'feedback write something': 'напиши что-нибудь',
+          'feedback description': [
+            'Здесь ты можешь рассказать, что думаешь о сайте,',
+            'что нравится, что не нравится, а что можно улучшить.',
+            'Или же просто поделиться своими впечатлениями :)',
+          ],
+          'feedback send': 'отправить',
           'footer': {
             'contact': 'Связаться',
             'me': 'со мной:',
             'end': 'конец',
           },
-
+          'placeholder': 'Введите текст',
         },
       },
       en: {
@@ -175,12 +182,19 @@ i18n
               location: 'remote',
             },
           },
+          'feedback write something': 'write something',
+          'feedback description': [
+            'Here you can tell what you think about the site,',
+            "what you like, what you don't like, and what can",
+            'be improved. Or just share your impressions :)',
+          ],
+          'feedback send': 'send',
           'footer': {
             'contact': 'Contact',
             'me': 'with me:',
             'end': 'the end',
           },
-
+          'placeholder': 'Enter the text',
         },
       },
     },
