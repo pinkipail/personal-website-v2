@@ -3,4 +3,5 @@
     --background-hover: #ffffff40;
     --background-active: white;
     --backdrop-filter: blur(4px);
+    --border-radius: 8px;
 }

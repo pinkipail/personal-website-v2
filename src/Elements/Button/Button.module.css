@@ -3,7 +3,7 @@
     padding: 0 24px;
     border: none;
     border: 3px solid #fff;
-    border-radius: 6px;
+    border-radius: var(--border-radius);
     background: white;
     color: black;
     font-size: 28px;

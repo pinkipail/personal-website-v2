@@ -1,11 +1,11 @@
 import React from 'react';
-import './ProgressBar.css';
 import useScrollProgress from '../../Common/hooks/useScrollProgress';
+import classes from './ProgressBar.module.css';
 
 export default function ProgressBar() {
   const scrolled = useScrollProgress() * 1.25;
   return (
-    <svg className="spinner" viewBox="0 0 50 50">
+    <svg className={classes.spinner} viewBox="0 0 50 50">
       <circle
         cx="25"
         cy="25"

@@ -1,0 +1,6 @@
+.spinner {
+    align-self: end;
+    width: 34px;
+    height: 34px;
+    transform: rotate(-90deg);
+}

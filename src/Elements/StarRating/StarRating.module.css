@@ -10,8 +10,8 @@
     height: 70px;
     padding: 0 20px;
     border: 3px solid white;
-    border-radius: 6px;
-    background: #00000040;
+    border-radius: var(--border-radius);
+    background: var(--background);
     direction: rtl;
     backdrop-filter: blur(4px);
 }
@@ -95,7 +95,7 @@ input:checked ~ .rate > i::before {
     width: 46px;
     height: 46px;
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     background: black;
     font-size: 36px;
     opacity: 0;

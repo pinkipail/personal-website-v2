@@ -9,9 +9,10 @@
     width: var(--width);
     height: var(--height);
     margin: 10vh 0;
-    background-color: #1c1c1c;
+    background-color: #ffffff15;
     color: #eee;
-    backdrop-filter: blur(6px);
+    box-shadow: 0 0 18px 7px rgb(0 0 0 / 50%);
+    backdrop-filter: blur(8px);
 }
 
 .line::before,
@@ -34,13 +35,13 @@
     background: linear-gradient(to left, #111 0%, transparent 100%);
 }
 
-.line-content {
+.lineContent {
     display: flex;
     height: 100%;
     filter: invert(0.9);
 }
 
-.line-content > div {
+.lineContent > div {
     display: flex;
     flex-shrink: 0;
     align-items: center;
@@ -48,6 +49,6 @@
     width: var(--element-width);
 }
 
-.line-content > div img {
+.lineContent > div img {
     height: calc(var(--height) * 0.7);
 }

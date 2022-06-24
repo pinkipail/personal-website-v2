@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useRef, useState } from 'react';
 import { useClickAway } from 'react-use';
 import gsap from 'gsap/all';
@@ -5,6 +6,7 @@ import classes from './Select.module.css';
 
 function Select({ options, defaultOption, onChange }) {
   const selectRef = useRef(null);
+  const optionRef = useRef(null);
   const optionsRef = useRef([]);
   useClickAway(selectRef, clickAway);
 
@@ -13,12 +15,12 @@ function Select({ options, defaultOption, onChange }) {
 
   function openList() {
     setIsOpen(true);
-    animationShowingOptions(optionsRef.current);
+    animationShowingOptions(optionsRef.current, optionRef.current);
   }
 
   function closeList() {
     setIsOpen(false);
-    animationHidingOptions(optionsRef.current);
+    animationHidingOptions(optionsRef.current, optionRef.current);
   }
 
   function clickAway() {
@@ -26,11 +28,9 @@ function Select({ options, defaultOption, onChange }) {
   }
 
   function toggleSelect() {
-    if (isOpen) {
-      closeList();
-    } else {
-      openList();
-    }
+    isOpen
+      ? closeList()
+      : openList();
   }
 
   function selectOption(option) {
@@ -52,7 +52,7 @@ function Select({ options, defaultOption, onChange }) {
           </div>
           <div className={classes.arrow} />
         </div>
-        <div className={classes.options}>
+        <div className={classes.options} ref={optionRef}>
           {options.map((option, i) => (
             <div
               ref={(ref) => { optionsRef.current[i] = ref; }}
@@ -75,7 +75,13 @@ function Select({ options, defaultOption, onChange }) {
 
 // animations
 
-function animationShowingOptions(options) {
+function animationShowingOptions(options, optionWrap) {
+  gsap.to(optionWrap, {
+    height: '10em',
+    duration: 0.4,
+    autoAlpha: 1,
+    ease: 'power1.out',
+  });
   options.forEach((option, i) => {
     gsap.to(option, {
       y: `${i * 100 + 100}%`,
@@ -86,7 +92,13 @@ function animationShowingOptions(options) {
   });
 }
 
-function animationHidingOptions(options) {
+function animationHidingOptions(options, optionWrap) {
+  gsap.to(optionWrap, {
+    height: 0,
+    duration: 0.4,
+    autoAlpha: 0,
+    ease: 'power1.out',
+  });
   options.forEach((option, i) => {
     gsap.to(option, {
       y: '0%',

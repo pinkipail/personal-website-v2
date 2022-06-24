@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-
-import './Skills.css';
 import gsap from 'gsap/all';
 import ICONS_NAME from './consts/ICONS_NAME';
+import classes from './Skills.module.css';
 
 const displayedIcons = 5;
 const ALL_ICONS_NAME = [...ICONS_NAME, ...ICONS_NAME.filter((item, i) => i < displayedIcons)];
@@ -17,8 +16,8 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="line">
-      <div className="line-content" ref={iconsRef}>
+    <div className={classes.line}>
+      <div className={classes.lineContent} ref={iconsRef}>
         {ALL_ICONS_NAME.map((icon, i) => (
           <div key={icon + i}>
             <img src={`img/icons/skills/${icon}_icon.png`} alt={icon} />

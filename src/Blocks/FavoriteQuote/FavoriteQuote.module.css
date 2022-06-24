@@ -20,6 +20,7 @@
 
 .text span {
     padding: 0 1rem;
+    border-radius: var(--border-radius);
     backdrop-filter: blur(4px);
 }
 
@@ -47,6 +48,8 @@
     grid-area: image;
     margin-right: 3rem;
     border-radius: 0.8rem;
+    box-shadow: 0 0 18px 7px rgb(255 255 255 / 50%);
+    filter: invert(1);
 }
 
 .blockNumber {

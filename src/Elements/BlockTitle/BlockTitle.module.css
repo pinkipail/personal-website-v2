@@ -1,11 +1,12 @@
 .title {
     display: inline-block;
+    overflow: hidden;
     padding: 0 1rem;
+    border-radius: var(--border-radius);
     color: transparent;
     color: #000 !important;
     font-weight: 900;
     font-size: 7rem;
-    line-height: 1;
     letter-spacing: 0.1rem;
     text-transform: lowercase;
     -webkit-text-stroke: 0.15rem rgba(255, 255, 255, 1);

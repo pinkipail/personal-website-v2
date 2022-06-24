@@ -10,5 +10,6 @@
 .wrapBlurred div {
     display: inline-block;
     padding: 0 1rem;
+    border-radius: var(--border-radius);
     backdrop-filter: blur(4px);
 }

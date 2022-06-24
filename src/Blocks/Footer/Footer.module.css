@@ -6,9 +6,9 @@
     box-sizing: border-box;
     width: 100%;
     height: 30rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff15;
     box-shadow: 0 0 18px 7px rgb(0 0 0 / 50%);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
 }
 
 .footerItem {

@@ -4,7 +4,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SurfacingText from '../../Common/animation/SurfacingText/SurfacingText';
 import ContactLink from '../../Elements/ContactLink/ContactLink';
-import TextWave from '../../Elements/TextWave/TextWave';
 import classes from './Footer.module.css';
 
 const year = new Date().getFullYear();
@@ -36,6 +35,7 @@ function Footer() {
             icon="img/icons/telegram.svg"
             href="https://t.me/twenty_seventh"
           />
+          {/* todo: replace with linkedin */}
           <ContactLink
             text="github.com/pinkipail"
             icon="img/icons/github.svg"
