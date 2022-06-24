@@ -37,9 +37,9 @@ function Footer() {
           />
           {/* todo: replace with linkedin */}
           <ContactLink
-            text="github.com/pinkipail"
-            icon="img/icons/github.svg"
-            href="https://github.com/pinkipail"
+            text="linkedin.com/vasiliy-fedorov"
+            icon="img/icons/linkedin_icon.svg"
+            href="https://www.linkedin.com/in/vasiliy-fedorov-a23784225/"
           />
         </div>
       </div>
