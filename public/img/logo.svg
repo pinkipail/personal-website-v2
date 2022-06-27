@@ -1,14 +1,10 @@
 <svg width="103" height="50" viewBox="0 0 103 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M78 0H67C65.3431 0 64 1.34315 64 3V11C64 12.6569 65.3431 14 67 14H78V12H67C66.4477 12 66 11.5523 66 11V3C66 2.44772 66.4477 2 67 2H78V0Z" fill="white"/>
-<path d="M78 36H67C65.3431 36 64 37.3431 64 39V47C64 48.6569 65.3431 50 67 50H78V48H67C66.4477 48 66 47.5523 66 47V39C66 38.4477 66.4477 38 67 38H78V36Z" fill="white"/>
-<path d="M78 50C91.8071 50 103 38.8071 103 25C103 11.1929 91.8071 0 78 0V2C90.7025 2 101 12.2975 101 25C101 37.7025 90.7025 48 78 48V50Z" fill="white"/>
-<path d="M78 38C85.1797 38 91 32.1797 91 25C91 17.8203 85.1797 12 78 12V14C84.0751 14 89 18.9249 89 25C89 31.0751 84.0751 36 78 36V38Z" fill="white"/>
-<path d="M78 32C81.866 32 85 28.866 85 25C85 21.134 81.866 18 78 18V20C80.7614 20 83 22.2386 83 25C83 27.7614 80.7614 30 78 30V32Z" fill="white"/>
-<path d="M78 18H67C65.3431 18 64 19.3431 64 21V29C64 30.6569 65.3431 32 67 32H78V30H67C66.4477 30 66 29.5523 66 29V21C66 20.4477 66.4477 20 67 20H78V18Z" fill="white"/>
-<rect x="1" y="37" width="12" height="12" rx="2" stroke="white" stroke-width="2"/>
-<rect x="33" y="19" width="12" height="12" rx="2" stroke="white" stroke-width="2"/>
-<rect x="1" y="19" width="26" height="12" rx="2" stroke="white" stroke-width="2"/>
-<rect x="1" y="1" width="26" height="12" rx="2" stroke="white" stroke-width="2"/>
-<rect x="33" y="37" width="26" height="12" rx="2" stroke="white" stroke-width="2"/>
-<rect x="33" y="1" width="26" height="12" rx="2" stroke="white" stroke-width="2"/>
+<path d="M84 25C84 28.3137 81.3137 31 78 31H67C65.8954 31 65 30.1046 65 29V21C65 19.8954 65.8954 19 67 19H78C81.3137 19 84 21.6863 84 25Z" fill="black" stroke="white" stroke-width="2"/>
+<path d="M67 1H78C91.2548 1 102 11.7452 102 25C102 38.2548 91.2548 49 78 49H67C65.8954 49 65 48.1046 65 47V39C65 37.8954 65.8954 37 67 37H78C84.6274 37 90 31.6274 90 25C90 18.3726 84.6274 13 78 13H67C65.8954 13 65 12.1046 65 11V3C65 1.89543 65.8954 1 67 1Z" fill="black" stroke="white" stroke-width="2"/>
+<rect x="1" y="37" width="12" height="12" rx="2" fill="black" stroke="white" stroke-width="2"/>
+<rect x="33" y="19" width="12" height="12" rx="2" fill="black" stroke="white" stroke-width="2"/>
+<rect x="1" y="19" width="26" height="12" rx="2" fill="black" stroke="white" stroke-width="2"/>
+<rect x="1" y="1" width="26" height="12" rx="2" fill="black" stroke="white" stroke-width="2"/>
+<rect x="33" y="37" width="26" height="12" rx="2" fill="black" stroke="white" stroke-width="2"/>
+<rect x="33" y="1" width="26" height="12" rx="2" fill="black" stroke="white" stroke-width="2"/>
 </svg>
