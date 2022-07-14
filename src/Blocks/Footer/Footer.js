@@ -1,5 +1,3 @@
-// TODO
-// наполнить страницу
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SurfacingText from '../../Common/animation/SurfacingText/SurfacingText';
@@ -12,7 +10,6 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-
     <div className={classes.footer}>
       <div className={classes.footerBlock}>
         <div className={classes.title}>
