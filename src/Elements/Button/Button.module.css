@@ -18,6 +18,9 @@
 
 .button:active {
     background: var(--background);
+    color: white;
+    transition-duration: 0.3s;
+    backdrop-filter: blur(4px);
 }
 
 .button:disabled {
