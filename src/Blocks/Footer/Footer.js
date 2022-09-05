@@ -32,7 +32,6 @@ function Footer() {
             icon="img/icons/telegram.svg"
             href="https://t.me/twenty_seventh"
           />
-          {/* todo: replace with linkedin */}
           <ContactLink
             text="linkedin.com/vasiliy-fedorov"
             icon="img/icons/linkedin_icon.svg"
