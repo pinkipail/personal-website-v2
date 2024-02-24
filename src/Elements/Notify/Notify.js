@@ -10,6 +10,12 @@ function Notify() {
     if (nameParam) {
       setVisitorName(nameParam);
     }
+    const timer = setTimeout(() => {
+      if (nameParam) {
+        setVisitorName('');
+      }
+    }, 20000);
+    return (() => clearTimeout(timer));
   }, []);
 
   function onCloseNotification() {
