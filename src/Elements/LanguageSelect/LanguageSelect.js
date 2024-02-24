@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Notify from '../Notify/Notify';
 import Select from '../Select/Select';
+import '../Notify/Notify.module.css';
 
 function LanguageSelect() {
   const { i18n } = useTranslation();
@@ -10,11 +12,14 @@ function LanguageSelect() {
   }
 
   return (
-    <Select
-      options={options}
-      defaultOption={options[0]}
-      onChange={changeLanguage}
-    />
+    <>
+      <Select
+        options={options}
+        defaultOption={options[0]}
+        onChange={changeLanguage}
+      />
+      <Notify />
+    </>
   );
 }
 
