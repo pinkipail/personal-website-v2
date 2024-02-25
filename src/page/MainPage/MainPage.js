@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import Background from '../../Background/Background';
 import classes from './MainPage.module.css';
+import '../../Elements/Notify/Notify.module.css';
 
 import SmoothScroll from '../../Common/SmoothScroll/SmoothScroll';
 import Logo from '../../Elements/Logo/Logo';
@@ -18,6 +19,7 @@ import useDetectBrowser from '../../Common/hooks/useDetectBrowser';
 import Disclaimer from '../../Blocks/Disclaimer/Disclaimer';
 import FavoriteQuote from '../../Blocks/FavoriteQuote/FavoriteQuote';
 import Feedback from '../../Blocks/Feedback/Feedback';
+import Notify from '../../Elements/Notify/Notify';
 
 export default function MainPage({ onLoading }) {
   const browser = useDetectBrowser();
@@ -35,6 +37,7 @@ export default function MainPage({ onLoading }) {
       <div className={classes.footer}>
         {!isFirefox(browser) && <ThemeButton />}
         <ProgressBar />
+        <Notify />
       </div>
       <Suspense>
         <SmoothScroll>

@@ -1,6 +1,4 @@
 .notify {
-  width: 669px;
-  height: 146px;
   position: fixed;
   bottom: 29px;
   right: 36px;
@@ -16,9 +14,7 @@
 }
 
 .notifyBlock {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  max-width: 621px;
   text-align: left;
   padding: 24px;
 }
@@ -34,16 +30,20 @@
   cursor: pointer;
   background: inherit;
 }
+.closeButton:hover {
+  background: rgba(200, 200, 200, 0.5);
+}
 
 .title {
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
   font-weight: 700;
   font-size: 43px;
   line-height: 121%;
+  overflow: hidden;
 }
 
 .text {
-  margin-bottom: 0px;
+  margin: 0;
   font-weight: 400;
   font-size: 24px;
   line-height: 121%;

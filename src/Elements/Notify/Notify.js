@@ -28,8 +28,8 @@ function Notify() {
         <div className={classes.notify}>
           <div className={classes.notifyBlock}>
             <button className={classes.closeButton} type="button" onClick={onCloseNotification}><img src="img/icons/close.svg" alt="close" /></button>
-            <span className={classes.title}>Вэлком, {visitorName}!!!</span>
-            <span className={classes.text}>Спасибо, что заглянули ко мне на страничку :)</span>
+            <p className={classes.title}>Вэлком, {visitorName}!!!</p>
+            <p className={classes.text}>Спасибо, что заглянули ко мне на страничку :)</p>
           </div>
         </div>
       )}
