@@ -1,0 +1,39 @@
+import React, { useState, useEffect } from 'react';
+import classes from './Notify.module.css';
+
+function Notify() {
+  const [visitorName, setVisitorName] = useState('');
+
+  useEffect(() => {
+    const nameParam = new URLSearchParams(window.location.search).get('name');
+    if (nameParam) {
+      setVisitorName(nameParam);
+    }
+    const timer = setTimeout(() => {
+      if (nameParam) {
+        setVisitorName('');
+      }
+    }, 20000);
+    return (() => clearTimeout(timer));
+  }, []);
+
+  function onCloseNotification() {
+    setVisitorName('');
+  }
+
+  return (
+    <>
+      { visitorName && (
+        <div className={classes.notify}>
+          <div className={classes.notifyBlock}>
+            <button className={classes.closeButton} type="button" onClick={onCloseNotification}><img src="img/icons/close.svg" alt="close" /></button>
+            <p className={classes.title}>Вэлком, {visitorName}!!!</p>
+            <p className={classes.text}>Спасибо, что заглянули ко мне на страничку :)</p>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default Notify;
