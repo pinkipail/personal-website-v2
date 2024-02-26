@@ -36,7 +36,7 @@ export default function MainPage({ onLoading }) {
       <div className={classes.footer}>
         {!isFirefox(browser) && <ThemeButton />}
         <ProgressBar />
-        <Notify />
+        <Notify type="name" />
       </div>
       <Suspense>
         <SmoothScroll>
