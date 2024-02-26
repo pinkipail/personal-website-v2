@@ -8,42 +8,46 @@
   background: var(--background);
   box-sizing: border-box;
   border: 2px solid #fff;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   box-shadow: 0 0 18px 7px rgb(0 0 0 / 50%);
-  backdrop-filter: blur(8px);
+  backdrop-filter: var(--backdrop-filter);
 }
 
 .notifyBlock {
   text-align: left;
-  padding: 24px;
+  padding: 2.645rem;
 }
 
 .closeButton {
-  width: 30px;
-  height: 30px;
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 2.645rem;
+  right: 2.645rem;
   padding: 0;
   border: none;
-  cursor: pointer;
   background: inherit;
 }
+
+.closeButton img {
+  width: 3.30rem;
+  height: 3.30rem;
+}
+
 .closeButton:hover {
   background: rgba(200, 200, 200, 0.5);
 }
 
 .title {
-  margin: 0 0 16px 0;
+  margin: 0 0 1.764rem 0;
   font-weight: 700;
-  font-size: 43px;
+  font-size: 4.74rem;
   line-height: 121%;
   overflow: hidden;
 }
 
 .text {
   margin: 0;
+  margin: 0 2.75rem 0 0;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 2.645rem;
   line-height: 121%;
 }

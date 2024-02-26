@@ -99,6 +99,16 @@ i18n
             'end': 'конец',
           },
           'placeholder': 'Введите текст',
+          'notify title': {
+            name: 'Вэлком',
+            sent: 'Отправлено!',
+            retry: 'Не отправлено!',
+          },
+          'notify text': {
+            name: 'Рад, что вы заглянули ко мне на страничку :)',
+            sent: 'Спасибо за обратную связь.',
+            retry: 'Вы уже отправляли сообщение.',
+          },
         },
       },
       en: {
@@ -195,6 +205,16 @@ i18n
             'end': 'the end',
           },
           'placeholder': 'Enter the text',
+          'notify title': {
+            name: 'Welcome',
+            sent: 'Sent!',
+            retry: 'Not sent!',
+          },
+          'notify text': {
+            name: 'I am glad that you looked at my page',
+            sent: 'Thanks for the feedback.',
+            retry: 'You have already sent a message.',
+          },
         },
       },
     },
