@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import Background from '../../Background/Background';
 import classes from './MainPage.module.css';
-import '../../Elements/Notify/Notify.module.css';
 
 import SmoothScroll from '../../Common/SmoothScroll/SmoothScroll';
 import Logo from '../../Elements/Logo/Logo';
