@@ -10,13 +10,11 @@ function LanguageSelect() {
   }
 
   return (
-    <>
-      <Select
-        options={options}
-        defaultOption={options[0]}
-        onChange={changeLanguage}
-      />
-    </>
+    <Select
+      options={options}
+      defaultOption={options[0]}
+      onChange={changeLanguage}
+    />
   );
 }
 

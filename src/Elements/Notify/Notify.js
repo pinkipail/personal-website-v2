@@ -5,8 +5,7 @@ function Notify() {
   const [visitorName, setVisitorName] = useState('');
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const nameParam = urlParams.get('name');
+    const nameParam = new URLSearchParams(window.location.search).get('name');
     if (nameParam) {
       setVisitorName(nameParam);
     }
