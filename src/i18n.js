@@ -211,7 +211,7 @@ i18n
             retry: 'Not sent!',
           },
           'notify text': {
-            name: 'I am glad that you looked at my page',
+            name: 'I am glad that you looked at my page :)',
             sent: 'Thanks for the feedback.',
             retry: 'You have already sent a message.',
           },
