@@ -1,4 +1,5 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Background from '../../Background/Background';
 import classes from './MainPage.module.css';
 
@@ -22,9 +23,29 @@ import Notify from '../../Elements/Notify/Notify';
 
 export default function MainPage({ onLoading }) {
   const browser = useDetectBrowser();
+  const [visitorName, setVisitorName] = useState('');
+
   useEffect(() => {
     onLoading();
+    const nameParam = new URLSearchParams(window.location.search).get('name');
+    if (nameParam) {
+      setVisitorName(nameParam);
+    }
+    const timer = setTimeout(() => {
+      if (nameParam) {
+        setVisitorName('');
+      }
+    }, 20000);
+    return () => clearTimeout(timer);
   }, []);
+
+  function onCloseNotify() {
+    setVisitorName('');
+  }
+
+  const { t } = useTranslation();
+  const title = `${t('notify title.name')}, ${visitorName}!!!`;
+  const text = t('notify text.name');
 
   return (
     <Background>
@@ -36,7 +57,7 @@ export default function MainPage({ onLoading }) {
       <div className={classes.footer}>
         {!isFirefox(browser) && <ThemeButton />}
         <ProgressBar />
-        <Notify type="name" />
+        <Notify title={title} text={text} visitorName={visitorName} onCloseNotify={onCloseNotify} />
       </div>
       <Suspense>
         <SmoothScroll>
