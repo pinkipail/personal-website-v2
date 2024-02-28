@@ -15,7 +15,7 @@ function Notify(props) {
         <div className={classes.notify}>
           <div className={classes.notifyBlock}>
             <button
-              className={classes.closeButton}
+              className={`${classes.closeButton} cursor-animation`}
               type="button"
               onClick={onCloseNotify}
             >
