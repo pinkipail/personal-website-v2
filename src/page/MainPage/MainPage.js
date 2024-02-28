@@ -28,6 +28,10 @@ export default function MainPage({ onLoading }) {
 
   useEffect(() => {
     onLoading();
+    handleQueryParam();
+  }, []);
+
+  function handleQueryParam() {
     const nameParam = new URLSearchParams(window.location.search).get('name');
     if (nameParam) {
       setVisitorName(nameParam);
@@ -38,15 +42,15 @@ export default function MainPage({ onLoading }) {
       }
     }, 20000);
     return () => clearTimeout(timer);
-  }, []);
+  }
 
   function onCloseNotify() {
     setVisitorName('');
   }
 
   const { t } = useTranslation();
-  const title = `${t('notify title.name')}, ${visitorName}!!!`;
-  const text = t('notify text.name');
+  const notifyTitle = `${t('notify title.name')}, ${visitorName}!!!`;
+  const notifyText = t('notify text.name');
 
   return (
     <Background>
@@ -58,7 +62,12 @@ export default function MainPage({ onLoading }) {
       <div className={classes.footer}>
         {!isFirefox(browser) && <ThemeButton />}
         <ProgressBar />
-        <Notify title={title} text={text} visitorName={visitorName} onCloseNotify={onCloseNotify} />
+        <Notify
+          title={notifyTitle}
+          text={notifyText}
+          showNotify={visitorName}
+          onCloseNotify={onCloseNotify}
+        />
       </div>
       <Suspense>
         <SmoothScroll>
