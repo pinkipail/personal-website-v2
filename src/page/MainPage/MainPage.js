@@ -1,12 +1,6 @@
-import React, {
-  Suspense,
-  useEffect,
-  useState,
-  useRef,
-} from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Transition } from 'react-transition-group';
-import gsap from 'gsap';
 import Background from '../../Background/Background';
 import classes from './MainPage.module.css';
 
@@ -32,7 +26,6 @@ export default function MainPage({ onLoading }) {
   const browser = useDetectBrowser();
   const [visitorName, setVisitorName] = useState('');
   const [showNotify, setShowNotify] = useState(false);
-  const notifyRef = useRef();
 
   useEffect(() => {
     onLoading();
@@ -44,12 +37,10 @@ export default function MainPage({ onLoading }) {
     if (nameParam) {
       setVisitorName(nameParam);
       setShowNotify(true);
-      animationShowingNotify(notifyRef.current);
     }
-
     const timerHide = setTimeout(() => {
       if (nameParam) {
-        animationHidingNotify(notifyRef.current, setVisitorName);
+        setShowNotify(false);
       }
     }, 20000);
 
@@ -57,7 +48,7 @@ export default function MainPage({ onLoading }) {
   }
 
   function onCloseNotify() {
-    animationHidingNotify(notifyRef.current, setVisitorName);
+    setShowNotify(false);
   }
 
   const { t } = useTranslation();
@@ -76,19 +67,18 @@ export default function MainPage({ onLoading }) {
         <ProgressBar />
         <Transition
           in={showNotify}
-          timeout={1500}
+          timeout={500}
           mountOnEnter
           unmountOnExit
         >
-          {() => (
-            showNotify && (
-              <Notify
-                notifyRef={notifyRef}
-                title={notifyTitle}
-                text={notifyText}
-                onCloseNotify={onCloseNotify}
-              />
-            ))}
+          {(state) => (
+            <Notify
+              animation={state}
+              title={notifyTitle}
+              text={notifyText}
+              onCloseNotify={onCloseNotify}
+            />
+          )}
         </Transition>
       </div>
       <Suspense>
@@ -113,28 +103,4 @@ export default function MainPage({ onLoading }) {
 
 function isFirefox(browser) {
   return browser.includes('Firefox');
-}
-
-// animations
-
-function animationShowingNotify(element) {
-  gsap.fromTo(element, {
-    x: 300,
-    autoAlpha: 0,
-  },
-  {
-    x: 0,
-    autoAlpha: 1,
-    duration: 0.4,
-    ease: 'power1.easyOut',
-  });
-}
-
-function animationHidingNotify(element) {
-  gsap.to(element, {
-    x: 300,
-    autoAlpha: 0,
-    duration: 0.4,
-    ease: 'power1.easyOut',
-  });
 }

@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import classes from './Notify.module.css';
 
 function Notify(props) {
+  const notifyRef = useRef();
   const {
+    animation,
     title,
     text,
     onCloseNotify,
-    notifyRef,
   } = props;
+
+  useEffect(() => {
+    if (animation === 'entered') {
+      animationShowingNotify(notifyRef.current);
+    } else if (animation === 'exiting') {
+      animationHidingNotify(notifyRef.current);
+    }
+  }, [animation]);
 
   return (
     <>
@@ -29,3 +39,24 @@ function Notify(props) {
 }
 
 export default Notify;
+
+// animations
+
+function animationShowingNotify(element) {
+  gsap.fromTo(element, {
+    x: '130%',
+  },
+  {
+    x: '0%',
+    duration: 0.5,
+    ease: 'power1.easyOut',
+  });
+}
+
+function animationHidingNotify(element) {
+  gsap.to(element, {
+    x: '130%',
+    duration: 0.6,
+    ease: 'power1.easyOut',
+  });
+}
