@@ -130,7 +130,7 @@ i18n
           ],
           'about me:': 'about me:',
           'about me description': [
-            'Hi, my name is Vasiliy. I am 22 years old.',
+            'Hi, my name is Vasiliy. I am 24 years old.',
             'I grew up in the small village of Novoegoryevskoye,',
             'in the Altai Territory, on the outskirts of Russia.',
             'After school, I moved closer to the capital,',
