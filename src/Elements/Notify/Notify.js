@@ -1,15 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import classes from './Notify.module.css';
+import NotifyContext from './NotifyContext';
 
 function Notify(props) {
   const notifyRef = useRef();
-  const {
-    animation,
-    title,
-    text,
-    onCloseNotify,
-  } = props;
+  const { animation, onCloseNotify } = props;
+  const filling = useContext(NotifyContext);
 
   useEffect(() => {
     if (animation === 'entered') {
@@ -29,8 +26,8 @@ function Notify(props) {
         >
           <img src="img/icons/close.svg" alt="close" />
         </button>
-        <p className={classes.title}>{title}</p>
-        <p className={classes.text}>{text}</p>
+        <p className={classes.title}>{filling.notifyTitle}</p>
+        <p className={classes.text}>{filling.notifyText}</p>
       </div>
     </div>
   );
